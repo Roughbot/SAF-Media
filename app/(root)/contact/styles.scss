@@ -1,0 +1,22 @@
+.contact {
+  background-image: url("../../../public/assets/newsletter.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+input,
+textarea {
+  background-color: transparent;
+}
+
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:not(:placeholder-shown) ~ .input-text,
+input[type="tel"]:focus ~ .input-text,
+input[type="tel"]:not(:placeholder-shown) ~ .input-text {
+  @apply text-blue-500 bg-white font-semibold rounded-lg transform -translate-y-9 -translate-x-4 scale-75;
+}
+
+textarea:focus ~ .input-text,
+textarea:not(:placeholder-shown) ~ .input-text {
+  @apply text-blue-500 bg-white font-semibold rounded-lg transform -translate-y-9 -translate-x-4 scale-75;
+}

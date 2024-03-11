@@ -1,0 +1,112 @@
+"use client";
+import { createContact } from "../../utils/actions/contact.action";
+import toast from "react-hot-toast";
+import { useRef } from "react";
+
+const Form = () => {
+  const ref = useRef<HTMLFormElement>(null);
+
+  return (
+    <form
+      ref={ref}
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target as HTMLFormElement);
+        toast.promise(createContact(formData), {
+          loading: "Sending...",
+          success: "Message sent successfully!",
+          error: "Failed to send message",
+        });
+        ref.current?.reset();
+      }}
+      className="flex flex-col gap-12"
+    >
+      <div className="flex flex-col gap-10 sm:flex-row">
+        <div className="space-y-8">
+          <div className="items-center flex justify-between">
+            <label className="relative">
+              <input
+                type="text"
+                name="name"
+                placeholder=""
+                required
+                className="h-16 w-full text-black sm:w-70 px-6 text-lg sm:text-2xl  border-2 rounded-lg border-black  border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+              />
+              <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-4 mx-6 px-2 transition duration-200 input-text">
+                Name
+              </span>
+            </label>
+          </div>
+          <div className=" items-center flex gap-3">
+            <label className="relative flex items-center justify-center ">
+              <input
+                type="text"
+                name="email"
+                placeholder=""
+                required
+                className="h-16 w-full text-black sm:w-70 px-6 text-lg sm:text-2xl  border-2 rounded-lg border-black  border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+              />
+              <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-4 mx-5 px-2 transition duration-200 input-text">
+                Email Address
+              </span>
+            </label>
+          </div>
+        </div>
+        <div className="space-y-8">
+          <div className=" items-center flex justify-between">
+            <label className="relative">
+              <input
+                type="text"
+                name="company"
+                placeholder=""
+                className="h-16 w-full text-black sm:w-70 px-6 text-lg sm:text-2xl  border-2 rounded-lg border-black  border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+              />
+              <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-4 mx-6 px-2 transition duration-200 input-text">
+                Company
+              </span>
+            </label>
+          </div>
+          <div className=" items-center flex gap-3">
+            <label className="relative flex items-center justify-center ">
+              <input
+                type="tel"
+                name="phone"
+                placeholder=""
+                required
+                className="h-16 w-full text-black sm:w-70 px-6 text-lg sm:text-2xl  border-2 rounded-lg border-black  border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+              />
+              <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-4 mx-5 px-2 transition duration-200 input-text">
+                Phone Number
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <label className="relative flex items-center justify-center">
+            <textarea
+              placeholder=""
+              name="message"
+              required
+              className="h-72 w-full text-black px-6 py-3 text-lg sm:text-2xl border-2 rounded-lg border-black border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+            ></textarea>
+            <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-4 mx-5 px-2 transition duration-200 input-text">
+              Message
+            </span>
+          </label>
+        </div>
+        <div className="flex items-center pt-4 justify-center">
+          <button
+            type="submit"
+            className="bg-blue-600 text-white text-lg sm:text-xl font-semibold w-32 h-16 rounded-lg transition duration-200"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+export default Form;
