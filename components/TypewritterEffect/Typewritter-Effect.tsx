@@ -6,28 +6,31 @@ export function TypewriterEffectSmoothComponent() {
       text: "Build",
     },
     {
-      text: "awesome",
+      text: "Your",
     },
     {
-      text: "apps",
+      text: "Success",
+    },
+    {
+      text: "Story",
     },
     {
       text: "with",
     },
     {
-      text: "Aceternity.",
+      text: "SAF Media.",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
   return (
     <div className="flex flex-col items-center justify-center h-[40rem]  ">
       <p className="text-white font-semibold text-xs sm:text-base  ">
-        The road to freedom starts from here
+        The road to success starts from here
       </p>
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
         <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm hover:bg-black hover:text-white hover:border-white">
-          Signup
+          Contact us!
         </button>
       </div>
     </div>

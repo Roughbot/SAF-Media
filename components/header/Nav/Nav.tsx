@@ -15,16 +15,16 @@ export default function Nav() {
       href: "/",
     },
     {
+      title: "About Us",
+      href: "/about",
+    },
+    {
       title: "What we do",
       href: "/whatwedo",
     },
     {
       title: "Blogs",
       href: "/blogs",
-    },
-    {
-      title: "About Us",
-      href: "/about",
     },
     {
       title: "Contact Us",

@@ -5,7 +5,10 @@ const About = () => {
   return (
     <div>
       <LampComponent />
-      <AnimatedTooltipPreview />
+      {/* <AnimatedTooltipPreview /> */}
+      <div className="p-32">
+        <h1 className="text-white ">About</h1>
+      </div>
     </div>
   );
 };
