@@ -24,7 +24,7 @@ const Login = () => {
         password,
       });
 
-      if (response.status !== 200) {
+      if (response.status === 400) {
         setIsLoading(false);
         toast.error("Invalid login details");
         return;
@@ -39,7 +39,7 @@ const Login = () => {
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      toast.error("Internal server Error, Please Try Again Later");
+      toast.error("Check your Credentials and try again");
     }
   };
 
