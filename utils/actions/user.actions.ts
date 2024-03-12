@@ -56,7 +56,6 @@ export async function deleteUser(id: string) {
 }
 
 //Update User
-
 export async function updateUser(id: string, user: CreateUserParams) {
   try {
     await connectToDatabase();
