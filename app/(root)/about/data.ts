@@ -1,7 +1,7 @@
-import integrity from "../../../public/assets/integrity.json";
-import creative from "../../../public/assets/Creative.json";
-import collaboration from "../../../public/assets/collaboration.png";
-import passion from "../../../public/assets/passion.json";
+import integrity from "../../../public/assets/integrity.svg";
+import creative from "../../../public/assets/creative.svg";
+import collaboration from "../../../public/assets/collaboration.svg";
+import passion from "../../../public/assets/passion.svg";
 
 export const points = [
   {

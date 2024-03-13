@@ -22,22 +22,34 @@ const DataCardt = (props: any) => {
     >
       <motion.div
         style={{ top: `calc(-5% + ${i * 25}px)`, scale }}
-        className={`h-[500px] w-[1000px] p-8 flex flex-col origin-top rounded-[25px] relative top-8 ${color}`}
+        className={`h-[400px] w-[600px] sm:h-[500px] sm:w-[1000px] p-8 flex flex-col origin-top rounded-[25px] relative top-8 ${color}`}
       >
-        <h1 className="font-semibold text-4xl py-10 text-center">{title}</h1>
-        <div className="flex h-full justify-between p-10 gap-10">
+        <div className="shadow-lg rounded-3xl ">
+          <h1
+            style={{ fontFamily: "Dosis" }}
+            className="font-bold  text-white text-lg sm:text-4xl py-10 text-center"
+          >
+            {title}
+          </h1>
+        </div>
+        <div className="flex h-full shadow-lg rounded-lg items-center p-10 gap-10">
           <div className="flex w-[60%] flex-row">
             <motion.div
               style={{ opacity: scrollYProgress, scale: imageScale }}
               className="relative top-[10%]"
             >
-              <p className="text-base first-letter:text-xl">{description}</p>
+              <p
+                style={{ fontFamily: "Dosis" }}
+                className="text-xs sm:text-2xl first-letter:text-xl"
+              >
+                {description}
+              </p>
             </motion.div>
           </div>
-          <div className="relative w-[40%] h-[100%] rounded-3xl overflow-hidden">
+          <div className="relative w-[40%] h-[100%]   overflow-hidden">
             <motion.div
               style={{ opacity: scrollYProgress, scale: imageScale }}
-              className="w-full h-full"
+              className="w-full h-full justify-center"
             >
               <Image className="object-cover" src={image} alt={title} />
             </motion.div>

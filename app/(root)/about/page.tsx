@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import inovation from "../../../public/assets/inovation.svg";
 import { points } from "./data";
 import DataCardt from "@/components/dataCard/DataCardt";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const About = () => {
   const container = useRef(null);
@@ -31,7 +31,7 @@ const About = () => {
       <Description phrase={phrase} />
       {/* <AnimatedTooltipPreview /> */}
       <div>
-        <div>
+        <div ref={container}>
           {points.map((point, index) => {
             const targetScale = 1 - (points.length - index) * 0.08;
             return (

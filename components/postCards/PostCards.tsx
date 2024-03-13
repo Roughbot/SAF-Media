@@ -1,5 +1,5 @@
 import Image from "next/image";
-import image from "../../public/assets/contact.svg";
+import image from "../../public/assets/inovation.svg";
 import Link from "next/link";
 
 const PostCards = () => {
