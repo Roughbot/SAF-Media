@@ -1,45 +1,83 @@
 "use client";
-import Autoplay from "embla-carousel-autoplay";
-import PostCards from "../postCards/PostCards";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import FeaturedPostCard from "../featuredPostCard/FeaturedPostCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-const autoPlay = Autoplay({
-  delay: 5000,
-});
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1024 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 768, min: 640 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 640, min: 0 },
+    items: 1,
+  },
+};
+
+const customLeftArrow = (
+  <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-white"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M10 19l-7-7m0 0l7-7m-7 7h18"
+      />
+    </svg>
+  </div>
+);
+
+const customRightArrow = (
+  <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 text-white w-full"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M14 5l7 7m0 0l-7 7m7-7H3"
+      />
+    </svg>
+  </div>
+);
 
 const Featured = () => {
   return (
     <div>
-      <div className="py-20">
-        <h1 className="text-start px-10 font-bold text-white">
-          <span className="text-black text-8xl">Welcom</span>
-          <br />
-          <p className="text-3xl">Discover new stories and technologies</p>
-        </h1>
-      </div>
-      <div className="sm:px-8 md:px-16 lg:px-36">
-        <Carousel plugins={[autoPlay]}>
-          <CarouselContent className="-ml-2 md:-ml-4">
-            <CarouselItem className="md:pl-4">
-              <PostCards />
-            </CarouselItem>
-            <CarouselItem className="md:pl-4">
-              <PostCards />
-            </CarouselItem>
-            <CarouselItem className=" md:pl-4">
-              <PostCards />
-            </CarouselItem>
-          </CarouselContent>
-          <div className="hidden sm:block">
-            <CarouselPrevious />
-            <CarouselNext />
-          </div>
+      <div className="mb-8  ">
+        <Carousel
+          autoPlay
+          infinite
+          customLeftArrow={customLeftArrow}
+          customRightArrow={customRightArrow}
+          responsive={responsive}
+          itemClass="px-4"
+        >
+          <FeaturedPostCard />
+          <FeaturedPostCard />
+          <FeaturedPostCard />
+          <FeaturedPostCard />
+          <FeaturedPostCard />
+          <FeaturedPostCard />
         </Carousel>
       </div>
     </div>

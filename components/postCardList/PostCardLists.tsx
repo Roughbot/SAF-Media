@@ -3,8 +3,7 @@ import PostCards from "../postCards/PostCards";
 const PostCardLists = () => {
   return (
     <div>
-      PostCardLists
-      <div>
+      <div className="p-6 lg:p-20 ">
         <PostCards />
         <PostCards />
         <PostCards />

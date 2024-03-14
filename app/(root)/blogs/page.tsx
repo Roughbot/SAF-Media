@@ -5,20 +5,22 @@ import MenuLists from "@/components/menuList/MenuLists";
 
 const Blogs = () => {
   return (
-    <main className="flex min-h-screen overflow-hidden px-20 flex-col items-center justify-center  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
-      <div>
+    <div className="container mx-auto px-10 mb-8 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
+      <div className="pt-28">
         <Featured />
-        <Categories />
       </div>
-      <div className="flex gap-12 px-32">
-        <div className="flex-5 ">
+      <Categories />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-8 col-span-1">
           <PostCardLists />
         </div>
-        <div className="flex-2 hidden sm:block">
-          <MenuLists />
+        <div className="lg:col-span-4 col-span-1">
+          <div className="lg:sticky pt-20 relative top-8">
+            <MenuLists />
+          </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 

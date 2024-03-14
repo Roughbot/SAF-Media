@@ -9,7 +9,7 @@ const PostCards = () => {
         <Image
           src={image}
           alt=""
-          className="object-top absolute h-40 object-fill shadow-lg rounded-t-lg lg:rounded-lg"
+          className="object-top absolute h-full w-full object-fill shadow-lg rounded-t-lg lg:rounded-lg"
         />
       </div>
 
