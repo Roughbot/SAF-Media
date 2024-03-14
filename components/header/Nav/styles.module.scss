@@ -21,6 +21,10 @@
       gap: 12px;
       margin-top: 10px;
 
+      @media (max-width: 768px) {
+        font-size: 26px;
+      }
+
       .header {
         color: rgn(153, 153, 153);
         border-bottom: 1px solid rgb(153, 153, 153);
