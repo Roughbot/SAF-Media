@@ -40,7 +40,7 @@ const PostCards = () => {
           <span className="align-middle">MMM DD, YYYY</span>
         </div>
       </div>
-      <p className="text-center text-sm sm:text-2xl text-gray-700 font-normal px-2 lg:px-10 mb-4">
+      <p className="text-center text-sm sm:text-2xl text-gray-900 font-normal px-2 lg:px-10 mb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis
         optio rerum, perspiciatis reiciendis commodi pariatur cum sed voluptat.
       </p>
