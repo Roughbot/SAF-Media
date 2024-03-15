@@ -1,7 +1,13 @@
-import React from "react";
+import BlogPostForm from "@/components/blogPostForm/BlogPostForm";
 
 const page = () => {
-  return <div>Create Blog</div>;
+  return (
+    <div className="p-10 h-full w-full">
+      <div>
+        <BlogPostForm />
+      </div>
+    </div>
+  );
 };
 
 export default page;

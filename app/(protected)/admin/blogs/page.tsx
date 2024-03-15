@@ -1,7 +1,34 @@
+"use client";
 import React from "react";
+import { fetchBlogPosts } from "@/utils/actions/blogPost.action";
+import { Button } from "@/components/ui/button";
 
-const page = () => {
-  return <div>page</div>;
+const Page = () => {
+  const [blogPosts, setBlogPosts] = React.useState<any[]>([]);
+
+  const fetchpost = async () => {
+    const fetchedPosts = await fetchBlogPosts();
+    setBlogPosts(fetchedPosts || []);
+  };
+  return (
+    <div className="m-10">
+      <Button onClick={fetchpost}>fetch</Button>
+
+      <div>
+        <h1>Blog Posts</h1>
+        {blogPosts.map((post: any) => {
+          return (
+            <div key={post._id}>
+              <h2>{post.title}</h2>
+              <p>{post.description}</p>
+              <p>{post.category}</p>
+              <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
-export default page;
+export default Page;

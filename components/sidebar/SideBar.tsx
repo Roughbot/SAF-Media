@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ChevronsLeftIcon,
   ChevronsRightIcon,
   Contact,
   FilePen,
@@ -25,7 +26,7 @@ const SideNavBar = () => {
   };
 
   return (
-    <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24">
+    <div className="relative bg-slate-300 hidden md:block min-w-[80px] max-w-[130px] border-r px-3 pb-10 pt-24">
       <div className="absolute right-[-20px] top-7">
         <Button
           onClick={() => {
@@ -34,7 +35,7 @@ const SideNavBar = () => {
           variant="secondary"
           className="rounded-xl p-2"
         >
-          <ChevronsRightIcon />
+          {isCollapsed ? <ChevronsRightIcon /> : <ChevronsLeftIcon />}
         </Button>
       </div>
       <div className="flex flex-col items-center justify-end">
@@ -73,7 +74,7 @@ const SideNavBar = () => {
             },
           ]}
         />
-        <div className="absolute bottom-0 w-full flex justify-center items-center py-3 bg-white border-t border-gray-200 ">
+        <div className="absolute bg-slate-300 bottom-0 w-full flex justify-center items-center py-3 border-t border-gray-200 ">
           <Button
             size="sm"
             onClick={() => {

@@ -1,0 +1,152 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import { createBlogPost } from "@/utils/actions/blogPost.action";
+import toast from "react-hot-toast";
+
+const QuillNoSSRWrapper = dynamic(
+  () => {
+    import("react-quill/dist/quill.snow.css" as any);
+    return import("react-quill");
+  },
+  {
+    ssr: false,
+    loading: () => <p>Loading...</p>,
+  }
+);
+
+const BlogPostForm = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [picture, setPicture] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("picture", picture);
+    formData.append("content", content);
+
+    toast.promise(createBlogPost(formData), {
+      loading: "Creating...",
+      success: "Blog Post Created successfully!",
+      error: "Failed to Create Blog Post!",
+    });
+
+    setTitle("");
+    setDescription("");
+    setCategory("");
+    setPicture("");
+    setContent("");
+  };
+
+  const handleFileChange = (event: any) => {
+    setPicture(event.target.files[0]);
+  };
+
+  return (
+    <form
+      className="space-y-10 p-10 rounded-3xl shadow-2xl bg-slate-200"
+      onSubmit={handleSubmit}
+    >
+      <div className=" grid grid-cols-1 md:grid-cols-2 p-8 gap-10">
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <label htmlFor="description">Description</label>
+          <input
+            type="text"
+            className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            placeholder="Description"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <label htmlFor="category">Category</label>
+          <input
+            type="text"
+            className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            name="category"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
+        </div>
+
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <label htmlFor="picture">Header Image</label>
+          <input
+            name="picture"
+            className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            type="file"
+            onChange={handleFileChange}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col gap-14 px-10">
+        <div className="overflow-hidden rounded-lg shadow-lg border-2 border-gray-300 p-2">
+          <label htmlFor="content p-2">Content</label>
+          <QuillNoSSRWrapper
+            theme="snow"
+            className=" bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            value={content}
+            onChange={setContent}
+            modules={{
+              toolbar: [
+                [{ header: "1" }, { header: "2" }, { font: [] }],
+                [{ size: [] }],
+                ["bold", "italic", "underline", "strike", "blockquote"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["link", "image"],
+                ["clean"],
+              ],
+              clipboard: {
+                matchVisual: false,
+              },
+            }}
+            formats={[
+              "header",
+              "font",
+              "size",
+              "bold",
+              "italic",
+              "underline",
+              "strike",
+              "blockquote",
+              "list",
+              "bullet",
+              "link",
+              "image",
+            ]}
+          />
+        </div>
+        <div className="flex items-center justify-center ">
+          <Button type="submit" className="btn w-[100px]  btn-primary">
+            Submit
+          </Button>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+export default BlogPostForm;
