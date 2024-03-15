@@ -2,6 +2,8 @@
 import FeaturedPostCard from "../featuredPostCard/FeaturedPostCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useState, useEffect, useCallback } from "react";
+import { fetchFeaturedBlogPosts } from "@/utils/actions/blogPost.action";
 
 const responsive = {
   superLargeDesktop: {
@@ -61,6 +63,17 @@ const customRightArrow = (
 );
 
 const Featured = () => {
+  const [featuredPosts, setFeaturedPosts] = useState([]);
+
+  const getFeaturedPosts = useCallback(async () => {
+    const response = (await fetchFeaturedBlogPosts()) || [];
+    setFeaturedPosts(response);
+  }, []);
+
+  useEffect(() => {
+    getFeaturedPosts();
+  }, [getFeaturedPosts]);
+
   return (
     <div>
       <div className="mb-8  ">
@@ -72,12 +85,9 @@ const Featured = () => {
           responsive={responsive}
           itemClass="px-4"
         >
-          <FeaturedPostCard />
-          <FeaturedPostCard />
-          <FeaturedPostCard />
-          <FeaturedPostCard />
-          <FeaturedPostCard />
-          <FeaturedPostCard />
+          {featuredPosts.map((post: any, index: number) => (
+            <FeaturedPostCard key={index} post={post} />
+          ))}
         </Carousel>
       </div>
     </div>

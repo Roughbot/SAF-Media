@@ -2,7 +2,13 @@ import Image from "next/image";
 import image from "../../public/assets/inovation.svg";
 import Link from "next/link";
 
-const PostCards = () => {
+const PostCards = ({ post }: any) => {
+  const date = new Date(post.createdAt).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
   return (
     <div className="glass shadow-lg rounded-lg p-0 lg:p-6 pb-6 mb-4">
       <div className="relative overflow-hidden shadow-md pb-40 mb-3">
@@ -14,12 +20,12 @@ const PostCards = () => {
       </div>
 
       <h1 className="transition duration-700 text-center mb-4 cursor-pointer hover:text-pink-600 text-xl font-semibold">
-        <Link href="/">Lorem ipsum dolor sit amet consectetur</Link>
+        <Link href="/">{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-4 w-full">
         <div className="flex justify-center mb-2 lg:mb-0 w-full lg:w-auto mr-4 items-center">
           <p className="inline align-middle text-gray-700 ml-2 font-medium text-base">
-            sathya
+            {post.author}
           </p>
         </div>
         <div className="font-medium text-gray-700">
@@ -37,12 +43,11 @@ const PostCards = () => {
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          <span className="align-middle">MMM DD, YYYY</span>
+          <span className="align-middle">{date}</span>
         </div>
       </div>
       <p className="text-center text-sm sm:text-2xl text-gray-900 font-normal px-2 lg:px-10 mb-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis
-        optio rerum, perspiciatis reiciendis commodi pariatur cum sed voluptat.
+        {post.description}
       </p>
       <div className="text-center">
         <Link href="/">

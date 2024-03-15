@@ -22,6 +22,7 @@ const BlogPostForm = () => {
   const [category, setCategory] = useState("");
   const [picture, setPicture] = useState("");
   const [content, setContent] = useState("");
+  const [author, setAuthor] = useState("");
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -32,6 +33,7 @@ const BlogPostForm = () => {
     formData.append("category", category);
     formData.append("picture", picture);
     formData.append("content", content);
+    formData.append("author", author);
 
     toast.promise(createBlogPost(formData), {
       loading: "Creating...",
@@ -44,6 +46,7 @@ const BlogPostForm = () => {
     setCategory("");
     setPicture("");
     setContent("");
+    setAuthor("");
   };
 
   const handleFileChange = (event: any) => {
@@ -91,7 +94,17 @@ const BlogPostForm = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
         </div>
-
+        <div className="grid w-full max-w-sm items-center gap-1.5">
+          <label htmlFor="author">Author</label>
+          <input
+            type="text"
+            className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
+            name="author"
+            placeholder="Author"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+        </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <label htmlFor="picture">Header Image</label>
           <input

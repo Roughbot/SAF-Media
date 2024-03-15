@@ -9,6 +9,7 @@ const Page = () => {
   const fetchpost = async () => {
     const fetchedPosts = await fetchBlogPosts();
     setBlogPosts(fetchedPosts || []);
+    console.log(fetchedPosts);
   };
   return (
     <div className="m-10">

@@ -14,6 +14,7 @@ export async function createBlogPost(formData: FormData) {
       description: formData.get("description") as string,
       category: formData.get("category") as string,
       picture: formData.get("picture") as string,
+      author: formData.get("author") as string,
       content: formData.get("content") as String,
     };
 
@@ -36,7 +37,58 @@ export async function fetchBlogPosts() {
     await connectToDatabase();
 
     const blogPosts = await BlogPost.find();
-    return blogPosts;
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch recent BlogPost
+
+export async function fetchRecentBlogPosts() {
+  try {
+    await connectToDatabase();
+
+    const blogPosts = await BlogPost.find().sort({ createdAt: -1 }).limit(3);
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch BlogPost with high views
+
+export async function fetchFeaturedBlogPosts() {
+  try {
+    await connectToDatabase();
+
+    const blogPosts = await BlogPost.find().sort({ views: -1 }).limit(10);
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch BlogPost By Category
+
+export async function fetchBlogPostsByCategory(category: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPosts = await BlogPost.find({ category: category });
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
   } catch (error) {
     handleError(error);
   }
