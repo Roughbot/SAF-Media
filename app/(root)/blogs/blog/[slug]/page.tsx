@@ -28,12 +28,3 @@ const page = async ({ params }: any) => {
 };
 
 export default page;
-
-export async function getPostData({ params }: any) {
-  const post = await fetchBlogPostBySlug(params.slug);
-  return {
-    props: {
-      post,
-    },
-  };
-}
