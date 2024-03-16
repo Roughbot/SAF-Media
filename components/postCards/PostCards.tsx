@@ -1,5 +1,5 @@
+import App from "next/app";
 import Image from "next/image";
-import image from "../../public/assets/inovation.svg";
 import Link from "next/link";
 
 const PostCards = ({ post }: any) => {
@@ -13,8 +13,8 @@ const PostCards = ({ post }: any) => {
     <div className="glass shadow-lg rounded-lg p-0 lg:p-6 pb-6 mb-4">
       <div className="relative overflow-hidden shadow-md pb-40 mb-3">
         <Image
-          src={image}
-          alt=""
+          src={post.image}
+          alt="Image of the post"
           className="object-top absolute h-full w-full object-fill shadow-lg rounded-t-lg lg:rounded-lg"
         />
       </div>
