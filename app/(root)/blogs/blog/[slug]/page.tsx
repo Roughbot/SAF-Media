@@ -5,9 +5,8 @@ import CommentForm from "@/components/comments/commentForm/CommentForm";
 import CommentCard from "@/components/comments/commentCard/CommentCard";
 
 const page = async ({ params }: any) => {
-  console.log(params);
-
   const post: any = await getPostData(params.slug);
+
   return (
     <div
       style={{ fontFamily: "Dosis" }}
@@ -31,11 +30,7 @@ const page = async ({ params }: any) => {
 
 export default page;
 
-async function getPostData({ params }: any) {
-  const post = await fetchBlogPostBySlug(params.slug);
-  return {
-    props: {
-      post,
-    },
-  };
+async function getPostData(slug: string) {
+  const post = await fetchBlogPostBySlug(slug);
+  return post;
 }

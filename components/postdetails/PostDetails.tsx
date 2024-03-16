@@ -16,7 +16,7 @@ const PostDetails = ({ post }: any) => {
           <div className="flex items-center justify-between mb-8 w-full">
             <div className="hidden md:flexjustify-center lg:mb-0 lg:w-auto mr-8 items-center">
               <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
-                {post.author.name}
+                {post.author}
               </p>
             </div>
             <div className="font-medium text-gray-700">
