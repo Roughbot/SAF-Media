@@ -1,4 +1,5 @@
 "use client";
+import slugify from "slugify";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { useState } from "react";
@@ -27,8 +28,12 @@ const BlogPostForm = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
+    const slug = slugify(title, { lower: true, strict: true });
+    console.log(slug);
+
     const formData = new FormData();
     formData.append("title", title);
+    formData.append("slug", slug);
     formData.append("description", description);
     formData.append("category", category);
     formData.append("picture", picture);

@@ -3,6 +3,7 @@ import Image from "next/image";
 import image from "../../public/assets/success.svg";
 import { useState, useEffect, useCallback } from "react";
 import { fetchRecentBlogPosts } from "@/utils/actions/blogPost.action";
+import Link from "next/link";
 
 const RecentPosts = () => {
   const [recentPosts, setRecentPosts] = useState([]);
@@ -40,7 +41,13 @@ const RecentPosts = () => {
               <p className="text-gray-900 font-xs">
                 {new Date(post.createdAt).toLocaleDateString()}
               </p>
-              <h4 className="text-lg font-semibold">{post.title}</h4>
+              <Link
+                href={`blogs/blog/${post.slug}`}
+                className="text-md"
+                key={index}
+              >
+                {post.title}
+              </Link>
             </div>
           </div>
         ))}

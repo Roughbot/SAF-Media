@@ -36,11 +36,13 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className="glass text-center shadow-lg w-[200px] rounded-lg p-8 pb-12 ">
+    <div className="glass text-center shadow-lg rounded-lg p-8 pb-12 ">
       <h3 className="text-2xl mb-8 font-semibold  ">Categories</h3>
       {categories.map((category, index) => (
         <Link key={index} href="/">
-          <span className="cursor-pointer pb-2 block">{category.cate}</span>
+          <span className="cursor-pointer text-indigo-100 pb-2 block">
+            {category.cate}
+          </span>
         </Link>
       ))}
     </div>

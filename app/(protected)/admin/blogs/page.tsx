@@ -21,6 +21,7 @@ const Page = () => {
           return (
             <div key={post._id}>
               <h2>{post.title}</h2>
+              <h1 className="text-green-500">{post.slug}</h1>
               <p>{post.description}</p>
               <p>{post.category}</p>
               <div dangerouslySetInnerHTML={{ __html: post.content }}></div>

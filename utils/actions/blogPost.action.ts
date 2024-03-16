@@ -9,6 +9,14 @@ export async function createBlogPost(formData: FormData) {
   try {
     await connectToDatabase();
 
+    let slug = formData.get("slug") as string;
+    const existingPost = await BlogPost.findOne({ slug });
+    console.log(slug, existingPost);
+
+    if (existingPost) {
+      slug += "-" + Date.now();
+    }
+
     const data = {
       title: formData.get("title") as string,
       description: formData.get("description") as string,
@@ -16,6 +24,7 @@ export async function createBlogPost(formData: FormData) {
       picture: formData.get("picture") as string,
       author: formData.get("author") as string,
       content: formData.get("content") as String,
+      slug: slug as string,
     };
 
     const newBlogPost = await BlogPost.create(data);
@@ -24,6 +33,21 @@ export async function createBlogPost(formData: FormData) {
         message: "BlogPost created successfully!",
       })
     );
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch BlogPost By Slug
+export async function fetchBlogPostBySlug(slug: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPost = await BlogPost.findOne({ slug });
+
+    const response = JSON.parse(JSON.stringify(blogPost));
 
     return response;
   } catch (error) {

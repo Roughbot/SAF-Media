@@ -29,7 +29,6 @@ const About = () => {
     <div>
       <LampComponent />
       <Description phrase={phrase} />
-      {/* <AnimatedTooltipPreview /> */}
       <div>
         <div ref={container}>
           {points.map((point, index) => {
@@ -47,6 +46,8 @@ const About = () => {
           })}
         </div>
       </div>
+
+      <AnimatedTooltipPreview />
     </div>
   );
 };

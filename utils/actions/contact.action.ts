@@ -27,5 +27,6 @@ export async function createContact(formData: FormData) {
     return response;
   } catch (error) {
     handleError(error);
+    return error;
   }
 }
