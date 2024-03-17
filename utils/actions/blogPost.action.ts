@@ -156,3 +156,21 @@ export async function fetchPreviousBlogPost(slug: string) {
     handleError(error);
   }
 }
+
+//views count
+export async function updateViews(slug: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPost = await BlogPost.findOne({ slug });
+
+    blogPost.views += 1;
+    await blogPost.save();
+
+    const response = JSON.parse(JSON.stringify({ message: "Views updated!" }));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}

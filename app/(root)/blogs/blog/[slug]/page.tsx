@@ -5,6 +5,7 @@ import CommentForm from "@/components/comments/commentForm/CommentForm";
 import CommentCard from "@/components/comments/commentCard/CommentCard";
 import NextPostNavigation from "@/components/nextPost/NextPostNavigation";
 import { Skeleton } from "@/components/ui/skeleton";
+import { updateViews } from "@/utils/actions/blogPost.action";
 
 const page = async ({ params }: any) => {
   const post: any = await getPostData(params.slug);
@@ -43,5 +44,8 @@ export default page;
 
 async function getPostData(slug: string) {
   const post = await fetchBlogPostBySlug(slug);
+  if (post) {
+    await updateViews(post.slug);
+  }
   return post;
 }
