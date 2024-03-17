@@ -55,12 +55,15 @@ export async function fetchBlogPostBySlug(slug: string) {
   }
 }
 
-//fetch BlogPost
-export async function fetchBlogPosts() {
+//fetch first 10 BlogPost
+export async function fetchBlogPosts(page: number, pageSize: number) {
   try {
     await connectToDatabase();
 
-    const blogPosts = await BlogPost.find();
+    const blogPosts = await BlogPost.find()
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
 
     const response = JSON.parse(JSON.stringify(blogPosts));
 
@@ -111,6 +114,42 @@ export async function fetchBlogPostsByCategory(category: string) {
     const blogPosts = await BlogPost.find({ category: category });
 
     const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch next BlogPost
+
+export async function fetchNextBlogPost(slug: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPost = await BlogPost.findOne({ slug: { $gt: slug } }).sort({
+      slug: 1,
+    });
+
+    const response = JSON.parse(JSON.stringify(blogPost));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch previous BlogPost
+
+export async function fetchPreviousBlogPost(slug: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPost = await BlogPost.findOne({ slug: { $lt: slug } }).sort({
+      slug: -1,
+    });
+
+    const response = JSON.parse(JSON.stringify(blogPost));
 
     return response;
   } catch (error) {

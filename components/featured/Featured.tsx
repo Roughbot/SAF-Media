@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useState, useEffect, useCallback } from "react";
 import { fetchFeaturedBlogPosts } from "@/utils/actions/blogPost.action";
+import { Skeleton } from "../ui/skeleton";
 
 const responsive = {
   superLargeDesktop: {
@@ -64,15 +65,39 @@ const customRightArrow = (
 
 const Featured = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getFeaturedPosts = useCallback(async () => {
+    setLoading(true);
     const response = (await fetchFeaturedBlogPosts()) || [];
     setFeaturedPosts(response);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
     getFeaturedPosts();
   }, [getFeaturedPosts]);
+
+  if (loading) {
+    return (
+      <div>
+        <div className="mb-8  ">
+          <Carousel
+            autoPlay
+            infinite
+            customLeftArrow={customLeftArrow}
+            customRightArrow={customRightArrow}
+            responsive={responsive}
+            itemClass="px-4"
+          >
+            {[1, 2, 3, 4, 5].map((index) => (
+              <Skeleton key={index} className="h-64" />
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
