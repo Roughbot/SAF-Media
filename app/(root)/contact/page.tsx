@@ -12,7 +12,7 @@ const Contact = () => {
                 Let&apos;s get <span className="text-blue-600">started!</span>
               </h1>
 
-              <p className="font-semibold text-xs sm:text-xl pt-6">
+              <p className="font-normal text-xs sm:text-base pt-6">
                 Both big and small, any kind of business category.Send us a
                 message to find out the power that we can do to make your
                 business even more successful.

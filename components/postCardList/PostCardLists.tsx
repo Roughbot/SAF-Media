@@ -1,20 +1,29 @@
 "use client";
 import PostCards from "../postCards/PostCards";
 import { useEffect, useState, useCallback } from "react";
-import { fetchBlogPosts } from "@/utils/actions/blogPost.action";
+import {
+  fetchBlogPosts,
+  fetchBlogPostsByCategory,
+} from "@/utils/actions/blogPost.action";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 
-const PostCardLists = () => {
+const PostCardLists = ({ type }: any) => {
+  const cate = type;
+
   const [posts, setPosts] = useState<any[]>([]);
   const [page, setPage] = useState(1);
   const pageSize = 10;
 
   const fetchPosts = useCallback(async () => {
-    const posts = await fetchBlogPosts(page, pageSize);
-
-    setPosts(posts);
-  }, [page]);
+    if (cate === "blog") {
+      const posts = await fetchBlogPosts(page, pageSize);
+      setPosts(posts);
+    } else {
+      const posts = await fetchBlogPostsByCategory(cate, page, pageSize);
+      setPosts(posts);
+    }
+  }, [page, cate]);
 
   useEffect(() => {
     fetchPosts();
@@ -53,7 +62,9 @@ const PostCardLists = () => {
         <Button onClick={handlePreviousPage} disabled={page === 1}>
           Previous
         </Button>
-        <Button onClick={handleNextPage}>Next</Button>
+        <Button onClick={handleNextPage} disabled={posts.length < 10}>
+          Next
+        </Button>
       </div>
     </div>
   );

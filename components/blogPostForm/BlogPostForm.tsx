@@ -35,7 +35,7 @@ const BlogPostForm = () => {
     formData.append("title", title);
     formData.append("slug", slug);
     formData.append("description", description);
-    formData.append("category", category);
+    formData.append("category", category.toLowerCase());
     formData.append("picture", picture);
     formData.append("content", content);
     formData.append("author", author);

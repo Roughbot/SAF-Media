@@ -42,7 +42,7 @@ const RecentPosts = () => {
                 {new Date(post.createdAt).toLocaleDateString()}
               </p>
               <Link
-                href={`blogs/blog/${post.slug}`}
+                href={`/blogs/blog/${post.slug}`}
                 className="text-md"
                 key={index}
               >

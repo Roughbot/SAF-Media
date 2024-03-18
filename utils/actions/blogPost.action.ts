@@ -73,6 +73,30 @@ export async function fetchBlogPosts(page: number, pageSize: number) {
   }
 }
 
+//fetch BlogPost By Category
+
+export async function fetchBlogPostsByCategory(
+  category: string,
+  page: number,
+  pageSize: number
+) {
+  try {
+    await connectToDatabase();
+
+    category.toLowerCase();
+    const blogPosts = await BlogPost.find({ category })
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
 //fetch recent BlogPost
 
 export async function fetchRecentBlogPosts() {
@@ -96,22 +120,6 @@ export async function fetchFeaturedBlogPosts() {
     await connectToDatabase();
 
     const blogPosts = await BlogPost.find().sort({ views: -1 }).limit(10);
-
-    const response = JSON.parse(JSON.stringify(blogPosts));
-
-    return response;
-  } catch (error) {
-    handleError(error);
-  }
-}
-
-//fetch BlogPost By Category
-
-export async function fetchBlogPostsByCategory(category: string) {
-  try {
-    await connectToDatabase();
-
-    const blogPosts = await BlogPost.find({ category: category });
 
     const response = JSON.parse(JSON.stringify(blogPosts));
 
