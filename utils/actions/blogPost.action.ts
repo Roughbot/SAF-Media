@@ -60,7 +60,10 @@ export async function fetchBlogPosts(page: number, pageSize: number) {
   try {
     await connectToDatabase();
 
-    const blogPosts = await BlogPost.find()
+    const blogPosts = await BlogPost.find(
+      {},
+      { image: 1, createdAt: 1, author: 1, title: 1, description: 1 }
+    )
       .sort({ createdAt: -1 })
       .skip((page - 1) * pageSize)
       .limit(pageSize);
@@ -84,7 +87,16 @@ export async function fetchBlogPostsByCategory(
     await connectToDatabase();
 
     category.toLowerCase();
-    const blogPosts = await BlogPost.find({ category })
+    const blogPosts = await BlogPost.find(
+      { category },
+      {
+        image: 1,
+        createdAt: 1,
+        author: 1,
+        title: 1,
+        description: 1,
+      }
+    )
       .sort({ createdAt: -1 })
       .skip((page - 1) * pageSize)
       .limit(pageSize);
@@ -103,7 +115,9 @@ export async function fetchRecentBlogPosts() {
   try {
     await connectToDatabase();
 
-    const blogPosts = await BlogPost.find().sort({ createdAt: -1 }).limit(3);
+    const blogPosts = await BlogPost.find({}, { title: 1, createdAt: 1 })
+      .sort({ createdAt: -1 })
+      .limit(3);
 
     const response = JSON.parse(JSON.stringify(blogPosts));
 
@@ -118,8 +132,12 @@ export async function fetchRecentBlogPosts() {
 export async function fetchFeaturedBlogPosts() {
   try {
     await connectToDatabase();
-
-    const blogPosts = await BlogPost.find().sort({ views: -1 }).limit(10);
+    const blogPosts = await BlogPost.find(
+      {},
+      { author: 1, title: 1, slug: 1, createdAt: 1, image: 1 }
+    )
+      .sort({ views: -1 })
+      .limit(6);
 
     const response = JSON.parse(JSON.stringify(blogPosts));
 
@@ -135,7 +153,10 @@ export async function fetchNextBlogPost(slug: string) {
   try {
     await connectToDatabase();
 
-    const blogPost = await BlogPost.findOne({ slug: { $gt: slug } }).sort({
+    const blogPost = await BlogPost.findOne(
+      { slug: { $gt: slug } },
+      { image: 1, title: 1, createdAt: 1, slug: 1 }
+    ).sort({
       slug: 1,
     });
 
@@ -153,7 +174,10 @@ export async function fetchPreviousBlogPost(slug: string) {
   try {
     await connectToDatabase();
 
-    const blogPost = await BlogPost.findOne({ slug: { $lt: slug } }).sort({
+    const blogPost = await BlogPost.findOne(
+      { slug: { $lt: slug } },
+      { image: 1, title: 1, createdAt: 1, slug: 1 }
+    ).sort({
       slug: -1,
     });
 
