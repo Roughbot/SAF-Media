@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import categories from "./category";
 
-const Categories = () => {
+const Categories2 = () => {
   return (
     <div className="glass text-center shadow-lg rounded-lg p-8 pb-12 ">
       <h3 className="text-2xl mb-8 font-semibold  ">Categories</h3>
@@ -17,4 +17,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Categories2;

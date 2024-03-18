@@ -62,7 +62,7 @@ export async function fetchBlogPosts(page: number, pageSize: number) {
 
     const blogPosts = await BlogPost.find(
       {},
-      { image: 1, createdAt: 1, author: 1, title: 1, description: 1 }
+      { image: 1, createdAt: 1, author: 1, title: 1, description: 1, slug: 1 }
     )
       .sort({ createdAt: -1 })
       .skip((page - 1) * pageSize)
@@ -95,6 +95,7 @@ export async function fetchBlogPostsByCategory(
         author: 1,
         title: 1,
         description: 1,
+        slug: 1,
       }
     )
       .sort({ createdAt: -1 })
@@ -115,7 +116,10 @@ export async function fetchRecentBlogPosts() {
   try {
     await connectToDatabase();
 
-    const blogPosts = await BlogPost.find({}, { title: 1, createdAt: 1 })
+    const blogPosts = await BlogPost.find(
+      {},
+      { title: 1, createdAt: 1, slug: 1, image: 1 }
+    )
       .sort({ createdAt: -1 })
       .limit(3);
 

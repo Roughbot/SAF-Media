@@ -1,6 +1,6 @@
 import Categories from "@/components/categories/categories";
 import PostCardLists from "@/components/postCardList/PostCardLists";
-import MenuLists from "@/components/menuList/MenuLists";
+import Categories2 from "@/components/categories/categories2";
 
 const page = ({ params }: any) => {
   return (
@@ -16,7 +16,7 @@ const page = ({ params }: any) => {
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky py-20 relative top-8">
             <div className="items-center justify-center flex flex-col">
-              <MenuLists />
+              <Categories2 />
             </div>
           </div>
         </div>
