@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Page = () => {
   return (
-    <div>
+    <div className="p-8">
       <Button>fetch</Button>
 
       <div>

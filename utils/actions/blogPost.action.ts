@@ -40,6 +40,35 @@ export async function createBlogPost(formData: FormData) {
   }
 }
 
+//update BlogPost
+
+export async function updateBlogPost(slug: string, formData: FormData) {
+  try {
+    await connectToDatabase();
+
+    const blogPost = await BlogPost.findOne({ slug });
+
+    blogPost.title = formData.get("title") as string;
+    blogPost.description = formData.get("description") as string;
+    blogPost.category = formData.get("category") as string;
+    blogPost.picture = formData.get("picture") as string;
+    blogPost.author = formData.get("author") as string;
+    blogPost.content = formData.get("content") as string;
+
+    await blogPost.save();
+
+    const response = JSON.parse(
+      JSON.stringify({
+        message: "BlogPost updated successfully!",
+      })
+    );
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
 //fetch BlogPost By Slug
 export async function fetchBlogPostBySlug(slug: string) {
   try {

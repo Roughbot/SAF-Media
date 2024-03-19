@@ -3,7 +3,10 @@ import slugify from "slugify";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { createBlogPost } from "@/utils/actions/blogPost.action";
+import {
+  createBlogPost,
+  updateBlogPost,
+} from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
 
 const QuillNoSSRWrapper = dynamic(
@@ -17,13 +20,19 @@ const QuillNoSSRWrapper = dynamic(
   }
 );
 
-const BlogPostForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+const BlogPostForm = ({ existingPost }: any) => {
+  const [title, setTitle] = useState(existingPost ? existingPost.title : "");
+  const [description, setDescription] = useState(
+    existingPost ? existingPost.description : ""
+  );
+  const [category, setCategory] = useState(
+    existingPost ? existingPost.category : ""
+  );
   const [picture, setPicture] = useState("");
-  const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("");
+  const [content, setContent] = useState(
+    existingPost ? existingPost.content : ""
+  );
+  const [author, setAuthor] = useState(existingPost ? existingPost.author : "");
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -40,11 +49,21 @@ const BlogPostForm = () => {
     formData.append("content", content);
     formData.append("author", author);
 
-    toast.promise(createBlogPost(formData), {
-      loading: "Creating...",
-      success: "Blog Post Created successfully!",
-      error: "Failed to Create Blog Post!",
-    });
+    if (existingPost) {
+      // Update existing post
+      toast.promise(updateBlogPost(existingPost.slug, formData), {
+        loading: "Updating...",
+        success: "Blog Post Updated successfully!",
+        error: "Failed to Update Blog Post!",
+      });
+    } else {
+      // Create new post
+      toast.promise(createBlogPost(formData), {
+        loading: "Creating...",
+        success: "Blog Post Created successfully!",
+        error: "Failed to Create Blog Post!",
+      });
+    }
 
     setTitle("");
     setDescription("");
