@@ -19,6 +19,7 @@ export async function uploadFile(fileName: string) {
   const params = {
     Bucket: bucketName,
     Key: fileName,
+    Expires: 60,
   };
 
   const uploadURL = await s3.getSignedUrlPromise("putObject", params);

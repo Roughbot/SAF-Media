@@ -8,7 +8,9 @@ const PostDetails = ({ post }: any) => {
         <div className="relative overflow-hidden shadow-md mb-6">
           <Image
             src={post.image}
-            alt=""
+            width={1920}
+            height={1080}
+            alt={post.title}
             className="object-top h-full w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
           />
         </div>

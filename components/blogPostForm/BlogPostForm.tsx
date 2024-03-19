@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { uploadFile } from "@/utils/aws-config";
+import crypto from "crypto";
 
 import {
   createBlogPost,
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
-import axios from "axios";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -32,29 +32,35 @@ const BlogPostForm = ({ existingPost }: any) => {
   const [category, setCategory] = useState(
     existingPost ? existingPost.category : ""
   );
-  const [picture, setPicture] = useState("");
+  const [picture, setPicture] = useState(
+    existingPost ? existingPost.image : ""
+  );
   const [content, setContent] = useState(
     existingPost ? existingPost.content : ""
   );
   const [author, setAuthor] = useState(existingPost ? existingPost.author : "");
 
+  const [loading, setLoading] = useState(false);
+
   // Function to handle form submission
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
     const slug = slugify(title, { lower: true, strict: true });
 
     // Upload image to S3
-    const responceURL = await uploadFile(slug);
-
-    await axios.put(responceURL, picture, {
+    const randomString = crypto.randomBytes(10).toString("hex");
+    const responceURL = await uploadFile(randomString);
+    await fetch(responceURL, {
+      method: "PUT",
       headers: {
         "Content-Type": "multipart/form-data",
       },
+      body: picture,
     });
 
     const pictureURL = responceURL.split("?")[0];
-    console.log(pictureURL);
 
     // Create form data
     const formData = new FormData();

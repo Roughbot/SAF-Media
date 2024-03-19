@@ -11,7 +11,6 @@ export async function createBlogPost(formData: FormData) {
 
     let slug = formData.get("slug") as string;
     const existingPost = await BlogPost.findOne({ slug });
-    console.log(slug, existingPost);
 
     if (existingPost) {
       slug += "-" + Date.now();
@@ -21,7 +20,7 @@ export async function createBlogPost(formData: FormData) {
       title: formData.get("title") as string,
       description: formData.get("description") as string,
       category: formData.get("category") as string,
-      picture: formData.get("picture") as string,
+      image: formData.get("image") as string,
       author: formData.get("author") as string,
       content: formData.get("content") as String,
       slug: slug as string,

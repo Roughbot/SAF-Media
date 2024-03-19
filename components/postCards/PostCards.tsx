@@ -14,6 +14,8 @@ const PostCards = ({ post }: any) => {
       <div className="relative overflow-hidden shadow-md pb-40 mb-3">
         <Image
           src={post.image}
+          width={1920}
+          height={1080}
           alt="Image of the post"
           className="object-top absolute h-full w-full object-fill shadow-lg rounded-t-lg lg:rounded-lg"
         />

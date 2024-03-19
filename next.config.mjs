@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.pexels.com",
       },
+      {
+        protocol: "https",
+        hostname: "saf-media-images.s3.ap-south-1.amazonaws.com",
+      },
     ],
   },
 };

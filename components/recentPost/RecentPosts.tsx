@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import image from "../../public/assets/success.svg";
 import { useState, useEffect, useCallback } from "react";
 import { fetchRecentBlogPosts } from "@/utils/actions/blogPost.action";
 import Link from "next/link";
@@ -29,11 +28,11 @@ const RecentPosts = () => {
             <div className="w-16 flex-none">
               <Image
                 alt="title"
-                width={60}
-                height={60}
+                width={200}
+                height={200}
                 unoptimized
-                className="align-middle rounded-full"
-                src={image}
+                className="object-cover rounded-lg"
+                src={post.image}
                 priority={true}
               />
             </div>
