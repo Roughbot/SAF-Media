@@ -3,11 +3,14 @@ import slugify from "slugify";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { uploadFile } from "@/utils/aws-config";
+
 import {
   createBlogPost,
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -21,6 +24,7 @@ const QuillNoSSRWrapper = dynamic(
 );
 
 const BlogPostForm = ({ existingPost }: any) => {
+  //check if existing post is available
   const [title, setTitle] = useState(existingPost ? existingPost.title : "");
   const [description, setDescription] = useState(
     existingPost ? existingPost.description : ""
@@ -34,18 +38,31 @@ const BlogPostForm = ({ existingPost }: any) => {
   );
   const [author, setAuthor] = useState(existingPost ? existingPost.author : "");
 
+  // Function to handle form submission
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
     const slug = slugify(title, { lower: true, strict: true });
-    console.log(slug);
 
+    // Upload image to S3
+    const responceURL = await uploadFile(slug);
+
+    await axios.put(responceURL, picture, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    const pictureURL = responceURL.split("?")[0];
+    console.log(pictureURL);
+
+    // Create form data
     const formData = new FormData();
     formData.append("title", title);
     formData.append("slug", slug);
     formData.append("description", description);
     formData.append("category", category.toLowerCase());
-    formData.append("picture", picture);
+    formData.append("image", pictureURL);
     formData.append("content", content);
     formData.append("author", author);
 
@@ -73,6 +90,7 @@ const BlogPostForm = ({ existingPost }: any) => {
     setAuthor("");
   };
 
+  // Function to handle Image file change
   const handleFileChange = (event: any) => {
     setPicture(event.target.files[0]);
   };

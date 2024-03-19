@@ -51,7 +51,7 @@ export async function updateBlogPost(slug: string, formData: FormData) {
     blogPost.title = formData.get("title") as string;
     blogPost.description = formData.get("description") as string;
     blogPost.category = formData.get("category") as string;
-    blogPost.picture = formData.get("picture") as string;
+    blogPost.image = formData.get("image") as string;
     blogPost.author = formData.get("author") as string;
     blogPost.content = formData.get("content") as string;
 

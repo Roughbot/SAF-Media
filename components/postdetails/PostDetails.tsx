@@ -7,7 +7,7 @@ const PostDetails = ({ post }: any) => {
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12  mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
           <Image
-            src={image}
+            src={post.image}
             alt=""
             className="object-top h-full w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
           />
