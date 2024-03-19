@@ -60,7 +60,7 @@ const BlogPostForm = () => {
 
   return (
     <form
-      className="space-y-10 p-10 rounded-3xl shadow-2xl bg-slate-200"
+      className="space-y-10 sm:p-10 rounded-3xl shadow-2xl bg-slate-200"
       onSubmit={handleSubmit}
     >
       <div className=" grid grid-cols-1 md:grid-cols-2 p-8 gap-10">
@@ -157,7 +157,7 @@ const BlogPostForm = () => {
             ]}
           />
         </div>
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center pb-2 justify-center ">
           <Button type="submit" className="btn w-[100px]  btn-primary">
             Submit
           </Button>

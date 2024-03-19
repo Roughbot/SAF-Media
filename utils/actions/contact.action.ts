@@ -30,3 +30,27 @@ export async function createContact(formData: FormData) {
     return error;
   }
 }
+
+//get contact data
+
+export async function getContactData() {
+  try {
+    await connectToDatabase();
+    const contactData = await Contact.find(
+      {},
+      {
+        name: 1,
+        email: 1,
+        company: 1,
+        message: 1,
+      }
+    ).sort({ createdAt: -1 });
+
+    const response = JSON.parse(JSON.stringify(contactData));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+    return error;
+  }
+}

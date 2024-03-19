@@ -26,7 +26,7 @@ const SideNavBar = () => {
   };
 
   return (
-    <div className="relative bg-slate-300 hidden md:block min-w-[80px] max-w-[130px] border-r px-3 pb-10 pt-24">
+    <div className="fixed bg-slate-300 hidden h-screen md:block min-w-[80px] max-w-[130px] border-r px-3 pb-10 pt-24">
       <div className="absolute right-[-20px] top-7">
         <Button
           onClick={() => {
