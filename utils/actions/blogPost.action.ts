@@ -90,7 +90,15 @@ export async function fetchBlogPosts(page: number, pageSize: number) {
 
     const blogPosts = await BlogPost.find(
       {},
-      { image: 1, createdAt: 1, author: 1, title: 1, description: 1, slug: 1 }
+      {
+        image: 1,
+        createdAt: 1,
+        author: 1,
+        title: 1,
+        description: 1,
+        slug: 1,
+        category: 1,
+      }
     )
       .sort({ createdAt: -1 })
       .skip((page - 1) * pageSize)
