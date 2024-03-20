@@ -26,3 +26,18 @@ export async function uploadFile(fileName: string) {
 
   return uploadURL;
 }
+
+export async function deleteFile(fileName: string) {
+  const params = {
+    Bucket: bucketName,
+    Key: fileName,
+  };
+
+  await s3.deleteObject(params, (err, data) => {
+    if (err) {
+      console.log(err, err.stack);
+    } else {
+      console.log(data);
+    }
+  });
+}

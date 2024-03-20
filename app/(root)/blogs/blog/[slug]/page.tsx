@@ -31,7 +31,7 @@ const page = async ({ params }: any) => {
           <CommentCard slug={post.slug} />
         </div>
         <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky top-8">
+          <div className="relative lg:sticky top-8 pb-10">
             <MenuLists />
           </div>
         </div>

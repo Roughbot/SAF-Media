@@ -37,6 +37,13 @@ const PostCardLists = ({ type }: any) => {
     setPage(page - 1);
   };
 
+  if (posts.length === 0) {
+    return (
+      <div>
+        <h1 className="text-4xl text-center">No posts found</h1>
+      </div>
+    );
+  }
   if (!posts.length) {
     return (
       <div>

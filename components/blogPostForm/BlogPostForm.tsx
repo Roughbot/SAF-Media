@@ -11,6 +11,7 @@ import {
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
+import { set } from "mongoose";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -50,6 +51,7 @@ const BlogPostForm = ({ existingPost }: any) => {
     const slug = slugify(title, { lower: true, strict: true });
 
     // Upload image to S3
+    setLoading(true);
     const randomString = crypto.randomBytes(10).toString("hex");
     const responceURL = await uploadFile(randomString);
     await fetch(responceURL, {
@@ -59,6 +61,7 @@ const BlogPostForm = ({ existingPost }: any) => {
       },
       body: picture,
     });
+    setLoading(false);
 
     const pictureURL = responceURL.split("?")[0];
 
@@ -201,8 +204,8 @@ const BlogPostForm = ({ existingPost }: any) => {
           />
         </div>
         <div className="flex items-center pb-2 justify-center ">
-          <Button type="submit" className="btn w-[100px]  btn-primary">
-            Submit
+          <Button type="submit" className="btn w-[120px]  btn-primary">
+            {loading ? "Uploading..." : "Submit"}
           </Button>
         </div>
       </div>
