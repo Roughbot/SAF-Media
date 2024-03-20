@@ -39,9 +39,26 @@ export async function getComments(slug: string) {
 
     const comments = await Comment.find({ slug });
 
+    const response = JSON.parse(JSON.stringify(comments));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+    return error;
+  }
+}
+
+//delete comments by id
+
+export async function deleteComment(id: string) {
+  try {
+    await connectToDatabase();
+
+    await Comment.findByIdAndDelete(id);
+
     const response = JSON.parse(
       JSON.stringify({
-        comments,
+        message: "Comment deleted successfully!",
       })
     );
 

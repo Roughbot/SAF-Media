@@ -3,6 +3,7 @@
 import BlogPost from "../database/models/post.model";
 import { connectToDatabase } from "../database/mongoConnection";
 import { handleError } from "../cn";
+import { deleteFile } from "../aws-config";
 
 //Create BlogPost
 export async function createBlogPost(formData: FormData) {
@@ -242,6 +243,28 @@ export async function updateViews(slug: string) {
     const response = JSON.parse(JSON.stringify({ message: "Views updated!" }));
 
     return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//delete blog post by slug
+
+export async function deleteBlogPost(slug: string, image: string) {
+  try {
+    await connectToDatabase();
+
+    const s3image = image.split("/").pop() || "";
+
+    await deleteFile(s3image);
+
+    await BlogPost.deleteOne({ slug });
+
+    const response = JSON.parse(
+      JSON.stringify({
+        message: "BlogPost deleted successfully!",
+      })
+    );
   } catch (error) {
     handleError(error);
   }

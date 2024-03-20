@@ -1,5 +1,4 @@
 import Image from "next/image";
-import image from "../../public/assets/success.svg";
 
 const PostDetails = ({ post }: any) => {
   return (

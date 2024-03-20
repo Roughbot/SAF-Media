@@ -1,6 +1,23 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { deleteBlogPost } from "@/utils/actions/blogPost.action";
+import toast from "react-hot-toast";
+import { revalidatePath } from "next/cache";
+import { ManageComment } from "../commentsViewer/CommentsViewer";
+
 const BlogCard = ({ post }: any) => {
+  const handleDelete = () => {
+    deleteBlogPost(post.slug, post.image)
+      .then(() => {
+        toast.success("Blog post deleted successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Failed to delete blog post");
+      });
+    revalidatePath("/blog");
+  };
+
   return (
     <div>
       <div className="bg-slate-200 flex flex-col p-5 pure_glass rounded-3xl shadow-2xl">
@@ -30,16 +47,17 @@ const BlogCard = ({ post }: any) => {
           <p className="text-slate-900 text-sm text-center">{post.category}</p>
         </div>
         <div className="flex flex-row justify-around">
-          <Button size="sm" className="bg-blue-300" variant="outline">
-            Update
-          </Button>
           <Button
             size="sm"
-            className="bg-lime-200 hover:border-2 hover:border-lime-500 hover:text-lime-800"
-            variant="outline"
+            className="bg-blue-300 border-none"
+            variant="secondary"
           >
-            Comments
+            Update
           </Button>
+          <Button onClick={handleDelete} size="sm" variant="destructive">
+            Delete
+          </Button>
+          <ManageComment slug={post.slug} />
         </div>
       </div>
     </div>

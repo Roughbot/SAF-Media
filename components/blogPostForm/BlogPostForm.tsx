@@ -106,7 +106,7 @@ const BlogPostForm = ({ existingPost }: any) => {
 
   return (
     <form
-      className="space-y-10 sm:p-10 rounded-3xl shadow-2xl bg-slate-200"
+      className="space-y-10 sm:p-10 rounded-3xl shadow-2xl bg-slate-200 pure_glass"
       onSubmit={handleSubmit}
     >
       <div className=" grid grid-cols-1 md:grid-cols-2 p-8 gap-10">

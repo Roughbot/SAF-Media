@@ -8,11 +8,13 @@ const Page = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetchBlogPosts(1, 8);
-      setPosts(response);
-    };
-    fetchData();
+    fetchBlogPosts(1, 8)
+      .then((response) => {
+        setPosts(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
