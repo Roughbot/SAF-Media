@@ -2,15 +2,21 @@ import Featured from "@/components/featured/Featured";
 import Categories from "@/components/categories/categories";
 import PostCardLists from "@/components/postCardList/PostCardLists";
 import MenuLists from "@/components/menuList/MenuLists";
+import {
+  fetchFeaturedBlogPosts,
+  fetchRecentBlogPosts,
+} from "@/utils/actions/blogPost.action";
 
-const Blogs = () => {
+const Blogs = async () => {
+  const { featuredPost, recentPost } = await getPostData();
+
   return (
     <div
       style={{ fontFamily: "Dosis" }}
       className="container blog_background mx-auto px-10"
     >
       <div className="pt-28">
-        <Featured />
+        <Featured posts={featuredPost} />
       </div>
       <Categories />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -20,7 +26,7 @@ const Blogs = () => {
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky py-20 relative top-8">
             <div className="items-center justify-center flex flex-col">
-              <MenuLists />
+              <MenuLists recentPost={recentPost} />
             </div>
           </div>
         </div>
@@ -30,3 +36,10 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+async function getPostData() {
+  const featuredPost = await fetchFeaturedBlogPosts();
+  const recentPost = await fetchRecentBlogPosts();
+
+  return { featuredPost, recentPost };
+}

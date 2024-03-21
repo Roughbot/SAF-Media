@@ -8,7 +8,7 @@ const Page = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchBlogPosts(1, 8)
+    fetchBlogPosts(1, 6)
       .then((response) => {
         setPosts(response);
       })

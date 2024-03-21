@@ -63,41 +63,41 @@ const customRightArrow = (
   </div>
 );
 
-const Featured = () => {
-  const [featuredPosts, setFeaturedPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+const Featured = ({ posts }: any) => {
+  // const [featuredPosts, setFeaturedPosts] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
-  const getFeaturedPosts = useCallback(async () => {
-    setLoading(true);
-    const response = (await fetchFeaturedBlogPosts()) || [];
-    setFeaturedPosts(response);
-    setLoading(false);
-  }, []);
+  // const getFeaturedPosts = useCallback(async () => {
+  //   setLoading(true);
+  //   const response = (await fetchFeaturedBlogPosts()) || [];
+  //   setFeaturedPosts(response);
+  //   setLoading(false);
+  // }, []);
 
-  useEffect(() => {
-    getFeaturedPosts();
-  }, [getFeaturedPosts]);
+  // useEffect(() => {
+  //   getFeaturedPosts();
+  // }, [getFeaturedPosts]);
 
-  if (loading) {
-    return (
-      <div>
-        <div className="mb-8  ">
-          <Carousel
-            autoPlay
-            infinite
-            customLeftArrow={customLeftArrow}
-            customRightArrow={customRightArrow}
-            responsive={responsive}
-            itemClass="px-4"
-          >
-            {[1, 2, 3, 4, 5].map((index) => (
-              <Skeleton key={index} className="h-64" />
-            ))}
-          </Carousel>
-        </div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <div className="mb-8  ">
+  //         <Carousel
+  //           autoPlay
+  //           infinite
+  //           customLeftArrow={customLeftArrow}
+  //           customRightArrow={customRightArrow}
+  //           responsive={responsive}
+  //           itemClass="px-4"
+  //         >
+  //           {[1, 2, 3, 4, 5].map((index) => (
+  //             <Skeleton key={index} className="h-64" />
+  //           ))}
+  //         </Carousel>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
@@ -110,7 +110,7 @@ const Featured = () => {
           responsive={responsive}
           itemClass="px-4"
         >
-          {featuredPosts.map((post: any, index: number) => (
+          {posts.map((post: any, index: number) => (
             <FeaturedPostCard key={index} post={post} />
           ))}
         </Carousel>

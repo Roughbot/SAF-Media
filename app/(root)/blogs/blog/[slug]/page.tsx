@@ -1,5 +1,8 @@
 import MenuLists from "@/components/menuList/MenuLists";
-import { fetchBlogPostBySlug } from "@/utils/actions/blogPost.action";
+import {
+  fetchBlogPostBySlug,
+  fetchRecentBlogPosts,
+} from "@/utils/actions/blogPost.action";
 import PostDetails from "@/components/postdetails/PostDetails";
 import CommentForm from "@/components/comments/commentForm/CommentForm";
 import CommentCard from "@/components/comments/commentCard/CommentCard";
@@ -8,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { updateViews } from "@/utils/actions/blogPost.action";
 
 const page = async ({ params }: any) => {
-  const post: any = await getPostData(params.slug);
+  const { post, recentPost } = await getPostData(params.slug);
 
   if (!post) {
     return (
@@ -32,7 +35,7 @@ const page = async ({ params }: any) => {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8 pb-10">
-            <MenuLists />
+            <MenuLists recentPost={recentPost} />
           </div>
         </div>
       </div>
@@ -44,8 +47,9 @@ export default page;
 
 async function getPostData(slug: string) {
   const post = await fetchBlogPostBySlug(slug);
+  const recentPost = await fetchRecentBlogPosts();
   if (post) {
     await updateViews(post.slug);
   }
-  return post;
+  return { post, recentPost };
 }
