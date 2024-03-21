@@ -85,7 +85,7 @@ export async function fetchBlogPostBySlug(slug: string) {
   }
 }
 
-//fetch first 10 BlogPost
+//fetch  BlogPost by count
 export async function fetchBlogPosts(page: number, pageSize: number) {
   try {
     await connectToDatabase();
@@ -107,6 +107,22 @@ export async function fetchBlogPosts(page: number, pageSize: number) {
       .limit(pageSize);
 
     const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+//fetch blog count
+
+export async function fetchBlogCount() {
+  try {
+    await connectToDatabase();
+
+    const blogCount = await BlogPost.countDocuments();
+
+    const response = JSON.parse(JSON.stringify(blogCount));
 
     return response;
   } catch (error) {

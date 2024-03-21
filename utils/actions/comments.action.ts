@@ -1,5 +1,5 @@
 "use server";
-
+import Blog from "../database/models/post.model";
 import Comment from "../database/models/comments.model";
 import { connectToDatabase } from "@/utils/database/mongoConnection";
 import { handleError } from "@/utils/cn";
@@ -17,7 +17,18 @@ export async function postComment(formData: FormData) {
       slug: formData.get("slug") as string,
     };
 
+    const blogPost = await Blog.findOne({ slug: data.slug });
+
+    if (!blogPost) {
+      throw new Error("Blog post not found!");
+    }
+
     const newComment = await Comment.create(data);
+
+    blogPost.comments.push(newComment._id);
+
+    await blogPost.save();
+
     const response = JSON.parse(
       JSON.stringify({
         message: "Comment sent successfully!",

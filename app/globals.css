@@ -264,3 +264,9 @@ body {
     #141e30
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.page_button {
+  border-radius: 12px;
+  background: linear-gradient(145deg, #757575, #8b8b8b);
+  box-shadow: 23px 23px 100px #6d6d6d, -23px -23px 100px #979797;
+}
