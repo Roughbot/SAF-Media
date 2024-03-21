@@ -39,8 +39,34 @@ const Blogs = async ({ searchParams }: any) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 pt-10 col-span-1">
           {blogPosts.length ? (
-            blogPosts.map((post: any) => (
-              <PostCards key={post.id} post={post} />
+            blogPosts.map((post: any, index: number) => (
+              <div key={index}>
+                <PostCards post={post} />
+                <div>
+                  <div className="lg:col-span-8 col-span-1 pb-5 pt-8">
+                    <div className="flex justify-between">
+                      <div>
+                        <button
+                          className={`${
+                            page === 1 ? "bg-gray-500" : "bg-gray-900"
+                          } text-white px-4 py-2 rounded-md`}
+                        >
+                          <Link href={`/blogs?page=${prevPage}`}>Previous</Link>
+                        </button>
+                      </div>
+                      <div>
+                        <button
+                          className={`${
+                            page === totalPage ? "bg-gray-500" : "bg-gray-900"
+                          } text-white px-4 py-2 rounded-md`}
+                        >
+                          <Link href={`/blogs?page=${nextPage}`}>Next</Link>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))
           ) : (
             <div>
@@ -49,30 +75,6 @@ const Blogs = async ({ searchParams }: any) => {
               ))}
             </div>
           )}
-          <div>
-            <div className="lg:col-span-8 col-span-1 pb-5 pt-8">
-              <div className="flex justify-between">
-                <div>
-                  <button
-                    className={`${
-                      page === 1 ? "bg-gray-500" : "bg-gray-900"
-                    } text-white px-4 py-2 rounded-md`}
-                  >
-                    <Link href={`/blogs?page=${prevPage}`}>Previous</Link>
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className={`${
-                      page === totalPage ? "bg-gray-500" : "bg-gray-900"
-                    } text-white px-4 py-2 rounded-md`}
-                  >
-                    <Link href={`/blogs?page=${nextPage}`}>Next</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="lg:col-span-4 col-span-1">

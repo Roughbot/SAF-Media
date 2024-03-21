@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { deleteBlogPost } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
 import { ManageComment } from "../commentsViewer/CommentsViewer";
+import { UpdateBlog } from "../updateBlog/UpdateBlog";
 
 const BlogCard = ({ post, onDelete }: any) => {
   const handleDelete = async () => {
@@ -46,13 +47,7 @@ const BlogCard = ({ post, onDelete }: any) => {
           <p className="text-slate-900 text-sm text-center">{post.category}</p>
         </div>
         <div className="flex flex-row justify-around">
-          <Button
-            size="sm"
-            className="bg-blue-300 border-none"
-            variant="secondary"
-          >
-            Update
-          </Button>
+          <UpdateBlog post={post.slug} />
           <Button onClick={handleDelete} size="sm" variant="destructive">
             Delete
           </Button>

@@ -2,7 +2,7 @@
 import slugify from "slugify";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { uploadFile } from "@/utils/aws-config";
 import crypto from "crypto";
 
@@ -42,6 +42,17 @@ const BlogPostForm = ({ existingPost }: any) => {
   const [author, setAuthor] = useState(existingPost ? existingPost.author : "");
 
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (existingPost) {
+      setTitle(existingPost.title);
+      setDescription(existingPost.description);
+      setCategory(existingPost.category);
+      setPicture(existingPost.image);
+      setContent(existingPost.content);
+      setAuthor(existingPost.author);
+    }
+  }, [existingPost]);
 
   // Function to handle form submission
 
