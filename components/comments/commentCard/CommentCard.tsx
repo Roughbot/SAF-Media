@@ -8,8 +8,8 @@ const CommentCard = ({ slug }: any) => {
 
   useEffect(() => {
     getComments(slug).then((response) => {
-      if (response && Array.isArray(response.comments)) {
-        setComments(response.comments);
+      if (response) {
+        setComments(response);
       }
     });
   }, []);

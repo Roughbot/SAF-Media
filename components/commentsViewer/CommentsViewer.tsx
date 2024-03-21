@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -13,7 +12,6 @@ import {
 import { Label } from "@/components/ui/label";
 import { cn } from "@/utils/cn";
 import { deleteComment, getComments } from "@/utils/actions/comments.action";
-import { revalidatePath } from "next/cache";
 
 export function ManageComment({ slug }: any) {
   const [open, setOpen] = React.useState(false);
@@ -28,7 +26,6 @@ export function ManageComment({ slug }: any) {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Manage Comment</DialogTitle>
-          <DialogDescription>Comments of this Post</DialogDescription>
         </DialogHeader>
         <ProfileForm slug={slug} />
       </DialogContent>
