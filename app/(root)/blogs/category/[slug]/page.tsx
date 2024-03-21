@@ -1,9 +1,11 @@
 import Categories from "@/components/categories/categories";
+import MenuLists from "@/components/menuList/MenuLists";
 import PostCardLists from "@/components/postCardList/PostCardLists";
-import Categories2 from "@/components/categories/categories2";
-import RecentPosts from "@/components/recentPost/RecentPosts";
+import { fetchRecentBlogPosts } from "@/utils/actions/blogPost.action";
 
-const page = ({ params }: any) => {
+const page = async ({ params }: any) => {
+  const { recentPost } = await getPostData();
+
   return (
     <div
       style={{ fontFamily: "Dosis" }}
@@ -19,7 +21,7 @@ const page = ({ params }: any) => {
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky py-20 relative top-8">
             <div className="items-center justify-center flex flex-col">
-              <RecentPosts />
+              <MenuLists recentPost={recentPost} />
             </div>
           </div>
         </div>
@@ -29,3 +31,8 @@ const page = ({ params }: any) => {
 };
 
 export default page;
+
+async function getPostData() {
+  const recentPost = await fetchRecentBlogPosts();
+  return recentPost;
+}
