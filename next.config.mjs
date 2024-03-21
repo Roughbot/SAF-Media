@@ -20,17 +20,8 @@ const nextConfig = {
       },
     ],
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false;
-      config.externals = config.externals || [];
-      config.externals.push(
-        "@aws-sdk/client-s3",
-        "@aws-sdk/s3-request-presigner"
-      );
-    }
-
-    return config;
+  experimental: {
+    serverComponentsExternalPackages: ["@aws-sdk"],
   },
 };
 
