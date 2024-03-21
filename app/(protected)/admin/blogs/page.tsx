@@ -17,6 +17,10 @@ const Page = () => {
       });
   }, []);
 
+  const handleDeleteBlog = (slug: string) => {
+    setPosts(posts.filter((post: any) => post.slug !== slug));
+  };
+
   return (
     <div className="p-8">
       <div>
@@ -30,7 +34,7 @@ const Page = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8 gap-10">
         {posts.map((post, index) => (
           <div key={index}>
-            <BlogCard post={post} />
+            <BlogCard post={post} onDelete={handleDeleteBlog} />
           </div>
         ))}
       </div>

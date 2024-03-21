@@ -1,15 +1,19 @@
-import aws from "aws-sdk";
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  PutObjectCommand,
+  DeleteObjectCommand,
+} from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const accessKeyId = "AKIA2UC3DFKQ5HS6WVR5";
-const secretAccessKey = "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";
 const region = "ap-south-1";
 const bucketName = "saf-media-images";
+const accessKeyId = "AKIA2UC3DFKQ5HS6WVR5";
+const secretAccessKey = "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";
 
-const clinet = new S3Client({
+const s3Client = new S3Client({
   region,
   credentials: {
     accessKeyId,
@@ -17,36 +21,27 @@ const clinet = new S3Client({
   },
 });
 
-const s3 = new aws.S3({
-  region,
-  accessKeyId,
-  secretAccessKey,
-  signatureVersion: "v4",
-});
-
 export async function uploadFile(fileName: string) {
-  const params = {
+  const command = new PutObjectCommand({
     Bucket: bucketName,
     Key: fileName,
-    Expires: 60,
-  };
+  });
 
-  const uploadURL = await s3.getSignedUrlPromise("putObject", params);
+  const uploadURL = await getSignedUrl(s3Client, command, { expiresIn: 60 });
 
   return uploadURL;
 }
 
-export function deleteFile(fileName: string) {
-  const params = {
+export async function deleteFile(fileName: string) {
+  const command = new DeleteObjectCommand({
     Bucket: bucketName,
     Key: fileName,
-  };
-
-  s3.deleteObject(params, (err, data) => {
-    if (err) {
-      console.log(err, err.stack);
-    } else {
-      console.log(data);
-    }
   });
+
+  try {
+    const data = await s3Client.send(command);
+    console.log("successfully deleted file from aws");
+  } catch (err) {
+    console.log("error", err);
+  }
 }

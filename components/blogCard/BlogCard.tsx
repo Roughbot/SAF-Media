@@ -2,20 +2,18 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { deleteBlogPost } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
-import { revalidatePath } from "next/cache";
 import { ManageComment } from "../commentsViewer/CommentsViewer";
 
-const BlogCard = ({ post }: any) => {
-  const handleDelete = () => {
-    deleteBlogPost(post.slug, post.image)
-      .then(() => {
-        toast.success("Blog post deleted successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error("Failed to delete blog post");
-      });
-    revalidatePath("/blog");
+const BlogCard = ({ post, onDelete }: any) => {
+  const handleDelete = async () => {
+    try {
+      await deleteBlogPost(post.slug, post.image);
+      toast.success("Blog post deleted successfully!");
+
+      onDelete(post.slug);
+    } catch (error) {
+      toast.error("Error deleting blog post");
+    }
   };
 
   return (

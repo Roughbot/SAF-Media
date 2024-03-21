@@ -27,7 +27,7 @@ const PostCardLists = ({ type }: any) => {
 
   useEffect(() => {
     fetchPosts();
-  }, [fetchPosts]);
+  });
 
   const handleNextPage = () => {
     setPage(page + 1);
@@ -38,10 +38,10 @@ const PostCardLists = ({ type }: any) => {
   };
 
   if (!posts.length) {
-    if (posts.length === 0) {
+    if (posts.length === 0 && type !== "blog") {
       return (
         <div>
-          <h1 className="text-4xl text-center">No posts found</h1>
+          <h1 className="text-2xl text-center">No posts found</h1>
         </div>
       );
     }

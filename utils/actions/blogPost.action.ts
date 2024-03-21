@@ -1,6 +1,7 @@
 "use server";
 
 import BlogPost from "../database/models/post.model";
+import Comment from "../database/models/comments.model";
 import { connectToDatabase } from "../database/mongoConnection";
 import { handleError } from "../cn";
 import { deleteFile } from "../aws-config";
@@ -259,6 +260,8 @@ export async function deleteBlogPost(slug: string, image: string) {
     await deleteFile(s3image);
 
     await BlogPost.deleteOne({ slug });
+
+    await Comment.deleteMany({ slug });
 
     const response = JSON.parse(
       JSON.stringify({
