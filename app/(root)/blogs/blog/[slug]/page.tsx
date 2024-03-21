@@ -16,10 +16,7 @@ export async function generateStaticParams() {
   const paths = slugs.map((slug: any) => ({
     params: { slug },
   }));
-  return {
-    paths,
-    fallback: true,
-  };
+  return paths;
 }
 
 const page = async ({ params }: any) => {
