@@ -11,7 +11,7 @@ import NextPostNavigation from "@/components/nextPost/NextPostNavigation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { updateViews } from "@/utils/actions/blogPost.action";
 
-export async function getStaticParams() {
+export async function generateStaticParams() {
   const slugs = await fetchAllSlugs();
   const paths = slugs.map((slug: any) => ({
     params: { slug },
