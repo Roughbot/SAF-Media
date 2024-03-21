@@ -64,40 +64,26 @@ const customRightArrow = (
 );
 
 const Featured = ({ posts }: any) => {
-  // const [featuredPosts, setFeaturedPosts] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
-  // const getFeaturedPosts = useCallback(async () => {
-  //   setLoading(true);
-  //   const response = (await fetchFeaturedBlogPosts()) || [];
-  //   setFeaturedPosts(response);
-  //   setLoading(false);
-  // }, []);
-
-  // useEffect(() => {
-  //   getFeaturedPosts();
-  // }, [getFeaturedPosts]);
-
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <div className="mb-8  ">
-  //         <Carousel
-  //           autoPlay
-  //           infinite
-  //           customLeftArrow={customLeftArrow}
-  //           customRightArrow={customRightArrow}
-  //           responsive={responsive}
-  //           itemClass="px-4"
-  //         >
-  //           {[1, 2, 3, 4, 5].map((index) => (
-  //             <Skeleton key={index} className="h-64" />
-  //           ))}
-  //         </Carousel>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (!posts) {
+    return (
+      <div>
+        <div className="mb-8  ">
+          <Carousel
+            autoPlay
+            infinite
+            customLeftArrow={customLeftArrow}
+            customRightArrow={customRightArrow}
+            responsive={responsive}
+            itemClass="px-4"
+          >
+            {[1, 2, 3, 4, 5].map((index) => (
+              <Skeleton key={index} className="h-64" />
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>

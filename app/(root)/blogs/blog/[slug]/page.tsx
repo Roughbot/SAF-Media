@@ -2,6 +2,7 @@ import MenuLists from "@/components/menuList/MenuLists";
 import {
   fetchBlogPostBySlug,
   fetchRecentBlogPosts,
+  fetchAllSlugs,
 } from "@/utils/actions/blogPost.action";
 import PostDetails from "@/components/postdetails/PostDetails";
 import CommentForm from "@/components/comments/commentForm/CommentForm";
@@ -9,6 +10,17 @@ import CommentCard from "@/components/comments/commentCard/CommentCard";
 import NextPostNavigation from "@/components/nextPost/NextPostNavigation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { updateViews } from "@/utils/actions/blogPost.action";
+
+export async function getStaticParams() {
+  const slugs = await fetchAllSlugs();
+  const paths = slugs.map((slug: any) => ({
+    params: { slug },
+  }));
+  return {
+    paths,
+    fallback: true,
+  };
+}
 
 const page = async ({ params }: any) => {
   const { post, recentPost } = await getPostData(params.slug);

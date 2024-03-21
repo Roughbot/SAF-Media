@@ -272,3 +272,19 @@ export async function deleteBlogPost(slug: string, image: string) {
     handleError(error);
   }
 }
+
+//fetch all Slugs
+
+export async function fetchAllSlugs() {
+  try {
+    await connectToDatabase();
+
+    const blogPosts = await BlogPost.find({}, { slug: 1 });
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
