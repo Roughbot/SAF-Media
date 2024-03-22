@@ -307,18 +307,27 @@ export async function fetchAllSlugs() {
 
 //search blogpost by title
 
-export async function searchBlogPost(search: string) {
+export async function searchBlogPost(
+  search: string,
+  page: number,
+  pageSize: number
+) {
   try {
     await connectToDatabase();
 
-    const blogPosts = await BlogPost.find(
-      { title: { $regex: search, $options: "i" } },
-      { title: 1, image: 1, createdAt: 1, slug: 1 }
-    );
+    const blogCount = await BlogPost.countDocuments({
+      title: { $regex: search, $options: "i" },
+    });
+
+    const blogPosts = await BlogPost.find({
+      title: { $regex: search, $options: "i" },
+    })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
 
     const response = JSON.parse(JSON.stringify(blogPosts));
 
-    return response;
+    return { response, blogCount };
   } catch (error) {
     handleError(error);
   }

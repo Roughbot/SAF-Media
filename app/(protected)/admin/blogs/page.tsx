@@ -4,18 +4,20 @@ import {
   searchBlogPost,
 } from "@/utils/actions/blogPost.action";
 import SearchBlog from "@/components/searchBlog/SearchBlog";
+import Pagination from "@/components/pagination/Pagination";
 
 const Page = async ({ searchParams }: any) => {
   const searchWord = searchParams?.search || "";
-
+  const page = searchParams?.page || 1;
+  const pageSize = 6; // also change in the pagination component
   let posts: any;
+  const { response, blogCount } = (await searchBlogPost(
+    searchWord,
+    page,
+    pageSize
+  )) as { response: any; blogCount: number };
 
-  if (searchWord) {
-    posts = await searchBlogPost(searchWord);
-  } else {
-    posts = await fetchBlogPosts(1, 6);
-  }
-
+  posts = response;
   const handleDeleteBlog = (slug: string) => {
     posts = posts.filter((post: any) => post.slug !== slug);
   };
@@ -32,6 +34,7 @@ const Page = async ({ searchParams }: any) => {
           </div>
         ))}
       </div>
+      <Pagination count={blogCount} />
     </div>
   );
 };
