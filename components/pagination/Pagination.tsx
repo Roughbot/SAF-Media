@@ -10,7 +10,7 @@ const Pagination = ({ count }: { count: number }) => {
   const page: any = searchParams.get("page") || 1;
   const params = new URLSearchParams(searchParams);
 
-  const item_per_page = 6;
+  const item_per_page = 6; //also change in parent page
 
   const hasPrevious = item_per_page * (parseInt(page) - 1) > 0;
   const hasNext = item_per_page * (parseInt(page) - 1) + item_per_page < count;

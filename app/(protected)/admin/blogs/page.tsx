@@ -1,8 +1,5 @@
 import BlogCard from "@/components/blogCard/BlogCard";
-import {
-  fetchBlogPosts,
-  searchBlogPost,
-} from "@/utils/actions/blogPost.action";
+import { searchBlogPost } from "@/utils/actions/blogPost.action";
 import SearchBlog from "@/components/searchBlog/SearchBlog";
 import Pagination from "@/components/pagination/Pagination";
 
@@ -18,9 +15,6 @@ const Page = async ({ searchParams }: any) => {
   )) as { response: any; blogCount: number };
 
   posts = response;
-  const handleDeleteBlog = (slug: string) => {
-    posts = posts.filter((post: any) => post.slug !== slug);
-  };
 
   return (
     <div className="p-8">

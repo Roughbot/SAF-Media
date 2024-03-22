@@ -7,15 +7,6 @@ import { ManageComment } from "../commentsViewer/CommentsViewer";
 import { UpdateBlog } from "../updateBlog/UpdateBlog";
 
 const BlogCard = ({ post }: any) => {
-  const handleDelete = async () => {
-    try {
-      await deleteBlogPost(post.slug, post.image);
-      toast.success("Blog post deleted successfully!");
-    } catch (error) {
-      toast.error("Error deleting blog post");
-    }
-  };
-
   return (
     <div>
       <div className="bg-slate-200 flex flex-col p-5 pure_glass rounded-3xl shadow-2xl">
@@ -46,9 +37,14 @@ const BlogCard = ({ post }: any) => {
         </div>
         <div className="flex flex-row justify-around">
           <UpdateBlog post={post.slug} />
-          <Button onClick={handleDelete} size="sm" variant="destructive">
-            Delete
-          </Button>
+          <form action={deleteBlogPost}>
+            <input type="hidden" name="slug" value={post.slug} />
+            <input type="hidden" name="image" value={post.image} />
+
+            <Button size="sm" variant="destructive">
+              Delete
+            </Button>
+          </form>
           <ManageComment slug={post.slug} />
         </div>
       </div>

@@ -88,7 +88,7 @@ const BlogPostForm = ({ existingPost }: any) => {
     if (existingPost) {
       // Update existing post
       toast.promise(
-        updateBlogPost(existingPost.slug, formData).then((response) => {
+        updateBlogPost(existingPost.slug, formData).then(() => {
           window.location.reload();
         }),
         {

@@ -5,6 +5,7 @@ import Comment from "../database/models/comments.model";
 import { connectToDatabase } from "../database/mongoConnection";
 import { handleError } from "../cn";
 import { deleteFile } from "../aws-config";
+import { revalidatePath } from "next/cache";
 
 //Create BlogPost
 export async function createBlogPost(formData: FormData) {
@@ -267,9 +268,12 @@ export async function updateViews(slug: string) {
 
 //delete blog post by slug
 
-export async function deleteBlogPost(slug: string, image: string) {
+export async function deleteBlogPost(formData: FormData) {
   try {
     await connectToDatabase();
+
+    const slug = formData.get("slug") as string;
+    const image = formData.get("image") as string;
 
     const s3image = image.split("/").pop() || "";
 
@@ -287,6 +291,8 @@ export async function deleteBlogPost(slug: string, image: string) {
   } catch (error) {
     handleError(error);
   }
+
+  revalidatePath("/admin/blogs");
 }
 
 //fetch all Slugs
