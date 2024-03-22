@@ -3,6 +3,7 @@ import Blog from "../database/models/post.model";
 import Comment from "../database/models/comments.model";
 import { connectToDatabase } from "@/utils/database/mongoConnection";
 import { handleError } from "@/utils/cn";
+import { revalidateTag } from "next/cache";
 
 //post comment
 
@@ -28,14 +29,7 @@ export async function postComment(formData: FormData) {
     blogPost.comments.push(newComment._id);
 
     await blogPost.save();
-
-    const response = JSON.parse(
-      JSON.stringify({
-        message: "Comment sent successfully!",
-      })
-    );
-
-    return response;
+    revalidateTag("comments");
   } catch (error) {
     handleError(error);
     return error;
@@ -48,7 +42,7 @@ export async function getComments(slug: string) {
   try {
     await connectToDatabase();
 
-    const comments = await Comment.find({ slug });
+    const comments = await Comment.find({ slug }).sort({ createdAt: -1 });
 
     const response = JSON.parse(JSON.stringify(comments));
 

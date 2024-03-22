@@ -5,7 +5,6 @@ import {
   fetchAllSlugs,
 } from "@/utils/actions/blogPost.action";
 import PostDetails from "@/components/postdetails/PostDetails";
-import CommentForm from "@/components/comments/commentForm/CommentForm";
 import CommentCard from "@/components/comments/commentCard/CommentCard";
 import NextPostNavigation from "@/components/nextPost/NextPostNavigation";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -39,7 +38,6 @@ const page = async ({ params }: any) => {
         <div className="col-span-1 lg:col-span-8">
           <PostDetails post={post} />
           <NextPostNavigation slug={post.slug} />
-          <CommentForm slug={post.slug} />
           <CommentCard slug={post.slug} />
         </div>
         <div className="col-span-1 lg:col-span-4">
