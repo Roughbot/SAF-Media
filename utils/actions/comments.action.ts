@@ -30,6 +30,14 @@ export async function postComment(formData: FormData) {
 
     await blogPost.save();
     revalidateTag("comments");
+
+    const response = JSON.parse(
+      JSON.stringify({
+        message: "Comment posted successfully!",
+      })
+    );
+
+    return response;
   } catch (error) {
     handleError(error);
     return error;

@@ -1,5 +1,6 @@
 import { getComments } from "@/utils/actions/comments.action";
 import parse from "html-react-parser";
+import CommentSubmitFrom from "../commentSubmitForm/CommentSubmitForm";
 
 const CommentForm = async ({ slug }: any) => {
   const comments = await getComments(slug);
@@ -10,7 +11,7 @@ const CommentForm = async ({ slug }: any) => {
         <h3 className="text-xl mb-8 font-semibold border-b pb-4">
           Leave a Reply
         </h3>
-        <CommentForm slug={slug} />
+        <CommentSubmitFrom slug={slug} />
       </div>
       <div>
         {comments.length > 0 && (

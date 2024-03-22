@@ -3,17 +3,19 @@ import { postComment } from "@/utils/actions/comments.action";
 import React, { useRef } from "react";
 import toast from "react-hot-toast";
 
-const CommentForm = (slug: string) => {
+const CommentSubmitForm = ({ slug }: any) => {
   const ref = useRef<HTMLFormElement>(null);
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(ref.current as HTMLFormElement);
+    await postComment(formData);
+    toast.success("Comment posted successfully");
+    ref.current?.reset();
+  };
+
   return (
-    <form
-      action={async (fromData) => {
-        await postComment(fromData);
-        toast.success("Comment posted successfully");
-        ref.current?.reset();
-      }}
-    >
+    <form ref={ref} onSubmit={handleSubmit}>
       <input type="hidden" name="slug" value={slug} />
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
@@ -52,4 +54,4 @@ const CommentForm = (slug: string) => {
   );
 };
 
-export default CommentForm;
+export default CommentSubmitForm;
