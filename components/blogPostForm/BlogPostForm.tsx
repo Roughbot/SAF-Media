@@ -11,7 +11,6 @@ import {
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
-import { set } from "mongoose";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -88,11 +87,16 @@ const BlogPostForm = ({ existingPost }: any) => {
 
     if (existingPost) {
       // Update existing post
-      toast.promise(updateBlogPost(existingPost.slug, formData), {
-        loading: "Updating...",
-        success: "Blog Post Updated successfully!",
-        error: "Failed to Update Blog Post!",
-      });
+      toast.promise(
+        updateBlogPost(existingPost.slug, formData).then((response) => {
+          window.location.reload();
+        }),
+        {
+          loading: "Updating...",
+          success: "Blog Post Updated successfully!",
+          error: "Failed to Update Blog Post!",
+        }
+      );
     } else {
       // Create new post
       toast.promise(createBlogPost(formData), {

@@ -304,3 +304,22 @@ export async function fetchAllSlugs() {
     handleError(error);
   }
 }
+
+//search blogpost by title
+
+export async function searchBlogPost(search: string) {
+  try {
+    await connectToDatabase();
+
+    const blogPosts = await BlogPost.find(
+      { title: { $regex: search, $options: "i" } },
+      { title: 1, image: 1, createdAt: 1, slug: 1 }
+    );
+
+    const response = JSON.parse(JSON.stringify(blogPosts));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}

@@ -6,13 +6,11 @@ import toast from "react-hot-toast";
 import { ManageComment } from "../commentsViewer/CommentsViewer";
 import { UpdateBlog } from "../updateBlog/UpdateBlog";
 
-const BlogCard = ({ post, onDelete }: any) => {
+const BlogCard = ({ post }: any) => {
   const handleDelete = async () => {
     try {
       await deleteBlogPost(post.slug, post.image);
       toast.success("Blog post deleted successfully!");
-
-      onDelete(post.slug);
     } catch (error) {
       toast.error("Error deleting blog post");
     }

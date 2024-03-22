@@ -23,11 +23,11 @@ export function UpdateBlog(slug: any) {
           Update Blog
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1100px] sm:max-h-screen">
+      <DialogContent className=" max-h-screen sm:max-w-[1100px] mb-8">
         <DialogHeader>
           <DialogTitle>Update Blog</DialogTitle>
         </DialogHeader>
-        <div className="object-cover">
+        <div className="object-cover overflow-y-auto pb-8 max-h-screen">
           <UpdateForm slug={slug} />
         </div>
       </DialogContent>
@@ -45,7 +45,6 @@ function UpdateForm({
     fetchBlogPostBySlug(slug.post)
       .then((response) => {
         setExistingPost(response);
-        console.log(response.title);
       })
       .catch((error) => {
         console.log(error);
