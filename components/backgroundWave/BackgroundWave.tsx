@@ -2,7 +2,7 @@ import React from "react";
 
 const BackgroundWave = () => (
   <svg
-    className="absolute inset-0 z-0"
+    className="absolute inset-0 z-[0]"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
