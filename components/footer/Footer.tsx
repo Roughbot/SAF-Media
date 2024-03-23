@@ -3,10 +3,13 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
+import BackgroundWave from "../backgroundWave/BackgroundWave";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 relative">
+      <BackgroundWave />
+
       <div className="h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
         <div className="p-5">
           <ul>
