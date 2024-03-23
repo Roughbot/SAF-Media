@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="bg-gray-900 relative">
       <BackgroundWave />
-      <div className="z-10 relative h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
+      <div className="z-1 relative h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
         <div className="p-5">
           <ul>
             <p className="text-white font-bold text-2xl pb-4">Contacts</p>
