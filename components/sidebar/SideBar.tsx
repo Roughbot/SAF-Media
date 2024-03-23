@@ -1,8 +1,6 @@
 "use client";
 
 import {
-  ChevronsLeftIcon,
-  ChevronsRightIcon,
   Contact,
   FilePen,
   LayoutDashboard,
@@ -11,14 +9,17 @@ import {
   UsersRound,
 } from "lucide-react";
 import { Nav } from "../ui/nav";
-import { useState } from "react";
 import { Button } from "../ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import logo from "@/public/logo.png";
 import Image from "next/image";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const SideNavBar = () => {
+  const onlyWidth = useWindowWidth();
+  const isMediumScreen = onlyWidth < 1000;
+
   const handleLogout = async () => {
     await axios.get("/api/auth/logout");
     toast.success("Logged out successfully");
@@ -26,18 +27,20 @@ const SideNavBar = () => {
   };
 
   return (
-    <div className="fixed bg-slate-300 hidden h-screen md:block min-w-[80px] max-w-[130px] border-r px-3 pb-10 pt-24">
+    <div className="fixed bg-slate-300 hidden h-screen md:block  max-w-[130px] border-r px-3 pb-10 pt-24">
       <div>
         <Image
           src={logo}
           alt="Company Logo"
-          className={`absolute right-[35px] top-5  w-16 h-16
-          rounded-full bg-transparent`}
+          className={`absolute   w-16 h-16
+          rounded-full bg-transparent ${
+            isMediumScreen ? "top-6 w-14 h-14" : "right-[35px] top-5"
+          }`}
         />
       </div>
       <div className="flex flex-col items-center justify-end">
         <Nav
-          isCollapsed={false}
+          isCollapsed={isMediumScreen}
           links={[
             {
               title: "Dashboard",
