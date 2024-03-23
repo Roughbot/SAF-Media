@@ -18,7 +18,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 
 const SideNavBar = () => {
   const onlyWidth = useWindowWidth();
-  const isMediumScreen = onlyWidth < 1000;
+  const isMediumScreen = onlyWidth < 900;
 
   const handleLogout = async () => {
     await axios.get("/api/auth/logout");
@@ -32,9 +32,8 @@ const SideNavBar = () => {
         <Image
           src={logo}
           alt="Company Logo"
-          className={`absolute   w-16 h-16
-          rounded-full bg-transparent ${
-            isMediumScreen ? "top-6 w-14 h-14" : "right-[35px] top-5"
+          className={`absolute  border-2 border-black w-16 h-16 rounded-full bg-transparent ${
+            isMediumScreen ? "top-6 w-12 h-12 right-1" : "right-[35px] top-5"
           }`}
         />
       </div>
