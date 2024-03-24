@@ -1,5 +1,13 @@
+import { Metadata } from "next";
 import "./styles.scss";
 import Form from "@/components/contactForm/page";
+
+export const metadata: Metadata = {
+  title: "Contact Us | SAF Media",
+  description:
+    "For any kind of business category, send us a message to find out the power that we can do to make your business even more successful.",
+  keywords: "Marketing,Trending",
+};
 
 const Contact = () => {
   return (

@@ -1,5 +1,13 @@
 import { ImagesSliderComponent } from "@/components/ImageSlider/Image-Slider";
 import { TextGenerateEffectComponent } from "@/components/text-generate/TextGenerate";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "What we Do | SAF Media",
+  description:
+    "We are a digital marketing agency that specializes in SEO, Social Media Marketing, and Web Development. We are here to help you grow your business.",
+  keywords: "Marketing,Trending,SEO,Web Development, Social Media Marketing",
+};
 
 const whatwedo = () => {
   return (

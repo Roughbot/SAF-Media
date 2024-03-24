@@ -11,6 +11,13 @@ import {
 } from "@/utils/actions/blogPost.action";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "BLogs | SAF Media",
+  description: "Get the latest updates on marketing trends and strategies.",
+  keywords: "Marketing,Trending",
+};
 
 const Blogs = async ({ searchParams }: any) => {
   let page = parseInt(searchParams.page, 10);

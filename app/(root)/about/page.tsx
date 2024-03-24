@@ -7,7 +7,6 @@ import inovation from "../../../public/assets/inovation.svg";
 import { points } from "./data";
 import DataCardt from "@/components/dataCard/DataCardt";
 import { useScroll } from "framer-motion";
-import ScrollLight from "@/components/scrollLight/ScrollLight";
 
 const About = () => {
   const container = useRef(null);
