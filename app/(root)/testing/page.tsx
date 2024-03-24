@@ -1,12 +1,7 @@
-import Loader from "@/components/Loader/LoaderComponent";
 import React from "react";
 
 const page = () => {
-  return (
-    <div>
-      <Loader />
-    </div>
-  );
+  return <div className="min-h-screen"></div>;
 };
 
 export default page;
