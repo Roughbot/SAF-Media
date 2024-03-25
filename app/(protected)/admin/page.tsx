@@ -1,6 +1,8 @@
+import BarChartComponent from "@/components/dashBoardChart/BarChart";
 import TopPostCard from "@/components/topPostsCard/TopPostCard";
 import {
   fetchBlogCount,
+  fetchCategoryCount,
   fetchFeaturedBlogPosts,
   fetchViewsCount,
 } from "@/utils/actions/blogPost.action";
@@ -8,7 +10,8 @@ import { fetchCommentCount } from "@/utils/actions/comments.action";
 import { Eye, MessageSquareText, DockIcon } from "lucide-react";
 
 export default async function Home() {
-  const { BlogCount, CommentCount, views, topPosts } = await getPostData();
+  const { BlogCount, CommentCount, views, topPosts, categoryCount } =
+    await getPostData();
 
   return (
     <div>
@@ -37,12 +40,13 @@ export default async function Home() {
       </div>
 
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 pt-10 px-6">
-        <div>
-          <h1>Category chart</h1>
+        <div className="bg-slate-200 p-5 rounded-xl shadow-black  shadow-lg m-2">
+          <h1 className="text-lg text-center font-semibold">Category chart</h1>
+          <BarChartComponent categoryCount={categoryCount} />
         </div>
-        <div className="bg-white p-6 rounded-xl shadow-black  shadow-lg m-3">
-          <h1>Top Posts</h1>
-          <div className="object-contain overflow-heidden">
+        <div className="bg-slate-200 p-5 rounded-xl shadow-black  shadow-lg m-2">
+          <h1 className="text-lg text-center font-semibold">Top Posts</h1>
+          <div className="object-contain max-w-full h-[360px] overflow-scroll px-4 m-auto">
             {topPosts.map((post: any) => (
               <div key={post._id}>
                 <TopPostCard topPosts={post} />
@@ -60,11 +64,12 @@ async function getPostData() {
   const CommentCount = await fetchCommentCount();
   const viewsCount = await fetchViewsCount();
   const topPosts = await fetchFeaturedBlogPosts();
+  const categoryCount = await fetchCategoryCount();
 
   let views = 0;
   for (let i = 0; i < viewsCount.length; i++) {
     views += viewsCount[i].views;
   }
 
-  return { BlogCount, CommentCount, views, topPosts };
+  return { BlogCount, CommentCount, views, topPosts, categoryCount };
 }

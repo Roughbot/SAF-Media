@@ -354,3 +354,26 @@ export async function fetchViewsCount() {
     handleError(error);
   }
 }
+
+//fetch catagory and its count
+
+export async function fetchCategoryCount() {
+  try {
+    await connectToDatabase();
+
+    const categoryCount = await BlogPost.aggregate([
+      {
+        $group: {
+          _id: "$category",
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+
+    const response = JSON.parse(JSON.stringify(categoryCount));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
