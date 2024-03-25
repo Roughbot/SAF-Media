@@ -42,50 +42,52 @@ const MobileNav = () => {
             <AlignEndVertical className="w-6 h-6" />
           </SheetTrigger>
           <SheetContent className="sheet-content bg-slate-300">
-            <Nav
-              isCollapsed={false}
-              links={[
-                {
-                  title: "Dashboard",
-                  href: "/admin",
-                  icon: LayoutDashboard,
-                  variant: "default",
-                },
-                {
-                  title: "Messages",
-                  href: "/admin/messages",
-                  icon: Contact,
-                  variant: "ghost",
-                },
-                {
-                  title: "Blogs",
-                  href: "/admin/blogs",
-                  icon: Newspaper,
-                  variant: "ghost",
-                },
-                {
-                  title: "Create Blog",
-                  href: "/admin/create-blog",
-                  icon: FilePen,
-                  variant: "ghost",
-                },
-                {
-                  title: "Users",
-                  href: "/admin/users",
-                  icon: UsersRound,
-                  variant: "ghost",
-                },
-              ]}
-            />
-            <div className="absolute pr-4 bottom-0 w-full flex justify-center items-center py-3 border-t border-gray-200 ">
-              <Button
-                size="sm"
-                onClick={() => {
-                  handleLogout();
-                }}
-              >
-                <LogInIcon className="w-5" />
-              </Button>
+            <div className="pt-6">
+              <Nav
+                isCollapsed={false}
+                links={[
+                  {
+                    title: "Dashboard",
+                    href: "/admin",
+                    icon: LayoutDashboard,
+                    variant: "default",
+                  },
+                  {
+                    title: "Messages",
+                    href: "/admin/messages",
+                    icon: Contact,
+                    variant: "ghost",
+                  },
+                  {
+                    title: "Blogs",
+                    href: "/admin/blogs",
+                    icon: Newspaper,
+                    variant: "ghost",
+                  },
+                  {
+                    title: "Create Blog",
+                    href: "/admin/create-blog",
+                    icon: FilePen,
+                    variant: "ghost",
+                  },
+                  {
+                    title: "Users",
+                    href: "/admin/users",
+                    icon: UsersRound,
+                    variant: "ghost",
+                  },
+                ]}
+              />
+              <div className="absolute pr-4 bottom-0 w-full flex justify-center items-center py-3 border-t border-gray-200 ">
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    handleLogout();
+                  }}
+                >
+                  <LogInIcon className="w-5" />
+                </Button>
+              </div>
             </div>
           </SheetContent>
         </Sheet>

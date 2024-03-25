@@ -81,3 +81,20 @@ export async function deleteComment(id: string) {
     return error;
   }
 }
+
+// fetch the number of comments
+
+export async function fetchCommentCount() {
+  try {
+    await connectToDatabase();
+
+    const commentCount = await Comment.find({}).countDocuments();
+
+    const response = JSON.parse(JSON.stringify(commentCount));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+    return error;
+  }
+}

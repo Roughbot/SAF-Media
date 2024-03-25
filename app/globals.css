@@ -278,3 +278,9 @@ body {
 .sheet-content button {
   @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
 }
+
+.testing {
+  border-radius: 82px;
+  background: linear-gradient(145deg, #323232, #3c3c3c);
+  box-shadow: 30px 30px 60px #292929, -30px -30px 60px #474747;
+}

@@ -338,3 +338,19 @@ export async function searchBlogPost(
     handleError(error);
   }
 }
+
+//fetch views count
+
+export async function fetchViewsCount() {
+  try {
+    await connectToDatabase();
+
+    const views = await BlogPost.find({}, { views: 1 });
+
+    const response = JSON.parse(JSON.stringify(views));
+
+    return response;
+  } catch (error) {
+    handleError(error);
+  }
+}
