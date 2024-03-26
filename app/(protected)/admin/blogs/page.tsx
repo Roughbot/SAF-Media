@@ -17,7 +17,7 @@ const Page = async ({ searchParams }: any) => {
   posts = response;
 
   return (
-    <div className="p-8">
+    <div className="p-8 no-scrollbar">
       <div>
         <SearchBlog />
       </div>
