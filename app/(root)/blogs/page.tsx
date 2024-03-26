@@ -23,7 +23,7 @@ const Blogs = async ({ searchParams }: any) => {
   let page = parseInt(searchParams.page, 10);
 
   page = !page || page < 1 ? 1 : page;
-  const pageSize = 6;
+  const pageSize = 10;
 
   const { featuredPost, recentPost, blogPosts, blogCount } = await getPostData(
     page,

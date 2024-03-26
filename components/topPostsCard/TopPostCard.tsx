@@ -3,7 +3,7 @@ import React from "react";
 
 const TopPostCard = ({ topPosts }: any) => {
   return (
-    <div className="rounded-2xl bg-slate-400 m-1">
+    <div className="rounded-2xl bg-slate-300 m-1">
       <div key={topPosts._id} className="flex flex-row items-center gap-4 p-3">
         <Image
           width={48}

@@ -27,7 +27,7 @@ export function UpdateBlog(slug: any) {
         <DialogHeader>
           <DialogTitle>Update Blog</DialogTitle>
         </DialogHeader>
-        <div className="object-cover overflow-y-auto pb-8 max-h-screen">
+        <div className="object-cover overflow-y-auto no-scrollbar pb-8 max-h-screen">
           <UpdateForm slug={slug} />
         </div>
       </DialogContent>
