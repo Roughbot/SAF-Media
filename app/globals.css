@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +25,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  font-family: "Roboto Mono", "Raleway", "Dosis", sans-serif;
+  font-family: "Rubik", "Dosis", sans-serif;
   background: linear-gradient(
       to bottom,
       transparent,

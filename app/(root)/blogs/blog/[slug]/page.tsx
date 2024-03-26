@@ -31,7 +31,7 @@ const page = async ({ params }: any) => {
 
   return (
     <div
-      style={{ fontFamily: "Dosis" }}
+      style={{ fontFamily: "Rubik" }}
       className="container mx-auto px-10  mb-8"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 pt-36 gap-12">

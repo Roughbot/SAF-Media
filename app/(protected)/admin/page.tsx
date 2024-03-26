@@ -14,7 +14,7 @@ export default async function Home() {
     await getPostData();
 
   return (
-    <div style={{ fontFamily: "Dosis" }}>
+    <div style={{ fontFamily: "Rubik" }}>
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 pt-7 px-6">
         <div className="bg-slate-200  text-center p-6 rounded-xl shadow-black shadow-lg m-3  hover:cursor-pointer hover:text-blue-600 hover:scale-110 hover:transition-transform">
           <h1 className="text-xl font-semibold">Number of Blogs</h1>

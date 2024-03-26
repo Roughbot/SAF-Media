@@ -36,7 +36,7 @@ const Blogs = async ({ searchParams }: any) => {
 
   return (
     <div
-      style={{ fontFamily: "Dosis" }}
+      style={{ fontFamily: "Rubik" }}
       className="container blog_background mx-auto px-10"
     >
       <div className="pt-28">

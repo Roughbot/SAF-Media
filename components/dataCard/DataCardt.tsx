@@ -26,7 +26,7 @@ const DataCardt = (props: any) => {
       >
         <div className="shadow-lg rounded-3xl ">
           <h1
-            style={{ fontFamily: "Dosis" }}
+            style={{ fontFamily: "Rubik" }}
             className="font-bold  text-white text-lg sm:text-4xl py-10 text-center"
           >
             {title}
@@ -39,7 +39,7 @@ const DataCardt = (props: any) => {
               className="relative top-[10%]"
             >
               <p
-                style={{ fontFamily: "Dosis" }}
+                style={{ fontFamily: "Rubik" }}
                 className="text-xs sm:text-2xl first-letter:text-xl"
               >
                 {description}
