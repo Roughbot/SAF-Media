@@ -8,10 +8,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const region = "ap-south-1";
-const bucketName = "saf-media-images";
-const accessKeyId = "AKIA2UC3DFKQ5HS6WVR5";
-const secretAccessKey = "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";
+const region = process.env.NEXT_PUBLIC_AWS_REGION as string;
+const bucketName = process.env.NEXT_PUBLIC_AWS_BUCKET_NAME as string;
+const accessKeyId = process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID as string;
+const secretAccessKey = process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY as string;
 
 const s3Client = new S3Client({
   region,
@@ -22,6 +22,10 @@ const s3Client = new S3Client({
 });
 
 export async function uploadFile(fileName: string) {
+  if (!accessKeyId || !secretAccessKey) {
+    throw new Error("AWS credentials not found");
+  }
+
   const command = new PutObjectCommand({
     Bucket: bucketName,
     Key: fileName,

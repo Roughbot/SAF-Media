@@ -17,21 +17,21 @@ export default async function Home() {
     <div style={{ fontFamily: "Rubik" }}>
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 pt-7 px-6">
         <div className="bg-slate-200  text-center p-6 rounded-xl shadow-black shadow-lg m-3  hover:cursor-pointer hover:text-blue-600 hover:scale-110 hover:transition-transform">
-          <h1 className="text-xl font-semibold">Number of Blogs</h1>
+          <h1 className="text-xl font-semibold">Total Blogs</h1>
           <div className="flex flex-row items-center justify-center gap-4 p-3">
             <p className="text-center text-3xl font-semibold">{BlogCount}</p>
             <DockIcon size={32} />
           </div>
         </div>
         <div className="bg-slate-200  text-center shadow-black  p-6 rounded-xl shadow-lg m-3  hover:cursor-pointer hover:text-blue-600 hover:scale-110 hover:transition-transform">
-          <h1 className="text-xl font-semibold">Number of views</h1>
+          <h1 className="text-xl font-semibold">Total views</h1>
           <div className="flex flex-row items-center justify-center gap-4 p-3">
             <p className="text-center text-3xl font-semibold">{views}</p>
             <Eye size={32} />
           </div>
         </div>
         <div className="bg-slate-200  p-6 text-center  shadow-black  rounded-xl shadow-lg m-3  hover:cursor-pointer hover:text-blue-600 hover:scale-110  hover:transition-transform">
-          <h1 className="text-xl font-semibold">Number of comments</h1>
+          <h1 className="text-xl font-semibold">Total comments</h1>
           <div className="flex flex-row items-center justify-center gap-4 p-3">
             <p className="text-center text-3xl font-semibold">{CommentCount}</p>
             <MessageSquareText size={32} />

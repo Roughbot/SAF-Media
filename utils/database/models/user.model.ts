@@ -18,8 +18,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "user",
     },
-    verifyToken: String,
-    verifyTokenExpiry: Date,
   },
   { timestamps: true }
 );
