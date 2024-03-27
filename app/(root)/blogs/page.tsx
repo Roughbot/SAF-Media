@@ -37,7 +37,7 @@ const Blogs = async ({ searchParams }: any) => {
   return (
     <div
       style={{ fontFamily: "Rubik" }}
-      className="container blog_background mx-auto px-10 "
+      className="container animation_background mx-auto px-10 "
     >
       <div className="pt-28">
         <Featured posts={featuredPost} />

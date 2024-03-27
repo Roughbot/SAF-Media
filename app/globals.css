@@ -98,6 +98,10 @@ body {
   @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
 }
 
+.black_gradient {
+  background: linear-gradient(115deg, #000000, #444444);
+}
+
 .glassmorphism {
   background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
@@ -251,17 +255,11 @@ body {
 }
 
 .blog_background {
-  background: #141e30; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #243b55,
-    #141e30
-  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
-    #243b55,
-    #141e30
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    109.6deg,
+    rgb(0, 0, 0) 98.6% rgb(36, 45, 57) 11.2%,
+    rgb(16, 37, 60) 51.2%
+  );
 }
 
 .page_button {
@@ -280,4 +278,22 @@ body {
 
 .p-16-medium {
   @apply font-medium text-[16px] leading-[140%];
+}
+
+.animation_background {
+  background: linear-gradient(-45deg, #f7f5f5, #000000, #111111, #130808);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -23,7 +23,7 @@ const Pagination = ({ count }: { count: number }) => {
   };
 
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row justify-between pt-5">
       <Button
         disabled={!hasPrevious}
         onClick={() => {
