@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import jwt from "jsonwebtoken";
 
-// async function validateToken(token: string) {
-//   // Validate the token with your session management system
-//   // This could involve checking a database or an external API
-//   const isValid = await someExternalValidationFunction(token);
-//   return isValid;
-// }
+async function validateToken(token: string) {
+  try {
+    jwt.verify(token, process.env.SECRET_TOKEN as string);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   const isPublicPath = path === "/login" || path === "/";
@@ -16,21 +19,13 @@ export function middleware(request: NextRequest) {
 
   const token = request.cookies.get("token")?.value || "";
 
-  // const isValidToken = await validateToken(token);
+  const isValidToken = await validateToken(token);
 
-  // if (isPublicPath && !isValidToken) {
-  //   return NextResponse.redirect(new URL("/login", request.nextUrl));
-  // }
-
-  // if (isAdminPath && !isValidToken) {
-  //   return NextResponse.redirect(new URL("/login", request.nextUrl));
-  // }
-
-  if (isPublicPath && token) {
+  if (isPublicPath && token && isValidToken) {
     return NextResponse.redirect(new URL("/login", request.nextUrl));
   }
 
-  if (isAdminPath && !token) {
+  if (isAdminPath && !token && !isValidToken) {
     return NextResponse.redirect(new URL("/login", request.nextUrl));
   }
 }

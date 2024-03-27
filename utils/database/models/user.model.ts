@@ -14,13 +14,9 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
-    isSuperAdmin: {
-      type: Boolean,
-      default: false,
+    role: {
+      type: String,
+      default: "user",
     },
     verifyToken: String,
     verifyTokenExpiry: Date,
