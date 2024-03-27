@@ -19,7 +19,7 @@ export function ManageComment({ slug }: any) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="secondary" size="sm">
+        <Button variant="secondary" size="sm" className="btn-back-pink">
           Comment
         </Button>
       </DialogTrigger>

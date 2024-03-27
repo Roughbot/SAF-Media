@@ -13,7 +13,7 @@ const page = async () => {
 
   return (
     <div className="p-8 ">
-      <div className="p-3 rounded-3xl bg-slate-200 shadow-2xl">
+      <div className="p-3 rounded-3xl bg-slate-200 gradient_purple shadow-2xl">
         <DataTable columns={columns} data={data} />
       </div>
     </div>

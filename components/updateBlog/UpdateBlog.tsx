@@ -19,7 +19,7 @@ export function UpdateBlog(slug: any) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="secondary" size="sm">
+        <Button variant="secondary" size="sm" className="neo-btn">
           Update Blog
         </Button>
       </DialogTrigger>

@@ -5,7 +5,7 @@ import SideBarNav from "@/components/sidebar/SideBarNav";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="protected min-h-screen  bg-slate-800 w-full  text-black">
+    <main className="protected min-h-screen  bg-gray-900 w-full  text-black">
       <SideBarNav />
       <MobileNav />
       <div className="lg:pl-[130px] md:pl-[80px] pt-16 md:pt-0">{children}</div>

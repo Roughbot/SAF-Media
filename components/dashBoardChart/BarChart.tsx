@@ -23,27 +23,38 @@ export default function BarChartComponent({ categoryCount }: any) {
         <XAxis
           tickLine={false}
           axisLine={false}
-          stroke="#000"
+          stroke="#E3E5E7"
           fontSize={12}
           dataKey={"name"}
         >
           <Label
             value="Categories"
             offset={-4}
-            stroke="#000000"
+            stroke="#E3E5E7"
             position="insideBottom"
           />
         </XAxis>
-        <YAxis tickLine={false} axisLine={false} stroke="#000" fontSize={12}>
+        <YAxis tickLine={false} axisLine={false} stroke="#E3E5E7" fontSize={12}>
           <Label
             value="Count"
             angle={-90}
-            stroke="#000000"
+            stroke="#E3E5E7"
             position="insideLeft"
           />
         </YAxis>
-        <Tooltip />
-        <Bar dataKey={"value"} fill="#000" radius={[7, 7, 0, 0]} />
+        <Tooltip
+          isAnimationActive={true}
+          animationEasing="ease-in-out"
+          animationDuration={300}
+          cursor={{ fill: "#252728" }}
+          contentStyle={{
+            background: "#fff",
+            border: "1px solid #E3E5E7",
+            borderRadius: "5px",
+          }}
+          itemStyle={{ color: "#000" }}
+        />
+        <Bar dataKey={"value"} fill="#CDD0D5" radius={[7, 7, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
