@@ -6,8 +6,8 @@ const MenuLists = ({ recentPost }: any) => {
   return (
     <>
       <div>
-        <div className="glass shadow-lg rounded-lg p-8 pb-12 mb-8">
-          <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+        <div className="white_glass shadow-lg rounded-lg p-8 pb-4 mb-8">
+          <h3 className="text-2xl text-center mb-3 font-semibold border-b pb-4">
             Recent Posts
           </h3>
 

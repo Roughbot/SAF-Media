@@ -119,6 +119,18 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.white_glass {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(252, 252, 252, 0.5);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(252, 252, 252, 0.5);
+  box-shadow: 0px 0px 7px 2px rgba(252, 252, 252, 0.5);
+}
+
 .pure_glass {
   background: rgba(255, 255, 255, 0.33);
   border-radius: 16px;
@@ -280,20 +292,6 @@ body {
   @apply font-medium text-[16px] leading-[140%];
 }
 
-.animation_background {
-  background: linear-gradient(-45deg, #f7f5f5, #000000, #111111, #130808);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.cat_radius {
+  border-radius: 74% 26% 65% 35% / 33% 50% 50% 67%;
 }

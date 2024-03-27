@@ -26,7 +26,13 @@ const page = async ({ params }: any) => {
 
   return (
     <div
-      style={{ fontFamily: "Rubik" }}
+      style={{
+        fontFamily: "Rubik",
+        backgroundImage: "url('/assets/bg-image2.jpeg')",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
       className="container blog_background mx-auto px-10"
     >
       <div className="pt-20">

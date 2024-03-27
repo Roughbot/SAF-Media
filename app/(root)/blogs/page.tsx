@@ -12,6 +12,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Metadata } from "next";
+import { url } from "inspector";
 
 export const metadata: Metadata = {
   title: "BLogs | SAF Media",
@@ -36,8 +37,14 @@ const Blogs = async ({ searchParams }: any) => {
 
   return (
     <div
-      style={{ fontFamily: "Rubik" }}
-      className="container animation_background mx-auto px-10 "
+      style={{
+        fontFamily: "Rubik",
+        backgroundImage: "url('/assets/bg-image2.jpeg')",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+      className="container mx-auto px-10 "
     >
       <div className="pt-28">
         <Featured posts={featuredPost} />

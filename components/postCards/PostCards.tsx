@@ -9,7 +9,7 @@ const PostCards = ({ post }: any) => {
   });
 
   return (
-    <div className="glass shadow-lg rounded-lg p-0 lg:p-6 pb-6 mb-4">
+    <div className="white_glass shadow-lg rounded-lg p-0 lg:p-6 pb-6 mb-4">
       <div className="relative overflow-hidden shadow-md pb-40 mb-3">
         <Image
           src={post.image}
@@ -47,7 +47,7 @@ const PostCards = ({ post }: any) => {
           <span className="align-middle">{date}</span>
         </div>
       </div>
-      <p className="text-center text-sm sm:text-2xl text-gray-900 font-normal px-2 lg:px-10 mb-4">
+      <p className="text-center text-sm sm:text-xl text-gray-900 font-normal px-2 lg:px-10 mb-4">
         {post.description}
       </p>
       <div className="text-center">

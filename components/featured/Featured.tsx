@@ -2,8 +2,6 @@
 import FeaturedPostCard from "../featuredPostCard/FeaturedPostCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useState, useEffect, useCallback } from "react";
-import { fetchFeaturedBlogPosts } from "@/utils/actions/blogPost.action";
 import { Skeleton } from "../ui/skeleton";
 
 const responsive = {
@@ -25,43 +23,43 @@ const responsive = {
   },
 };
 
-const customLeftArrow = (
-  <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6 text-white"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M10 19l-7-7m0 0l7-7m-7 7h18"
-      />
-    </svg>
-  </div>
-);
+// const customLeftArrow = (
+//   <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-black rounded-full">
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       className="h-6 w-6 text-white"
+//       fill="none"
+//       viewBox="0 0 24 24"
+//       stroke="currentColor"
+//     >
+//       <path
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//         strokeWidth="2"
+//         d="M10 19l-7-7m0 0l7-7m-7 7h18"
+//       />
+//     </svg>
+//   </div>
+// );
 
-const customRightArrow = (
-  <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-6 text-white w-full"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
-      />
-    </svg>
-  </div>
-);
+// const customRightArrow = (
+//   <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-black rounded-full">
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       className="h-6 text-white w-full"
+//       fill="none"
+//       viewBox="0 0 24 24"
+//       stroke="currentColor"
+//     >
+//       <path
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//         strokeWidth="2"
+//         d="M14 5l7 7m0 0l-7 7m7-7H3"
+//       />
+//     </svg>
+//   </div>
+// );
 
 const Featured = ({ posts }: any) => {
   if (!posts) {
@@ -71,8 +69,8 @@ const Featured = ({ posts }: any) => {
           <Carousel
             autoPlay
             infinite
-            customLeftArrow={customLeftArrow}
-            customRightArrow={customRightArrow}
+            // customLeftArrow={customLeftArrow}
+            // customRightArrow={customRightArrow}
             responsive={responsive}
             itemClass="px-4"
           >
@@ -91,8 +89,8 @@ const Featured = ({ posts }: any) => {
         <Carousel
           autoPlay
           infinite
-          customLeftArrow={customLeftArrow}
-          customRightArrow={customRightArrow}
+          // customLeftArrow={customLeftArrow}
+          // customRightArrow={customRightArrow}
           responsive={responsive}
           itemClass="px-4"
         >
