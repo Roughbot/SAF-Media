@@ -72,10 +72,27 @@ const Footer = () => {
               SAF <span className="text-blue-600">Media</span>
             </p>
             <div className="flex gap-6 pb-5">
-              <FaInstagram className="text-2xl text-white cursor-pointer hover:text-yellow-600  hover:p-0 hover:rounded-sm" />
-              <FaTwitter className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
-              <FaFacebook className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
-              <FaLinkedin className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
+              <Link
+                href="https://www.instagram.com/safmediagroup/"
+                target="_blank"
+              >
+                <FaInstagram className="text-2xl text-white cursor-pointer hover:text-yellow-600  hover:p-0 hover:rounded-sm" />
+              </Link>
+              <Link href="https://twitter.com/SAFMediaGroup" target="_blank">
+                <FaTwitter className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/people/SAF-MEDIA-GROUP/61556903258323/"
+                target="_blank"
+              >
+                <FaFacebook className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/saf-media-group/"
+                target="_blank"
+              >
+                <FaLinkedin className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
+              </Link>
             </div>
           </ul>
         </div>

@@ -1,5 +1,4 @@
 "use client";
-import { LampComponent } from "@/components/Lamp/Lamp";
 import { AnimatedTooltipPreview } from "@/components/tooltip/animated-tooltip-component";
 import Description from "@/components/Description/Description";
 import { useEffect, useRef } from "react";
@@ -7,6 +6,7 @@ import inovation from "../../../public/assets/inovation.svg";
 import { points } from "./data";
 import DataCardt from "@/components/dataCard/DataCardt";
 import { useScroll } from "framer-motion";
+import { AuroraBackgroundComponent } from "@/components/auroraBackground/AuroraBackground";
 
 const About = () => {
   const container = useRef(null);
@@ -27,7 +27,7 @@ const About = () => {
 
   return (
     <div>
-      <LampComponent />
+      <AuroraBackgroundComponent />
       <Description phrase={phrase} />
       <div>
         <div ref={container}>
