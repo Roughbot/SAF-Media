@@ -46,13 +46,17 @@ const Categories = () => {
           itemClass="px-4"
         >
           {categories.map((category, index) => (
-            <Link key={index} href={category.link}>
-              <p
-                className={`py-3 px-2 text-black text-center cat_radius hover:flip-scale-2-hor-top rounded-lg ${category.color} text-xs sm:text-sm md:text-base lg:text-lg`}
-              >
-                {category.cate}
-              </p>
-            </Link>
+            <div key={index} className="glass">
+              <Link href={category.link}>
+                <p
+                  className={
+                    "py-3 px-2 text-black hover:text-sky-500 text-center cat_radius  rounded-lg text-xs sm:text-sm md:text-base lg:text-lg"
+                  }
+                >
+                  {category.cate}
+                </p>
+              </Link>
+            </div>
           ))}
         </Carousel>
       </div>

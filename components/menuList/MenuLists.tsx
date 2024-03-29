@@ -12,14 +12,17 @@ const MenuLists = ({ recentPost }: any) => {
           </h3>
 
           {recentPost.map((post: any, index: number) => (
-            <div key={index} className="flex items-center w-full mb-4">
+            <div
+              key={index}
+              className="flex items-center w-full rounded-lg hover:shadow-lg  px-2 py-1 hover:bg-slate-300 hover:shadow-black border-0 mb-4"
+            >
               <div className="w-16 flex-none">
                 <Image
                   alt="title"
                   width={200}
                   height={200}
                   unoptimized
-                  className="object-cover rounded-lg"
+                  className="object-cover h-full w-full rounded-lg"
                   src={post.image}
                   priority={true}
                 />

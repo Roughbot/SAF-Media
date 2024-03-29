@@ -13,14 +13,14 @@ const PostCards = ({ post }: any) => {
       <div className="relative overflow-hidden shadow-md pb-40 mb-3">
         <Image
           src={post.image}
-          width={1920}
-          height={1080}
+          width={600}
+          height={800}
           alt="Image of the post"
-          className="object-top absolute h-full w-full object-fill shadow-lg rounded-t-lg lg:rounded-lg"
+          className="object-top absolute h-full  w-full object-fill shadow-lg rounded-t-lg lg:rounded-lg"
         />
       </div>
 
-      <h1 className="transition duration-700 text-center mb-4 cursor-pointer hover:text-green-300 text-xl font-semibold">
+      <h1 className="transition duration-700 text-center mb-4 cursor-pointer hover:text-blue-700 text-xl font-semibold">
         <Link href={`/blogs/blog/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-4 w-full">
@@ -32,7 +32,7 @@ const PostCards = ({ post }: any) => {
         <div className="font-medium text-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 inline mr-1 text-green-500"
+            className="h-4 w-4 inline mr-1 text-blue-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -52,7 +52,7 @@ const PostCards = ({ post }: any) => {
       </p>
       <div className="text-center">
         <Link href={`/blogs/blog/${post.slug}`}>
-          <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-green-600 text-base font-medium rounded-full text-white px-4 py-2 cursor-pointer">
+          <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-blue-700 text-base font-medium rounded-full text-white px-4 py-2 cursor-pointer">
             Continue Reading
           </span>
         </Link>

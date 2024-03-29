@@ -28,7 +28,8 @@ export async function uploadFile(fileName: string) {
 
   const command = new PutObjectCommand({
     Bucket: bucketName,
-    Key: fileName,
+    Key: fileName, // Add the 'Key' property with the value of the fileName
+    Body: fileName, // Upload the converted image
   });
 
   const uploadURL = await getSignedUrl(s3Client, command, { expiresIn: 60 });
