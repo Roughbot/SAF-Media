@@ -31,7 +31,7 @@ const Header = () => {
           <Link href="/">
             <div className={styles.logo}>
               <Image className={styles.img} src={logo} alt="logo" />
-              <h1 className={styles.font}>SAF Media</h1>
+              <h1 className={styles.font}>Right Hand Venture</h1>
             </div>
           </Link>
           <div

@@ -15,7 +15,7 @@ import { Metadata } from "next";
 import { url } from "inspector";
 
 export const metadata: Metadata = {
-  title: "BLogs | SAF Media",
+  title: "BLogs | Right Hand Venture",
   description: "Get the latest updates on marketing trends and strategies.",
   keywords: "Marketing,Trending",
 };

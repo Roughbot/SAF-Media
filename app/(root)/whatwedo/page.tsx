@@ -3,7 +3,7 @@ import { TextGenerateEffectComponent } from "@/components/text-generate/TextGene
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "What we Do | SAF Media",
+  title: "What we Do | Right Hand Venture",
   description:
     "We are a digital marketing agency that specializes in SEO, Social Media Marketing, and Web Development. We are here to help you grow your business.",
   keywords: "Marketing,Trending,SEO,Web Development, Social Media Marketing",

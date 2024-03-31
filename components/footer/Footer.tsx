@@ -99,7 +99,7 @@ const Footer = () => {
       </div>
       <div className="z-10 flex flex-col justify-center items-center text-center p-5">
         <h1 className="text-white font-semibold">
-          &copy; 2024 SAF Media. All rights reserved.
+          &copy; 2024 Right Hand Venture. All rights reserved.
         </h1>
       </div>
     </div>

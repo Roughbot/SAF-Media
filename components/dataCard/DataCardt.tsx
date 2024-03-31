@@ -22,7 +22,7 @@ const DataCardt = (props: any) => {
     >
       <motion.div
         style={{ top: `calc(-5% + ${i * 25}px)`, scale }}
-        className={`max-h-fit w-[400px] sm:h-[500px] sm:w-[1000px] p-8 flex flex-col origin-top rounded-[25px] relative top-8 ${color}`}
+        className={`max-h-fit w-[400px] sm:h-[500px] sm:w-[1000px] p-8 flex flex-col origin-top rounded-[25px] relative top-8 pure_glass ${color}`}
       >
         <div className="shadow-lg rounded-3xl ">
           <h1

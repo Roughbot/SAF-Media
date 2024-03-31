@@ -3,7 +3,7 @@ import "./styles.scss";
 import Form from "@/components/contactForm/page";
 
 export const metadata: Metadata = {
-  title: "Contact Us | SAF Media",
+  title: "Contact Us | Right Hand Venture",
   description:
     "For any kind of business category, send us a message to find out the power that we can do to make your business even more successful.",
   keywords: "Marketing,Trending",

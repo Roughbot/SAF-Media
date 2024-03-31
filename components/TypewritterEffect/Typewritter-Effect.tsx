@@ -18,7 +18,7 @@ export function TypewriterEffectSmoothComponent() {
       text: "with",
     },
     {
-      text: "SAF Media.",
+      text: "Right Hand Venture.",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];

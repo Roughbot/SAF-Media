@@ -17,7 +17,7 @@ const About = () => {
   });
 
   useEffect(() => {
-    document.title = "About Us | SAF Media";
+    document.title = "About Us | Right Hand Venture";
   }, []);
 
   const phrase = [
@@ -28,7 +28,7 @@ const About = () => {
   return (
     <div>
       <AuroraBackgroundComponent />
-      <Description phrase={phrase} />
+      {/* <Description phrase={phrase} /> */}
       <div>
         <div ref={container}>
           {points.map((point, index) => {
