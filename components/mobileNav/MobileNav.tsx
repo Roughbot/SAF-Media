@@ -29,7 +29,7 @@ const MobileNav = () => {
     <header className="header md:hidden">
       <Link href="/admin" className="flex items-center gap-2">
         <Image
-          className="rounded-full bottom-2 border-black"
+          className="rounded-full bottom-2 p-1 bg-slate-50 border-black"
           src={logo}
           alt="logo"
           width={40}

@@ -32,7 +32,7 @@ const SideNavBar = () => {
         <Image
           src={logo}
           alt="Company Logo"
-          className={`absolute  border-2 border-black w-16 h-16 rounded-full bg-transparent ${
+          className={`absolute  border-2 p-1 bg-slate-50 border-black w-16 h-16 rounded-full bg-transparent ${
             isMediumScreen ? "top-6 w-12 h-12 right-1" : "right-[35px] top-5"
           }`}
         />
