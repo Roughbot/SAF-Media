@@ -1,55 +1,26 @@
-"use client";
+import { ImagesSliderComponent } from "@/components/ImageSlider/Image-Slider";
+import { TextGenerateEffectComponent } from "@/components/text-generate/TextGenerate";
 import { AnimatedTooltipPreview } from "@/components/tooltip/animated-tooltip-component";
-import Description from "@/components/Description/Description";
-import { useEffect, useRef } from "react";
-import inovation from "../../../public/assets/inovation.svg";
-import { points } from "./data";
-import DataCardt from "@/components/dataCard/DataCardt";
-import { useScroll } from "framer-motion";
-import { AuroraBackgroundComponent } from "@/components/auroraBackground/AuroraBackground";
+import { Metadata } from "next";
 
-const About = () => {
-  const container = useRef(null);
+export const metadata: Metadata = {
+  title: "About Us | Right Hand Venture",
+  description:
+    "We are a digital marketing agency that specializes in SEO, Social Media Marketing, and Web Development. We are here to help you grow your business.",
+  keywords: "Marketing,Trending,SEO,Web Development, Social Media Marketing",
+};
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  });
-
-  useEffect(() => {
-    document.title = "About Us | Right Hand Venture";
-  }, []);
-
-  const phrase = [
-    "Where  Passion, Innovation, Collaboration, and  Integrity Meet  to  Elevate Your Digital Presence",
-    inovation,
-  ];
-
+const whatwedo = () => {
   return (
-    <div>
-      <AuroraBackgroundComponent />
-      {/* <Description phrase={phrase} /> */}
-      <div>
-        <div ref={container}>
-          {points.map((point, index) => {
-            const targetScale = 1 - (points.length - index) * 0.08;
-            return (
-              <DataCardt
-                key={index}
-                i={index}
-                {...point}
-                range={[index * 0.25, 1]}
-                progress={scrollYProgress}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </div>
+    <div className="min-h-screen">
+      <ImagesSliderComponent />
+      <div style={{ fontFamily: "Rubik" }} className="p-20">
+        <p className="text-center text-white text-9xl py-20">About Us</p>
+        <TextGenerateEffectComponent />
       </div>
-
       <AnimatedTooltipPreview />
     </div>
   );
 };
 
-export default About;
+export default whatwedo;
