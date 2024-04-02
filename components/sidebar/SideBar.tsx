@@ -65,6 +65,12 @@ const SideNavBar = () => {
               icon: FilePen,
               variant: "ghost",
             },
+            {
+              title: "Users",
+              href: "/admin/users",
+              icon: UsersRound,
+              variant: "ghost",
+            },
           ]}
         />
         <div className="absolute bg-slate-300 bottom-0 w-full flex justify-center items-center py-3 border-t border-gray-200 ">

@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="p-5">
           <ul>
             <p className="text-white font-bold text-3xl pb-6">
-              SAF <span className="text-blue-600">Media</span>
+              Right Hand <span className="text-blue-600">Venture</span>
             </p>
             <div className="flex gap-6 pb-5">
               <Link
