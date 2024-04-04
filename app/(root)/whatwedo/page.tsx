@@ -3,8 +3,9 @@ import Description from "@/components/Description/Description";
 import { useEffect } from "react";
 import { AuroraBackgroundComponent } from "@/components/auroraBackground/AuroraBackground";
 import { StickyScrollRevealComponent } from "@/components/stickScrollReveal/StickyScrollReveal";
+import ServicesComponent from "@/components/servicesComponent/ServicesComponent";
 
-const About = () => {
+const WhatWeDo = () => {
   useEffect(() => {
     document.title = "What we Do | Right Hand Venture";
     const descriptionMeta = document.querySelector('meta[name="description"]');
@@ -32,8 +33,16 @@ const About = () => {
       <AuroraBackgroundComponent />
       <Description phrase={phrase} />
       <StickyScrollRevealComponent />
+      <div className="py-6 flex flex-col ">
+        <h2 className="py-20 ml-10 ">
+          <span className="md:text-9xl text-6xl text-white font-bold">
+            Services
+          </span>
+        </h2>
+        <ServicesComponent />
+      </div>
     </div>
   );
 };
 
-export default About;
+export default WhatWeDo;

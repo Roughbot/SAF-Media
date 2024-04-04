@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: "Marketing,Trending,SEO,Web Development, Social Media Marketing",
 };
 
-const whatwedo = () => {
+const AboutUs = () => {
   return (
     <div className="min-h-screen">
       <ImagesSliderComponent />
@@ -31,4 +31,4 @@ const whatwedo = () => {
   );
 };
 
-export default whatwedo;
+export default AboutUs;
