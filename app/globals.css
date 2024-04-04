@@ -162,28 +162,6 @@ body {
   @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
 }
 
-.green-glow {
-  -webkit-box-shadow: 0px 0px 49px 22px rgba(45, 255, 196, 0.9);
-  -moz-box-shadow: 0px 0px 49px 22px rgba(45, 255, 196, 0.9);
-  box-shadow: 0px 0px 49px 22px rgba(45, 255, 196, 0.9);
-}
-
-.pink-glow {
-  -webkit-box-shadow: 0px 0px 80px 16px rgba(222, 93, 203, 0.72);
-  -moz-box-shadow: 0px 0px 80px 16px rgba(222, 93, 203, 0.72);
-  box-shadow: 0px 0px 80px 16px rgba(222, 93, 203, 0.72);
-}
-
-.blue-glow {
-  -webkit-box-shadow: 0px 0px 80px 16px rgba(27, 14, 145, 0.72);
-  -moz-box-shadow: 0px 0px 80px 16px rgba(27, 14, 145, 0.72);
-  box-shadow: 0px 0px 80px 16px rgba(27, 14, 145, 0.72);
-}
-.black-glow {
-  -webkit-box-shadow: 0px 0px 80px 16px rgba(173, 172, 191, 0.72);
-  -moz-box-shadow: 0px 0px 80px 16px rgba(173, 172, 191, 0.72);
-  box-shadow: 0px 0px 80px 16px rgba(173, 172, 191, 0.72);
-}
 .head_text {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] sm:text-6xl;
 }
