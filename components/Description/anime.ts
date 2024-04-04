@@ -18,8 +18,8 @@ export const slideUp = {
   open: (i: any) => ({
     y: 0,
     transition: {
-      duration: 0.5,
-      delay: i * 0.02,
+      duration: 0.9,
+      delay: i * 0.1,
     },
   }),
   closed: {
