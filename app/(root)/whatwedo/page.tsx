@@ -1,12 +1,10 @@
 "use client";
 import Description from "@/components/Description/Description";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { AuroraBackgroundComponent } from "@/components/auroraBackground/AuroraBackground";
 import { StickyScrollRevealComponent } from "@/components/stickScrollReveal/StickyScrollReveal";
 
 const About = () => {
-  const container = useRef(null);
-
   useEffect(() => {
     document.title = "What we Do | Right Hand Venture";
     const descriptionMeta = document.querySelector('meta[name="description"]');
@@ -33,9 +31,7 @@ const About = () => {
     <div>
       <AuroraBackgroundComponent />
       <Description phrase={phrase} />
-      <div>
-        <StickyScrollRevealComponent />
-      </div>
+      <StickyScrollRevealComponent />
     </div>
   );
 };

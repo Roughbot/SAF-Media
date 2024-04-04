@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const Contact = () => {
   return (
     <section>
-      <div className="bg-slate-600">
+      <div className="bg-black">
         <div className="pt-24 pb-10 px-7 sm:p-20 sm:py-24 sm:min-h-screen flex flex-col">
           <div className="shadow-md p-8 sm:p-8 bg-slate-300 rounded-3xl">
             <div className="pt-4 ">

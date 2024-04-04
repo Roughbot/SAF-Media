@@ -1,5 +1,6 @@
 import { ImagesSliderComponent } from "@/components/ImageSlider/Image-Slider";
 import { TextGenerateEffectComponent } from "@/components/text-generate/TextGenerate";
+import TextAnimation2 from "@/components/textAnimation2/TextAnimation2";
 import { AnimatedTooltipPreview } from "@/components/tooltip/animated-tooltip-component";
 import { Metadata } from "next";
 
@@ -15,10 +16,17 @@ const whatwedo = () => {
     <div className="min-h-screen">
       <ImagesSliderComponent />
       <div style={{ fontFamily: "Rubik" }} className="p-20">
-        <p className="text-center text-white text-9xl py-20">About Us</p>
+        <p className="text-center text-white text-5xl sm:text-9xl py-20">
+          About Us
+        </p>
         <TextGenerateEffectComponent />
       </div>
-      <AnimatedTooltipPreview />
+      <div className="h-screen">
+        <TextAnimation2 />
+      </div>
+      <div className="pt-40">
+        <AnimatedTooltipPreview />
+      </div>
     </div>
   );
 };

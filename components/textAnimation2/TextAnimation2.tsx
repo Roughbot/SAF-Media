@@ -1,23 +1,21 @@
-import React from "react";
+import "./styles.scss";
 
 const TextAnimation2 = () => {
   return (
     <div>
       <section>
         <span className="sliding">
-          <span>RUNNING</span>
-          <span>RAINING</span>
+          <span>RIGHT_</span>
+          <span>HAND_</span>
+          <span>VENTURE</span>
           <span> - </span>
-          <span>RUNNING</span>
-          <span>RAINING</span>
         </span>
         <div className="wrapper">
           <span className="sliding">
-            <span>RUNNING</span>
-            <span>RAINING</span>
+            <span>RIGHT_</span>
+            <span>HAND_</span>
+            <span>VENTURE</span>
             <span> - </span>
-            <span>RUNNING</span>
-            <span>RAINING</span>
           </span>
         </div>
       </section>
