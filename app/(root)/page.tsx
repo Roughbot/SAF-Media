@@ -3,6 +3,7 @@ import { TypewriterEffectSmoothComponent } from "@/components/TypewritterEffect/
 import { HeroParallaxDemo } from "@/components/header/hero-main";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import NumberCounter from "@/components/numberCounter/NumberCounter";
 
 export default function Home() {
   useEffect(() => {
@@ -19,6 +20,9 @@ export default function Home() {
     <>
       <HeroParallaxDemo />
       <TypewriterEffectSmoothComponent />
+      <div>
+        <NumberCounter />
+      </div>
     </>
   );
 }
