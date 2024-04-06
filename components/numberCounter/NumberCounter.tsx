@@ -28,12 +28,13 @@ const NumberCounter = () => {
     },
   ];
 
+  const ScrollComponent = ScrollTrigger as any;
   return (
     <div className="bg-white  text-center py-20 my-20">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 sm:gap-4">
         {data.map((item, index) => (
           <div key={index}>
-            <ScrollTrigger
+            <ScrollComponent
               onEnter={() => setTriggered(true)}
               onExit={() => setTriggered(false)}
             >
@@ -42,7 +43,7 @@ const NumberCounter = () => {
                 {item.symbol}
               </div>
               <div className="text-lg text-gray-600">{item.text}</div>
-            </ScrollTrigger>
+            </ScrollComponent>
           </div>
         ))}
       </div>

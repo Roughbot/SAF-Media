@@ -8,9 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "resolutions": {
-    "@types/react": "^17.0.38"
-  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.536.0",
     "@aws-sdk/s3-request-presigner": "^3.537.0",
