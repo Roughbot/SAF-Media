@@ -6,8 +6,19 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
-const VerticalTimeLine = ({ data, index }: { data: any; index: number }) => {
+const VerticalTimeLine = ({
+  data,
+  index,
+  image,
+  theme,
+}: {
+  data: any;
+  index: number;
+  image: any;
+  theme: string;
+}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -21,31 +32,41 @@ const VerticalTimeLine = ({ data, index }: { data: any; index: number }) => {
         visible={inView}
         position={index % 2 === 0 ? "right" : "left"}
         contentStyle={{
-          background: "#f9f9f9",
-          color: "#000",
-          borderBottomColor: "#837F7F",
-          borderStyle: "solid",
+          background: "#F9F9F9",
           borderBottom: "8px",
+          borderStyle: "solid",
+          borderBottomColor: theme,
         }}
         contentArrowStyle={{ borderRight: "7px solid  #837F7F" }}
-        iconStyle={{ background: "#f9f9f9", color: "#837F7F" }}
-        icon={<i className="fas fa-code"></i>}
+        iconStyle={{
+          background: theme,
+          color: theme,
+        }}
+        icon={
+          <div className="flex justify-center items-center w-full h-full">
+            <Image
+              src={image}
+              alt={information.heading}
+              className="w-[60%] h-[60%] object-contain"
+            />
+          </div>
+        }
       >
-        <div>
-          <h3 className="text-black text-xl font-poppins font-semibold">
-            {information.heading}
-          </h3>
+        <div className="bg-slate-300 shadow-lg rounded-xl pl-2 p-1">
+          <h3 className="text-black text-2xl">{information.heading}</h3>
         </div>
-        <ul className="my-5 list-disc ml-5 space-y-2">
-          {information.info.map((item: string, index: number) => (
-            <li
-              className="text-black-500/50 font-normal pl-1 text-sm "
-              key={index}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+        <div className="bg-slate-200 shadow-lg rounded-lg p-1 mt-4">
+          <ul className="my-5 list-disc ml-5 space-y-2">
+            {information.info.map((item: string, index: number) => (
+              <li
+                className="text-black-500/50 font-normal pl-1 text-base "
+                key={index}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </VerticalTimelineElement>
     </div>
   );

@@ -44,7 +44,17 @@ const page = ({ params }: any) => {
           {serviceData[0][
             service as keyof (typeof serviceData)[0]
           ].information.map((info: any, index: number) => (
-            <VerticalTimeLine data={info} index={index} key={index} />
+            <VerticalTimeLine
+              data={info}
+              image={
+                serviceData[0][service as keyof (typeof serviceData)[0]].image
+              }
+              theme={
+                serviceData[0][service as keyof (typeof serviceData)[0]].theme
+              }
+              index={index}
+              key={index}
+            />
           ))}
         </VerticalTimeline>
       </div>

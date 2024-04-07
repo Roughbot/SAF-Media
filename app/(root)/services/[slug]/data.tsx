@@ -1,9 +1,13 @@
+import { servicesIcon } from "@/public/assets/servicesIcon/index";
+
 export const serviceData = [
   {
     webdevelopment: {
       title: "Web Development",
       description:
         "We will build you website that is optimized for search engines, user-friendly, and visually appealing",
+      image: servicesIcon.webDevelopment,
+      theme: "#C991F3",
       information: [
         {
           heading: "Planning and Strategy",
@@ -55,6 +59,8 @@ export const serviceData = [
       title: "SEO",
       description:
         "We will optimize your website to rank higher on search engines",
+      image: servicesIcon.seo,
+      theme: "#F8E28A",
       information: [
         {
           heading: "E-Commerce SEO",
@@ -119,6 +125,8 @@ export const serviceData = [
       title: "Social Media Marketing",
       description:
         "We will help you create and manage your social media presence",
+      image: servicesIcon.socialMedia,
+      theme: "#F3A0D5",
       information: [
         {
           heading: "Content Strategy",
@@ -163,6 +171,8 @@ export const serviceData = [
       title: "Email Marketing",
       description:
         "We will help you create and manage your email marketing campaigns",
+      image: servicesIcon.emailMarketing,
+      theme: "#F87577",
       information: [
         {
           heading: "Subscriber List",
@@ -197,7 +207,7 @@ export const serviceData = [
         {
           heading: "Personalization",
           info: [
-            ": Personalizing emails based on subscriber preferences, past interactions, or demographics can significantly improve engagement and conversion rates. This may include using the subscriber's name, recommending products based on past purchases, or segmenting your email list for targeted messaging.",
+            "Personalizing emails based on subscriber preferences, past interactions, or demographics can significantly improve engagement and conversion rates. This may include using the subscriber's name, recommending products based on past purchases, or segmenting your email list for targeted messaging.",
           ],
         },
         {
@@ -224,6 +234,8 @@ export const serviceData = [
       title: "Content Writing and Blog Post",
       description:
         "We will help you create high-quality content that engages your audience",
+      image: servicesIcon.blog,
+      theme: "#AEE6E6",
       information: [
         {
           heading: "Headline",
@@ -290,11 +302,13 @@ export const serviceData = [
     googleads: {
       title: "Google Ads",
       description: "We will help you create and manage Google Ads campaigns",
+      image: servicesIcon.googleAds,
+      theme: "#8DD783",
       information: [
         {
           heading: "Ad Campaign Objective",
           info: [
-            ": Google Ads offers a wide range of campaign objectives including search campaigns, display campaigns, video campaigns, app campaigns, shopping campaigns, and smart campaigns.",
+            "Google Ads offers a wide range of campaign objectives including search campaigns, display campaigns, video campaigns, app campaigns, shopping campaigns, and smart campaigns.",
           ],
         },
         {
@@ -338,6 +352,8 @@ export const serviceData = [
     metaads: {
       title: "Meta Ads",
       description: "We will help you create and manage Meta Ads campaigns",
+      image: servicesIcon.metaAds,
+      theme: "#3282F1",
       information: [
         {
           heading: "Ad Campaign Objective",
