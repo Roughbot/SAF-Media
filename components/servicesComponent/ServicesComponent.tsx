@@ -53,7 +53,9 @@ const ServicesComponent = () => {
               </Link>
             </div>
             <div className="">
-              <span className="text-white text-2xl">{service.title}</span>
+              <h4 className="text-white text-2xl text-center">
+                {service.title}
+              </h4>
             </div>
           </motion.div>
         ))}

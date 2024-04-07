@@ -7,7 +7,7 @@ const content = [
   {
     title: "Passionate about Your Success",
     description:
-      "At SAF we don't just offer marketing solutions; we pour our hearts into empowering your business to thrive the digital landscape. Our passion drives us to go above and beyond to help you achieve your goals.",
+      "At Right Hand Venture we don't just offer marketing solutions; we pour our hearts into empowering your business to thrive the digital landscape. Our passion drives us to go above and beyond to help you achieve your goals.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-black bg-white">
         Passionate about Your Success
@@ -37,7 +37,7 @@ const content = [
   {
     title: "Integrity at the Core of Everything We Do",
     description:
-      "Honesty, transparency, and integrity are not just words for us; they are the pillars of our    operations. You can trust SAF to always act with integrity in all our interactions and relationships, ensuring a partnership built on trust and reliability.",
+      "Honesty, transparency, and integrity are not just words for us; they are the pillars of our    operations. You can trust Right Hand Venture to always act with integrity in all our interactions and relationships, ensuring a partnership built on trust and reliability.",
     content: (
       <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
         Integrity
@@ -45,6 +45,7 @@ const content = [
     ),
   },
 ];
+
 export function StickyScrollRevealComponent() {
   return <StickyScroll content={content} />;
 }

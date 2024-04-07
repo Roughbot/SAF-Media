@@ -17,9 +17,9 @@ export const data = [
     link: "/services/socialmedia",
   },
   {
-    title: "Content Creation",
+    title: "Content Writing and Blog Post",
     image: "/assets/marketing.svg",
-    link: "/services/contentcreation",
+    link: "/services/contentwriting",
   },
   {
     title: "Email Marketing",
@@ -27,18 +27,13 @@ export const data = [
     link: "/services/emailmarketing",
   },
   {
-    title: "PPC",
+    title: "Google Ads",
     image: "/assets/marketing.svg",
-    link: "/services/ppc",
+    link: "/services/googleads",
   },
   {
-    title: "Graphic Design",
+    title: "Meta Ads",
     image: "/assets/marketing.svg",
-    link: "/services/graphicdesign",
-  },
-  {
-    title: "Video Production",
-    image: "/assets/marketing.svg",
-    link: "/services/videoproduction",
+    link: "/services/metaads",
   },
 ];
