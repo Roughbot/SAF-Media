@@ -23,7 +23,7 @@ export function TypewriterEffectSmoothComponent() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[40rem]  ">
+    <div className="flex flex-col items-center justify-center mt-20">
       <p className="text-white font-semibold text-xs sm:text-base  ">
         The road to success starts from here
       </p>
