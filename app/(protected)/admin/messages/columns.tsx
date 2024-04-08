@@ -16,6 +16,8 @@ export type Message = {
   company: string;
   email: string;
   message: string;
+  phonenumber: number;
+  service: string[];
 };
 
 export const columns: ColumnDef<Message>[] = [
@@ -34,6 +36,10 @@ export const columns: ColumnDef<Message>[] = [
     },
   },
   {
+    accessorKey: "phonenumber",
+    header: "Phone Number",
+  },
+  {
     accessorKey: "company",
     header: "Company",
   },
@@ -42,9 +48,14 @@ export const columns: ColumnDef<Message>[] = [
     header: "Email-Id",
   },
   {
+    accessorKey: "service",
+    header: "Service",
+  },
+  {
     accessorKey: "message",
     header: "Message",
   },
+
   {
     id: "actions",
     cell: ({ row }) => {

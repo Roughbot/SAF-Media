@@ -5,6 +5,15 @@ import { useRef } from "react";
 
 const Form = () => {
   const ref = useRef<HTMLFormElement>(null);
+  const services = [
+    "Web Development",
+    "SEO",
+    "Email Marketing",
+    "Google Ads",
+    "Meta Ads",
+    "Content Writing",
+    "Social Media Marketing",
+  ];
 
   return (
     <form
@@ -17,6 +26,7 @@ const Form = () => {
           success: "Message sent successfully!",
           error: "Failed to send message",
         });
+
         ref.current?.reset();
       }}
       className="flex flex-col gap-12"
@@ -95,6 +105,23 @@ const Form = () => {
               Message
             </span>
           </label>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center py-5">
+          {services.map((service, index) => (
+            <div className="flex items-center gap-2 justify-center" key={index}>
+              <div>
+                <input
+                  type="checkbox"
+                  value={service}
+                  name="service"
+                  className=" mt-1 h-5 w-5 text-blue-600"
+                />
+              </div>
+              <div>
+                <label className="text-black text-lg">{service}</label>
+              </div>
+            </div>
+          ))}
         </div>
         <div className="flex items-center pt-4 justify-center">
           <button

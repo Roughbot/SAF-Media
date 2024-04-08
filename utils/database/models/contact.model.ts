@@ -19,12 +19,16 @@ const contactSchema = new mongoose.Schema(
     },
     phonenumber: {
       type: Number,
-      required: false,
+      required: true,
     },
     message: {
       type: String,
       required: true,
       min: 6,
+    },
+    service: {
+      type: [String],
+      required: true,
     },
   },
   { timestamps: true }

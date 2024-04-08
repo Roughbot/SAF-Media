@@ -8,13 +8,13 @@ import { handleError } from "../cn";
 export async function createContact(formData: FormData) {
   try {
     await connectToDatabase();
-
     const data = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       company: formData.get("company") as string,
-      phone: Number(formData.get("phone")),
+      phonenumber: Number(formData.get("phone")),
       message: formData.get("message") as string,
+      service: formData.getAll("service") as string[],
     };
 
     const newContact = await Contact.create(data);
@@ -43,6 +43,8 @@ export async function getContactData() {
         email: 1,
         company: 1,
         message: 1,
+        phonenumber: 1,
+        service: 1,
       }
     ).sort({ createdAt: -1 });
 
