@@ -106,15 +106,18 @@ const Form = () => {
             </span>
           </label>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center py-5">
+        <h3 className="font-semibold text-xl pt-5">
+          Services <span className="text-red-600">*</span>
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center pt-5 pb-12">
           {services.map((service, index) => (
-            <div className="flex items-center gap-2 justify-center" key={index}>
+            <div className="flex items-center gap-2" key={index}>
               <div>
                 <input
                   type="checkbox"
                   value={service}
                   name="service"
-                  className=" mt-1 h-5 w-5 text-blue-600"
+                  className="form-checkbox mt-1 h-5 w-5 bg-blue-600 checked:bg-blue-600 checked:border-transparent"
                 />
               </div>
               <div>
