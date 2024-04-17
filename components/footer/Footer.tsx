@@ -9,12 +9,12 @@ const Footer = () => {
   return (
     <div className="bg-gray-900 relative">
       <BackgroundWave />
-      <div className="z-1 relative h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
+      <div className="z-1 relative h-1/2 w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 flex-col justify-around items-start px-20 py-20">
         <div className="p-5">
           <ul>
             <p className="text-white font-bold text-2xl pb-4">Contacts</p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              SampleMail@gmail.com
+              Admin@righthandventure.com
             </li>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
               <a href="tel:+919971790511">+91 99717 90511</a>
@@ -27,8 +27,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="p-5">
-          <ul>
+        <div className="p-5 ">
+          <ul className="lg:pl-10">
             <p className="text-white font-bold text-2xl pb-4">Site Map</p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
               <Link href="/">Home</Link>
@@ -88,6 +88,17 @@ const Footer = () => {
                 <FaLinkedin className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
               </Link>
             </div>
+            <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
+              <Link
+                href="https://www.google.com/maps/search/?api=1&query=LG+332+Gaur+City+Center,+Noida+Extension,+Uttar+Pradesh,+201306"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LG 332 Gaur City Center,
+                <br />
+                Noida Extension, Uttar Pradesh, 201306
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

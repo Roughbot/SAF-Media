@@ -47,13 +47,42 @@ const page = () => {
             CONDUCTING TRANSACTIONS WITH THE COMPANY IN CONNECTION WITH THE
             WEBSITE AND PLATFORM YOU HEREBY:{" "}
           </h2>
-          <ul className="text-2xl pt-10">
+          <ol className="list-decimal list-inside space-y-3 text-xl pt-10">
             <li>
-              ACCEPT THIS AGREEMENT AND AGREE THAT YOU ARE LEGALLY BOUND BY ITS
-              TERMS;
+              Accept this agreement and agree that you are legally bound by its
+              terms;
             </li>
-            <li></li>
-          </ul>
+            <li>
+              Agree that you will only access the website and platform if you
+              are 18 years old,
+            </li>
+            <li>
+              Agree that you will comply with and be bound by this agreement as
+              it appears on the website and platform each time you access and
+              use the website or platform,
+            </li>
+            <li>
+              Agree that each use of the website and platform by you indicates
+              and confirms your assent to and agreement to be bound by this
+              agreement;
+            </li>
+            <li>
+              Represent, warrant and covenant that:
+              <ol className="list-disc list-inside px-6">
+                <li>You are of legal age to enter into a binding agreement;</li>
+                <li>
+                  If you are a corporation, governmental organization or other
+                  legal entity, you have the right, power, and authorization to
+                  enter into this agreement on behalf of your corporation,
+                  governmental organization or other legal entity. if you do not
+                  agree to the terms of this agreement, the company does not and
+                  will not license the platform to you or provide you with
+                  access to the website and you must not use the platform or
+                  website.
+                </li>
+              </ol>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
