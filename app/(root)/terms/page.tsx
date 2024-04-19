@@ -16,7 +16,7 @@ const page = () => {
           Terms and Conditions
         </h1>
       </div>
-      <div className="min-h-screen text-white px-8 sm:px-16 md:px-40">
+      <div className="min-h-screen text-white px-8 pb-10 sm:px-16 md:px-40">
         <div className="bg-slate-800 rounded-md mt-10 p-4">
           <p className="sm:text-lg md:text-xl text-base sm:text-justify">
             This website (
@@ -84,6 +84,136 @@ const page = () => {
             </li>
           </ol>
         </div>
+      </div>
+      <div className="py-10 terms_bg border-b-2 border-white">
+        <h1 className=" text-3xl pb-2 text-white text-center">License Grant</h1>
+      </div>
+      <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
+        <ol className="list-disc list-inside space-y-3 text-xl pt-10">
+          <li>
+            Subject to the terms of this Agreement, the Company hereby grants
+            You a limited, non-exclusive and non-transferable license to
+            register with, access and use the Platform strictly under the terms
+            herein including any Additional Terms{" "}
+            <span className="font-semibold text-gray-600">(defined below)</span>
+            . You agree and acknowledge that You have the sole responsibility
+            and liability for Your use of the Website and Platform and for
+            providing or obtaining, and for maintaining, all of the hardware,
+            software, electrical power, telecommunications, Internet services,
+            and other products or services necessary or desirable for You to
+            access and use the Platform or the Website.
+          </li>
+        </ol>
+      </div>
+      <div className="py-10 terms_bg border-b-2 border-white">
+        <h1 className=" text-3xl pb-2 text-white text-center">Restrictions</h1>
+      </div>
+      <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
+        <ol className="list-disc list-inside space-y-3 text-xl pt-10">
+          <li>
+            Modify, translate, adapt or otherwise create derivative works or
+            improvements, whether or not patentable, of the Platform or Website.
+          </li>
+          <li>
+            Reverse engineer, disassemble, decompile, decode or otherwise
+            attempt to derive or gain access to the source code of the Platform
+            or Website or any part thereof.
+          </li>
+          <li>
+            Remove, delete, alter or obscure any trademarks or any copyright,
+            trademark, patent or other intellectual property or proprietary
+            rights notices from the Platform or Website, including any copy
+            thereof.
+          </li>
+          <li>
+            Rent, lease, lend, sell, sublicense, assign, distribute, publish,
+            transfer or otherwise make available the Platform or Website or any
+            features or functionality of the Platform or Website, to any third
+            party for any reason.
+          </li>
+          <li>
+            Remove, disable, circumvent or otherwise create or implement any
+            workaround to any copy protection, rights management or security
+            features in or protecting the Platform or Website; or
+          </li>
+          <li>
+            Use the Website or Platform or any part thereof for any purpose
+            that:
+            <ol className="list-decimal list-inside space-y-3 text-xl px-10">
+              <li>
+                Interferes with or induces a breach of the contractual
+                relationships between Company and its employees;
+              </li>
+              <li>
+                Is any way unlawful or prohibited, or that is harmful or
+                destructive to anyone or their property;
+              </li>
+              <li>
+                Transmits any advertisements, solicitations, schemes, spam,
+                flooding, or other unsolicited Email, unsolicited commercial
+                communications;
+              </li>
+              <li>
+                Transmits any harmful or disabling computer codes or viruses;
+              </li>
+              <li>Harvests Email addresses from the Platform or Website;</li>
+              <li>
+                Transmits unsolicited Email to this site or to anyone whose
+                Email address included the domain name under on the Website;
+              </li>
+              <li>Interferes with the Company’s network services;</li>
+              <li>
+                Attempts to gain unauthorized access to the Company’s network
+                services;
+              </li>
+              <li>
+                Suggests an express or implied affiliation with the Company or
+                broker relationship with the Company (without the express
+                written permission of the Company);
+              </li>
+              <li>
+                Impairs or limits the Company’s ability to operate the Platform
+                or Website or any other person’s ability to access and use
+                Platform or Website;
+              </li>
+              <li>
+                Unlawfully impersonates or otherwise misrepresents Your
+                affiliation with any person or entity;
+              </li>
+              <li>
+                Harms minors in any way, including, but not limited to,
+                transmitting or uploading content that violates child
+                pornography laws, child sexual exploitation laws and laws
+                prohibiting the depiction of minors engaged in sexual conduct;
+              </li>
+              <li>
+                Transmits or uploads pornographic, violent, obscene, sexually
+                explicit, discriminatory, hateful, threatening, abusive,
+                defamatory, offensive, harassing, or otherwise objectionable
+                content or images;
+              </li>
+              <li>
+                Harms, Threatens, Harasses, Abuses or Intimidates another person
+                in any way or involves images or content that depicts, promotes,
+                encourages, indicates, advocates or tends to incite the
+                commission of a crime or other unlawful activities;
+              </li>
+              <li>
+                Dilutes or depreciates the name and reputation of the Company or
+                any of its affiliates;
+              </li>
+              <li>
+                Transmits or uploads any content or images that infringes any
+                third party’s intellectual property rights or infringes any
+                third party’s right of privacy; or
+              </li>
+              <li>
+                Unlawfully transmits or uploads any confidential, proprietary or
+                trade secret information.
+              </li>
+            </ol>
+          </li>
+        </ol>
       </div>
     </div>
   );
