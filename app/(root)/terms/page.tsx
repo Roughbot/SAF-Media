@@ -39,7 +39,7 @@ const page = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl text-justify  pt-10">
+          <h2 className=" text-lg md:text-2xl text-justify  pt-10">
             THE COMPANY PROVIDES THE PLATFORM AND ACCESS TO THE WEBSITE SOLELY
             ON THE TERMS AND CONDITIONS OUTLINED IN THIS AGREEMENT INCLUDING OUR
             PRIVACY POLICY FOUND HERE AND ON THE CONDITION THAT YOU ACCEPT AND
@@ -47,7 +47,7 @@ const page = () => {
             CONDUCTING TRANSACTIONS WITH THE COMPANY IN CONNECTION WITH THE
             WEBSITE AND PLATFORM YOU HEREBY:{" "}
           </h2>
-          <ol className="list-decimal text-justify list-inside space-y-3 text-xl pt-10">
+          <ol className="list-decimal text-lg  text-justify list-inside space-y-3 md:text-xl pt-10">
             <li>
               Accept this agreement and agree that you are legally bound by its
               terms;
@@ -89,7 +89,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">License Grant</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className="list-disc text-justify list-inside space-y-3 text-xl pt-10">
+        <ol className="list-disc text-justify list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             Subject to the terms of this Agreement, the Company hereby grants
             You a limited, non-exclusive and non-transferable license to
@@ -109,7 +109,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Restrictions</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className="list-decimal text-justify list-inside space-y-3 text-xl pt-10">
+        <ol className="list-decimal text-justify list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             Modify, translate, adapt or otherwise create derivative works or
             improvements, whether or not patentable, of the Platform or Website.
@@ -139,7 +139,7 @@ const page = () => {
           <li>
             Use the Website or Platform or any part thereof for any purpose
             that:
-            <ol className="list-disc list-inside space-y-3 text-xl pt-3 px-10">
+            <ol className="list-disc list-inside space-y-3 text-lg md:text-xl pt-3 px-3 md:px-10">
               <li>
                 Interferes with or induces a breach of the contractual
                 relationships between Company and its employees;
@@ -222,7 +222,7 @@ const page = () => {
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
         <p className="pt-5 text-xl">You acknowledge and agree that:</p>
-        <ol className="list-disc text-justify list-inside space-y-3 text-xl pt-10">
+        <ol className="list-disc text-justify list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             the Platform is provided under license, and not sold, to You; and
           </li>
@@ -246,7 +246,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             You hereby acknowledge and agree that the Company shall own all
             right, title and interest in and to any suggestions, enhancement
@@ -265,7 +265,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             Certain areas or features of the Platform and Website may be
             restricted to users who have obtained a user identification and
@@ -294,7 +294,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             You agree and acknowledge that the Company may revise or change the
             terms of this Agreement at any time, without notice to You, and You
@@ -315,7 +315,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Term</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside space-y-3 text-xl pt-10">
+        <ol className=" list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             The term of Agreement commences when You use the Platform and will
             continue in effect until terminated by You or Company as set forth
@@ -329,7 +329,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside space-y-3 text-xl pt-10">
+        <ol className=" list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             You may terminate this Agreement by discontinuing use of the
             Platform.
@@ -342,7 +342,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside space-y-3 text-xl pt-10">
+        <ol className=" list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             Company may terminate this Agreement or deny Your access to the
             Platform or Website at any time without notice to You which Company
@@ -356,7 +356,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className="list-inside space-y-3 text-xl pt-10">
+        <ol className="list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             This Agreement will terminate immediately and automatically without
             any notice if You violate any of the terms and conditions of this
@@ -371,7 +371,7 @@ const page = () => {
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
         <p className="pt-5 text-xl">Upon termination:</p>
-        <ol className="list-disc list-inside space-y-3 text-xl pt-10">
+        <ol className="list-disc list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
             All rights granted to You under this Agreement will also terminate;
             and
@@ -388,29 +388,29 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
-            THE PLATFORM AND WEBSITE IS PROVIDED TO YOU “AS IS” AND WITH ALL
-            FAULTS AND DEFECTS WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM
-            EXTENT PERMITTED UNDER APPLICABLE LAW, COMPANY, ON ITS OWN BEHALF
-            AND ON BEHALF OF ITS AFFILIATES AND ITS AND THEIR RESPECTIVE
-            LICENSORS AND SERVICE PROVIDERS, EXPRESSLY DISCLAIMS ALL WARRANTIES,
-            WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, WITH RESPECT TO
-            THE PLATFORM AND WEBSITE, INCLUDING ALL IMPLIED WARRANTIES OF
-            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
-            NON-INFRINGEMENT, AND WARRANTIES THAT MAY ARISE OUT OF COURSE OF
-            DEALING, COURSE OF PERFORMANCE, USAGE OR TRADE PRACTICE. WITHOUT
-            LIMITATION TO THE FOREGOING, COMPANY PROVIDES NO WARRANTY OR
-            UNDERTAKING, AND MAKES NO REPRESENTATION OF ANY KIND THAT THE
-            PLATFORM OR WEBSITE WILL MEET YOUR REQUIREMENTS, ACHIEVE ANY
-            INTENDED RESULTS, BE COMPATIBLE OR WORK WITH ANY OTHER SOFTWARE,
-            PLATFORMS, SYSTEMS OR SERVICES, OPERATE WITHOUT INTERRUPTION, MEET
-            ANY PERFORMANCE OR RELIABILITY STANDARDS OR BE ERROR FREE OR THAT
-            ANY ERRORS OR DEFECTS CAN OR WILL BE CORRECTED. SOME JURISDICTIONS
-            DO NOT ALLOW THE EXCLUSION OF OR LIMITATIONS ON IMPLIED WARRANTIES
-            OR THE LIMITATIONS ON THE APPLICABLE STATUTORY RIGHTS OF A CONSUMER,
-            SO SOME OR ALL OF THE ABOVE EXCLUSIONS AND LIMITATIONS MAY NOT APPLY
-            TO YOU.
+            The platform and website is provided to you “as is” and with all
+            faults and defects without warranty of any kind. to the maximum
+            extent permitted under applicable law, company, on its own behalf
+            and on behalf of its affiliates and its and their respective
+            licensors and service providers, expressly disclaims all warranties,
+            whether express, implied, statutory or otherwise, with respect to
+            the platform and website, including all implied warranties of
+            merchantability, fitness for a particular purpose, title and
+            non-infringement, and warranties that may arise out of course of
+            dealing, course of performance, usage or trade practice. without
+            limitation to the foregoing, company provides no warranty or
+            undertaking, and makes no representation of any kind that the
+            platform or website will meet your requirements, achieve any
+            intended results, be compatible or work with any other software,
+            platforms, systems or services, operate without interruption, meet
+            any performance or reliability standards or be error free or that
+            any errors or defects can or will be corrected. some jurisdictions
+            do not allow the exclusion of or limitations on implied warranties
+            or the limitations on the applicable statutory rights of a consumer,
+            so some or all of the above exclusions and limitations may not apply
+            to you.
           </li>
         </ol>
       </div>
@@ -420,56 +420,56 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className="list-decimal text-justify list-inside space-y-3 text-xl pt-10">
+        <ol className="list-decimal text-justify list-inside space-y-3 text-lg md:text-xl pt-10">
           <li>
-            IN NO EVENT WILL COMPANY OR ITS AFFILIATES, OR ANY OF ITS OR THEIR
-            RESPECTIVE LICENSORS OR SERVICE PROVIDERS, HAVE ANY LIABILITY FOR
-            DAMAGES ARISING FROM OR RELATED TO:{" "}
-            <ol className="list-disc list-inside space-y-3 text-xl px-10 pt-10">
-              <li>YOUR USE OF OR INABILITY TO USE THE PLATFORM OR WEBSITE;</li>
-              <li>THE PLATFORM, WEBSITE OR ANY CONTENT OR SERVICE;</li>
-              <li>ANY ACTION OR INVESTIGATION BY LAW ENFORCEMENT;</li>
-              <li>ANY ERRORS OR OMISSIONS IN THE PLATFORM OR WEBSITE;</li>
+            In no event will company or its affiliates, or any of its or their
+            respective licensors or service providers, have any liability for
+            damages arising from or related to:{" "}
+            <ol className="list-disc list-inside space-y-3 text-lg md:text-xl px-3 md:px-10 pt-4">
+              <li>Your use of or inability to use the platform or website;</li>
+              <li>The platform, website or any content or service;</li>
+              <li>Any action or investigation by law enforcement;</li>
+              <li>Any errors or omissions in the platform or website;</li>
               <li>
-                ANY ACTION TAKEN IN CONNECTION WITH OWNERS OF COPYRIGHT OR OTHER
-                INTELLECTUAL PROPERTY; AND
+                Any action taken in connection with owners of copyright or other
+                intellectual property; and
               </li>
               <li>
-                PERSONAL INJURY, PROPERTY DAMAGE, LOST PROFITS, COST OF
-                SUBSTITUTE GOODS OR SERVICES, LOSS OF DATA, LOSS OF GOODWILL,
-                BUSINESS INTERRUPTION, COMPUTER FAILURE OR MALFUNCTION OR ANY
-                OTHER CONSEQUENTIAL, INCIDENTAL, INDIRECT, EXEMPLARY, SPECIAL OR
-                PUNITIVE DAMAGES. THE FOREGOING LIMITATIONS WILL APPLY WHETHER
-                SUCH DAMAGES ARISE OUT OF BREACH OF CONTRACT, TORT{" "}
+                Personal injury, property damage, lost profits, cost of
+                substitute goods or services, loss of data, loss of goodwill,
+                business interruption, computer failure or malfunction or any
+                other consequential, incidental, indirect, exemplary, special or
+                punitive damages. the foregoing limitations will apply whether
+                such damages arise out of breach of contract, tort{" "}
                 <span className="font-semibold text-gray-600">
-                  (INCLUDING NEGLIGENCE)
+                  (including negligence)
                 </span>{" "}
-                OR OTHERWISE AND REGARDLESS OF WHETHER SUCH DAMAGES WERE
-                FORESEEABLE OR COMPANY WAS ADVISED OF THE POSSIBILITY OF SUCH
-                DAMAGES TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW. SOME
-                JURISDICTIONS DO NOT ALLOW CERTAIN LIMITATIONS OF LIABILITY SO
-                SOME OR ALL OF THE ABOVE LIMITATIONS OF LIABILITY MAY NOT APPLY
-                TO YOU. BY ACCESSING THE PLATFORM AND WEBSITE, YOU UNDERSTAND
-                THAT YOU MAY BE WAIVING RIGHTS WITH RESPECT TO CLAIMS THAT ARE
-                AT THIS TIME UNKNOWN OR UNSUSPECTED, AND IN ACCORDANCE WITH SUCH
-                WAIVER, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTAND, AND
-                HEREBY EXPRESSLY WAIVE, THE BENEFITS OF SECTION 1542 OF THE
-                CIVIL CODE OF CALIFORNIA, AND ANY SIMILAR LAW OF ANY STATE OR
-                TERRITORY, WHICH PROVIDES AS FOLLOWS: “A GENERAL RELEASE DOES
-                NOT EXTEND TO CLAIMS THAT THE CREDITOR OR RELEASING PARTY DOES
-                NOT KNOW OR SUSPECT TO EXIST IN HIS OR HER FAVOR AT THE TIME OF
-                EXECUTING THE RELEASE AND THAT, IF KNOWN BY HIM OR HER MUST HAVE
-                MATERIALLY AFFECTED HIS OR HER SETTLEMENT WITH THE DEBTOR OR
-                RELEASED PARTY.” YOU AGREE THAT IN THE EVENT YOU INCUR ANY
-                DAMAGES, LOSSES OR INJURIES THAT ARISE OUT OF COMPANY’S ACTS OR
-                OMISSIONS, THE DAMAGES, IF ANY, CAUSED TO YOU ARE NEITHER
-                IRREPARABLE NOR SUFFICIENT TO ENTITLE YOU TO AN INJUNCTION
-                PREVENTING ANY EXPLOITATION OF ANY WEB SITE, SERVICE, PROPERTY,
-                PRODUCT OR OTHER CONTENT OWNED OR CONTROLLED BY THE COMPANY, AND
-                THAT YOU WILL HAVE NO RIGHTS TO ENJOIN OR RESTRAIN THE
-                DEVELOPMENT, PRODUCTION, DISTRIBUTION, ADVERTISING, EXHIBITION
-                OR EXPLOITATION OF ANY WEB SITE, PROPERTY, PRODUCT, SERVICE, OR
-                OTHER CONTENT OWNED OR CONTROLLED BY THE COMPANY.
+                or otherwise and regardless of whether such damages were
+                foreseeable or company was advised of the possibility of such
+                damages to the fullest extent permitted by applicable law. some
+                jurisdictions do not allow certain limitations of liability so
+                some or all of the above limitations of liability may not apply
+                to you. by accessing the platform and website, you understand
+                that you may be waiving rights with respect to claims that are
+                at this time unknown or unsuspected, and in accordance with such
+                waiver, you acknowledge that you have read and understand, and
+                hereby expressly waive, the benefits of section 1542 of the
+                civil code of california, and any similar law of any state or
+                territory, which provides as follows: “a general release does
+                not extend to claims that the creditor or releasing party does
+                not know or suspect to exist in his or her favor at the time of
+                executing the release and that, if known by him or her must have
+                materially affected his or her settlement with the debtor or
+                released party.” you agree that in the event you incur any
+                damages, losses or injuries that arise out of company’s acts or
+                omissions, the damages, if any, caused to you are neither
+                irreparable nor sufficient to entitle you to an injunction
+                preventing any exploitation of any web site, service, property,
+                product or other content owned or controlled by the company, and
+                that you will have no rights to enjoin or restrain the
+                development, production, distribution, advertising, exhibition
+                or exploitation of any web site, property, product, service, or
+                other content owned or controlled by the company.
               </li>
             </ol>
           </li>
@@ -481,7 +481,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className="list-decimal text-justify list-inside space-y-3 text-xl  pt-10">
+        <ol className="list-decimal text-justify list-inside space-y-3 text-lg md:text-xl  pt-10">
           <li>
             You agree to indemnify, defend and hold harmless Company and its
             officers, directors, employees, agents, affiliates, successors and
@@ -489,7 +489,7 @@ const page = () => {
             deficiencies, claims, actions, judgments, settlements, interest,
             awards, penalties, fines, costs, or expenses of whatever kind,
             including attorneys’ fees, arising from or relating to:
-            <ol className="list-disc list-inside space-y-3 px-10 text-xl pt-10">
+            <ol className="list-disc list-inside space-y-3 px-3 md:px-10 text-lg md:text-xl pt-4">
               <li>Your use or misuse of the Platform or Website;</li>
               <li>
                 Any dispute or litigation caused by Your actions or omissions;
@@ -517,7 +517,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             The information presented on or through the Website or Platform is
             made available solely for general information purposes. We do not
@@ -552,7 +552,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             The Platform may be subject to US export control laws, including the
             US Export Administration Act and its associated regulations. You
@@ -571,7 +571,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Severability</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             If any provision of this Agreement is illegal or unenforceable under
             applicable law, the remainder of the provisions will be amended to
@@ -585,7 +585,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Governing Law</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             This Agreement is governed by and construed under the internal laws
             of the State of California without giving effect to any choice or
@@ -604,7 +604,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             Any cause of action or claim you may have arising out of or relating
             to this agreement or the platform or website must be commenced
@@ -617,7 +617,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Linking</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             For Your convenience, this Platform or Website may provide links to
             other websites on the World Wide Web. Unless expressly stated
@@ -639,7 +639,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             Your use of the Website and Platform and any personal information
             provided or used by you to access the Website or Platform shall be
@@ -655,7 +655,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             The Website and Platform may contain services and functionality
             provided by third parties, such as the service known as HubSpot. The
@@ -684,7 +684,7 @@ const page = () => {
         </h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             You acknowledge that certain features of the Platform and Website,
             as well other products and services of the Company, including those
@@ -709,7 +709,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Waiver</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             No failure to exercise, and no delay in exercising, on the part of
             either party, any right or any power hereunder shall operate as a
@@ -725,7 +725,7 @@ const page = () => {
         <h1 className=" text-3xl pb-2 text-white text-center">Contact Us</h1>
       </div>
       <div className="text-white px-8 pb-10 sm:px-16 md:px-40">
-        <ol className=" list-inside text-justify space-y-3 text-xl pt-10">
+        <ol className=" list-inside text-justify space-y-3 text-lg md:text-xl pt-10">
           <li>
             If you have any questions about this Agreement, please contact us:
             <br />
