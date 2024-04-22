@@ -15,8 +15,8 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen">
       <ImagesSliderComponent />
-      <div style={{ fontFamily: "Rubik" }} className="p-20">
-        <p className="text-center text-white text-5xl sm:text-9xl py-20">
+      <div style={{ fontFamily: "Rubik" }} className="p-8 md:p-20">
+        <p className="text-center text-white text-4xl sm:text-9xl py-10 sm:py-20">
           About Us
         </p>
         <TextGenerateEffectComponent />
