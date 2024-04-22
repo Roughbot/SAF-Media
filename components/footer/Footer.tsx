@@ -53,10 +53,15 @@ const Footer = () => {
               Privacy & Terms
             </p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/privacy" target="_blank">
+                Privacy Policy
+              </Link>
             </li>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <Link href="/terms"> Terms of Use</Link>
+              <Link href="/terms" target="_black">
+                {" "}
+                Terms of Use
+              </Link>
             </li>
           </ul>
         </div>
