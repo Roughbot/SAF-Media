@@ -9,16 +9,17 @@ import "react-vertical-timeline-component/style.min.css";
 
 const page = ({ params }: any) => {
   const service = params.slug;
+
+  const data = serviceData[0][service as keyof (typeof serviceData)[0]];
+
   return (
     <div className="py-40">
       <div className="relative">
-        <h1 className="lg:text-8xl text-4xl text-white pb-3">
-          {serviceData[0][service as keyof (typeof serviceData)[0]].title}
-        </h1>
+        <h1 className="lg:text-8xl text-4xl text-white pb-3">{data.title}</h1>
         <Image
-          src={service.bgImage || services}
+          src={data.bgImage || services}
           alt="Marketing"
-          className="object-cover w-full h-[400px] lg:h-[500px]"
+          className="object-cover w-full h-full"
         />
         <div
           className="absolute pure_glass "
@@ -30,10 +31,7 @@ const page = ({ params }: any) => {
           }}
         >
           <p className="text-black text-xs md:text-xl lg:text-2xl p-5">
-            {
-              serviceData[0][service as keyof (typeof serviceData)[0]]
-                .description
-            }
+            {data.description}
           </p>
         </div>
       </div>
@@ -41,17 +39,11 @@ const page = ({ params }: any) => {
         <h1 className="text-6xl text-white pt-40">Our Services</h1>
 
         <VerticalTimeline lineColor="#837F7F">
-          {serviceData[0][
-            service as keyof (typeof serviceData)[0]
-          ].information.map((info: any, index: number) => (
+          {data.information.map((info: any, index: number) => (
             <VerticalTimeLine
               data={info}
-              image={
-                serviceData[0][service as keyof (typeof serviceData)[0]].image
-              }
-              theme={
-                serviceData[0][service as keyof (typeof serviceData)[0]].theme
-              }
+              image={data.image}
+              theme={data.theme}
               index={index}
               key={index}
             />

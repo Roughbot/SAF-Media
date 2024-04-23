@@ -1,5 +1,29 @@
 import { servicesIcon } from "@/public/assets/servicesIcon/index";
 
+type ServiceInformation = {
+  heading: string;
+  info: string[];
+};
+
+type Service = {
+  title: string;
+  bgImage: string;
+  description: string;
+  image: string;
+  theme: string;
+  information: ServiceInformation[];
+};
+
+type ServiceData = {
+  webdevelopment: Service;
+  seo: Service;
+  socialmedia: Service;
+  emailmarketing: Service;
+  contentwriting: Service;
+  googleads: Service;
+  metaads: Service;
+};
+
 export const serviceData = [
   {
     webdevelopment: {
