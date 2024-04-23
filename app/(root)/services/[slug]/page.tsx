@@ -16,7 +16,7 @@ const page = ({ params }: any) => {
           {serviceData[0][service as keyof (typeof serviceData)[0]].title}
         </h1>
         <Image
-          src={services}
+          src={service.bgImage || services}
           alt="Marketing"
           className="object-cover w-full h-[400px] lg:h-[500px]"
         />

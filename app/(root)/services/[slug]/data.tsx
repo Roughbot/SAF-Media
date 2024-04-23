@@ -4,6 +4,7 @@ export const serviceData = [
   {
     webdevelopment: {
       title: "Web Development",
+      bgImage: servicesIcon.webDevelopmentBg,
       description:
         "We will build you website that is optimized for search engines, user-friendly, and visually appealing",
       image: servicesIcon.webDevelopment,
@@ -57,6 +58,7 @@ export const serviceData = [
 
     seo: {
       title: "SEO",
+      bgImage: servicesIcon.seoBg,
       description:
         "We will optimize your website to rank higher on search engines",
       image: servicesIcon.seo,
@@ -123,6 +125,7 @@ export const serviceData = [
 
     socialmedia: {
       title: "Social Media Marketing",
+      bgImage: servicesIcon.socialMediaBg,
       description:
         "We will help you create and manage your social media presence",
       image: servicesIcon.socialMedia,
@@ -169,6 +172,7 @@ export const serviceData = [
 
     emailmarketing: {
       title: "Email Marketing",
+      bgImage: servicesIcon.emailMarketingBg,
       description:
         "We will help you create and manage your email marketing campaigns",
       image: servicesIcon.emailMarketing,
@@ -301,6 +305,7 @@ export const serviceData = [
     },
     googleads: {
       title: "Google Ads",
+      bgImage: servicesIcon.googleAdsBg,
       description: "We will help you create and manage Google Ads campaigns",
       image: servicesIcon.googleAds,
       theme: "#8DD783",
@@ -351,6 +356,7 @@ export const serviceData = [
     },
     metaads: {
       title: "Meta Ads",
+      bgImage: servicesIcon.metaAdsBg,
       description: "We will help you create and manage Meta Ads campaigns",
       image: servicesIcon.metaAds,
       theme: "#3282F1",
