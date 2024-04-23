@@ -1,7 +1,6 @@
 "use client";
 import ServicesComponent from "@/components/servicesComponent/ServicesComponent";
 import Image from "next/image";
-import services from "@/public/assets/services.jpg";
 import { serviceData } from "./data";
 import VerticalTimeLine from "@/components/verticalTimeLine/VerticalTimeLine";
 import { VerticalTimeline } from "react-vertical-timeline-component";
@@ -17,7 +16,7 @@ const page = ({ params }: any) => {
       <div className="relative">
         <h1 className="lg:text-8xl text-4xl text-white pb-3">{data.title}</h1>
         <Image
-          src={data.bgImage || services}
+          src={data.bgImage}
           alt="Marketing"
           className="object-cover w-full h-full"
         />
