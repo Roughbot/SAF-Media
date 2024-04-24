@@ -14,16 +14,13 @@ const Footer = () => {
           <ul>
             <p className="text-white font-bold text-2xl pb-4">Contacts</p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              Admin@righthandventure.com
+              <a href="mailto:Admin@righthandventure.com">
+                support@righthandventure.com
+              </a>
             </li>
+
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <a href="tel:+919971790511">+91 99717 90511</a>
-            </li>
-            <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <a href="tel:+917503630301">+91 75036 30301</a>
-            </li>
-            <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <a href="tel:+918447769796">+91 84477 69796</a>
+              <a href="tel:+918447769796">+91 88827 86072</a>
             </li>
           </ul>
         </div>
@@ -93,17 +90,6 @@ const Footer = () => {
                 <FaLinkedin className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
               </Link>
             </div>
-            <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <Link
-                href="https://www.google.com/maps/search/?api=1&query=LG+332+Gaur+City+Center,+Noida+Extension,+Uttar+Pradesh,+201306"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LG 332 Gaur City Center,
-                <br />
-                Noida Extension, Uttar Pradesh, 201306
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
