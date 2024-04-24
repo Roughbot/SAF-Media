@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Categories2 from "../categories/categories2";
 
 const MenuLists = ({ recentPost }: any) => {
   return (
@@ -43,8 +42,6 @@ const MenuLists = ({ recentPost }: any) => {
           ))}
         </div>
       </div>
-
-      <Categories2 />
     </>
   );
 };

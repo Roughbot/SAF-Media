@@ -1,5 +1,4 @@
 import Featured from "@/components/featured/Featured";
-import Categories from "@/components/categories/categories";
 import PostCards from "@/components/postCards/PostCards";
 
 import MenuLists from "@/components/menuList/MenuLists";
@@ -12,7 +11,6 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Metadata } from "next";
-import { url } from "inspector";
 
 export const metadata: Metadata = {
   title: "BLogs | Right Hand Venture",
@@ -49,7 +47,6 @@ const Blogs = async ({ searchParams }: any) => {
       <div className="pt-28">
         <Featured posts={featuredPost} />
       </div>
-      <Categories />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 pt-10 col-span-1">
           {blogPosts.length ? (
