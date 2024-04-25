@@ -8,14 +8,12 @@ const TextAnimation2 = () => {
           <span>RIGHT_</span>
           <span>HAND_</span>
           <span>VENTURE</span>
-          <span> - </span>
         </span>
         <div className="wrapper">
           <span className="sliding">
             <span>RIGHT_</span>
             <span>HAND_</span>
             <span>VENTURE</span>
-            <span> - </span>
           </span>
         </div>
       </section>

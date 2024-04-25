@@ -15,7 +15,7 @@ const Contact = () => {
       <div className="pt-24 pb-10 px-7 sm:p-20 sm:py-24 sm:min-h-screen flex flex-col">
         <div className="shadow-md p-8 sm:p-8 bg-slate-300 rounded-3xl contact ">
           <div className="pt-4  ">
-            <h1 className="font-bold text-4xl  sm:text-6xl">
+            <h1 className="font-bold text-4xl text-black sm:text-6xl">
               Let&apos;s get <span className="text-blue-600">started!</span>
             </h1>
 
