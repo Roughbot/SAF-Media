@@ -38,7 +38,7 @@ const ServicesComponent = () => {
           >
             <div className="flex items-center justify-center p-10">
               <Link href={service.link}>
-                <div className="block-container w-32 h-32">
+                <div className="block-container w-28 h-28">
                   <div className="btn-back rounded-xl btn-back-black" />
                   <div className="btn-front rounded-xl flex justify-center items-center">
                     <Image

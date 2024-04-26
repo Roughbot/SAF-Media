@@ -14,7 +14,9 @@ const page = ({ params }: any) => {
   return (
     <div className="py-40">
       <div className="relative">
-        <h1 className="lg:text-8xl text-4xl text-white pb-3">{data.title}</h1>
+        <h1 className="md:text-8xl text-5xl pl-6 text-white pb-3">
+          {data.title}
+        </h1>
         <Image
           src={data.bgImage}
           alt="Marketing"
@@ -26,7 +28,7 @@ const page = ({ params }: any) => {
             position: "absolute",
             top: "95%",
             left: "60%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-125%, -50%)",
           }}
         >
           <p className="text-black text-xs md:text-xl lg:text-2xl p-5">
@@ -35,7 +37,7 @@ const page = ({ params }: any) => {
         </div>
       </div>
       <div className="">
-        <h1 className="text-6xl text-white pt-40">Our Services</h1>
+        <h1 className="text-6xl text-white pl-6 pt-40">Our Services</h1>
 
         <VerticalTimeline lineColor="#837F7F">
           {data.information.map((info: any, index: number) => (

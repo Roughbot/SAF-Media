@@ -59,7 +59,7 @@ const VerticalTimeLine = ({
           <ul className="my-5 list-disc ml-5 space-y-2">
             {information.info.map((item: string, index: number) => (
               <li
-                className="text-black-500/50 font-normal pl-1 text-base "
+                className="text-black font-normal pl-1 text-base "
                 key={index}
               >
                 {item}
