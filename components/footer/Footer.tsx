@@ -4,18 +4,31 @@ import { FaTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import BackgroundWave from "../backgroundWave/BackgroundWave";
+import Image from "next/image";
+import logo from "../../public/logo.png";
+import NewsLetter from "../newsLetter/NewsLetter";
 
 const Footer = () => {
   return (
     <div className="bg-gray-900 relative">
       <BackgroundWave />
-      <div className="z-1 relative h-1/2 w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 flex-col justify-around items-start p-10">
+      <div className="z-1 relative h-1/2  grid grid-cols-1 md:grid-cols-4 flex-col justify-around items-start p-10">
         <div className="p-5">
-          <ul>
-            <p className="text-white font-bold text-3xl pb-6">
-              Right Hand <span className="text-blue-600">Venture</span>
-            </p>
-            <div className="flex gap-6 pb-5">
+          <ul className="space-y-3">
+            <div className="flex flex-row">
+              <p className="text-white font-bold text-3xl pb-6">
+                Right Hand <span className="text-blue-600">Venture</span>
+              </p>
+              <Image
+                className="object-contain bg-white m-auto p-1 rounded-2xl mt-1"
+                src={logo}
+                width={60}
+                height={60}
+                alt="logo"
+              />
+            </div>
+            <NewsLetter />
+            <div className="flex gap-6 pb-5 items-center justify-around">
               <Link
                 href="https://www.instagram.com/safmediagroup/"
                 target="_blank"
@@ -41,8 +54,8 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="p-5 ">
-          <ul className="lg:pl-10">
+        <div className="sm:pl-10 pl-5 py-5 ">
+          <ul>
             <p className="text-white font-bold text-2xl pb-4">Site Map</p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
               <Link href="/">Home</Link>
@@ -61,6 +74,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+
         <div className="p-5">
           <ul>
             <p className="text-white font-bold text-2xl pb-4">
@@ -84,9 +98,7 @@ const Footer = () => {
           <ul>
             <p className="text-white font-bold text-2xl pb-4">Contacts</p>
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
-              <a href="mailto:Admin@righthandventure.com">
-                support@righthandventure.com
-              </a>
+              <a href="mailto:Admin@righthandventure.com">support@RHV.com</a>
             </li>
 
             <li className="text-white text-md pb-2 font-semibold cursor-pointer hover:text-blue-600">
