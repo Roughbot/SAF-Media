@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Company = () => {
   return (
-    <div>
+    <div className="pb-10">
       <div className=" p-4 md:p-10">
         <h2 className="text-white text-2xl md:text-4xl text-center">
           Join the team of successful clients who have trusted us with their

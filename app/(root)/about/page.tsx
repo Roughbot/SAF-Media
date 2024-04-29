@@ -4,6 +4,7 @@ import Company from "@/components/company/Company";
 import { TextGenerateEffectComponent } from "@/components/text-generate/TextGenerate";
 import TextAnimation2 from "@/components/textAnimation2/TextAnimation2";
 import { AnimatedTooltipPreview } from "@/components/tooltip/animated-tooltip-component";
+import WhyRHV from "@/components/whyRHV/WhyRHV";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -31,6 +32,9 @@ const AboutUs = () => {
       </div>
       <div>
         <VissionAndMission />
+      </div>
+      <div>
+        <WhyRHV />
       </div>
       <div className="py-20">
         <AnimatedTooltipPreview />
