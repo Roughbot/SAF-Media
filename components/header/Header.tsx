@@ -12,6 +12,8 @@ import Image from "next/image";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef<HTMLElement | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -19,8 +21,19 @@ const Header = () => {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout((window as any).scrollTimeout);
+      (window as any).scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150);
+    };
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [ref]);
 
@@ -31,7 +44,9 @@ const Header = () => {
           <Link href="/">
             <div className={styles.logo}>
               <Image className={styles.img} src={logo} alt="logo" />
-              <h1 className={styles.font}>Right Hand Venture</h1>
+              {!isScrolling && (
+                <h1 className={styles.font}>Right Hand Venture</h1>
+              )}
             </div>
           </Link>
           <div
