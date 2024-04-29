@@ -4,6 +4,7 @@ import { HeroParallaxDemo } from "@/components/header/hero-main";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import NumberCounter from "@/components/numberCounter/NumberCounter";
+import Company from "@/components/company/Company";
 
 export default function Home() {
   useEffect(() => {
@@ -22,6 +23,9 @@ export default function Home() {
       <TypewriterEffectSmoothComponent />
       <div>
         <NumberCounter />
+      </div>
+      <div>
+        <Company />
       </div>
     </>
   );
