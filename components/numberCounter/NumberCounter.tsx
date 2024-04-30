@@ -30,19 +30,22 @@ const NumberCounter = () => {
 
   const ScrollComponent = ScrollTrigger as any;
   return (
-    <div className="bg-white  text-center py-20 my-20">
+    <div className="bg-black  text-center py-20 my-20">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-20 sm:gap-4">
         {data.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className="p-10 rounded-2xl hover:shadow-white shadow-transparent shadow-md"
+          >
             <ScrollComponent
               onEnter={() => setTriggered(true)}
-              onExit={() => setTriggered(false)}
+              endTrigger=".grid"
             >
-              <div className="text-4xl font-bold text-primary">
-                <CountUp end={triggered ? item.number : 0} duration={5} />
+              <div className="text-4xl font-bold text-white">
+                <CountUp end={triggered ? item.number : 0} duration={3} />
                 {item.symbol}
               </div>
-              <div className="text-lg text-gray-600">{item.text}</div>
+              <div className="text-lg text-gray-400">{item.text}</div>
             </ScrollComponent>
           </div>
         ))}

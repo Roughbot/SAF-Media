@@ -7,6 +7,8 @@ import NumberCounter from "@/components/numberCounter/NumberCounter";
 import Company from "@/components/company/Company";
 import WhyRHV from "@/components/whyRHV/WhyRHV";
 import FiveCard from "@/components/fiveCard/FiveCard";
+import ServiceBanner from "@/components/serviceBanner/ServiceBanner";
+import WorkBanner from "@/components/workBanner/WorkBanner";
 
 export default function Home() {
   useEffect(() => {
@@ -27,21 +29,29 @@ export default function Home() {
         <Company />
       </div>
       <div>
-        <WhyRHV />
+        <ServiceBanner />
       </div>
-      <div className="pt-20">
-        <h2 className="text-center text-5xl text-white">
+      <div>
+        <WorkBanner />
+      </div>
+      <div className="pt-20 bg-white">
+        <h2 className="text-center text-5xl text-black">
           Client <span className="text-blue-700">Testimonials</span>
         </h2>
         <div className="py-20">
           <FiveCard />
         </div>
       </div>
-
       <div>
         <NumberCounter />
       </div>
-      <TypewriterEffectSmoothComponent />
+      <div>
+        <WhyRHV />
+      </div>
+
+      <div className="pb-20">
+        <TypewriterEffectSmoothComponent />
+      </div>
     </>
   );
 }
