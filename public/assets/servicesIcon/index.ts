@@ -1,4 +1,5 @@
 import blog from "./blog.svg";
+import blogBg from "./blog-bg.jpg";
 import emailMarketing from "./email-marketing.svg";
 import emailMarketingBg from "./email-marketing-bg.jpg";
 import webDevelopment from "./code.svg";
@@ -19,6 +20,7 @@ export const servicesIcon = {
   seoBg,
   socialMediaBg,
   metaAdsBg,
+  blogBg,
   blog,
   emailMarketing,
   webDevelopment,

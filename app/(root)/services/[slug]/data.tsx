@@ -1,6 +1,5 @@
 import { servicesIcon } from "@/public/assets/servicesIcon/index";
 import { StaticImageData } from "next/image";
-import services from "@/public/assets/services.jpg";
 
 type ServiceInformation = {
   heading: string;
@@ -262,7 +261,7 @@ export const serviceData: ServiceData[] = [
     },
     contentwriting: {
       title: "Content Writing and Blog Post",
-      bgImage: services,
+      bgImage: servicesIcon.blogBg,
       description:
         "We will help you create high-quality content that engages your audience",
       image: servicesIcon.blog,

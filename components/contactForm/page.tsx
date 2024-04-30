@@ -106,10 +106,10 @@ const Form = () => {
             </span>
           </label>
         </div>
-        <h3 className="font-semibold text-xl pt-5">
+        <h3 className="font-semibold text-black text-xl pt-5">
           Services <span className="text-red-600">*</span>
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center pt-5 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center pt-5 pb-6">
           {services.map((service, index) => (
             <div className="flex items-center gap-2" key={index}>
               <div>
@@ -125,6 +125,19 @@ const Form = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div>
+          <label className="relative flex items-center justify-center">
+            <input
+              type="text"
+              name="other"
+              placeholder=""
+              className="h-12 w-full text-black sm:w-70 px-6 text-lg sm:text-2xl  border-2 rounded-lg border-black  border-opacity-50 outline-none focus:border-blue-600 focus:text-black transition duration-200"
+            />
+            <span className="text-black text-lg sm:text-xl text-opacity-80 absolute left-0 top-3 mx-6 px-2 transition duration-200 input-text">
+              Other
+            </span>
+          </label>
         </div>
         <div className="flex items-center pt-4 justify-center">
           <button
