@@ -1,5 +1,11 @@
+import FiveCard from "@/components/fiveCard/FiveCard";
+
 const page = () => {
-  return <div>Testing</div>;
+  return (
+    <div className="py-40 ">
+      <FiveCard />
+    </div>
+  );
 };
 
 export default page;

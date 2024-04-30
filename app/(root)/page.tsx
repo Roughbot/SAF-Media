@@ -29,6 +29,7 @@ export default function Home() {
         <WhyRHV />
       </div>
       <TypewriterEffectSmoothComponent />
+
       <div>
         <NumberCounter />
       </div>
