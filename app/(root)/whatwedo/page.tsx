@@ -33,8 +33,8 @@ const WhatWeDo = () => {
       <AuroraBackgroundComponent />
       <Description phrase={phrase} />
       <StickyScrollRevealComponent />
-      <div className="py-6 flex flex-col ">
-        <h2 className="py-20 ml-10 ">
+      <div className="py-6 pb-20 flex flex-col ">
+        <h2 className="py-14 ml-10 ">
           <span className="md:text-9xl text-6xl text-white font-bold">
             Services
           </span>
