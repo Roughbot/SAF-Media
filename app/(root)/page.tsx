@@ -6,6 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import NumberCounter from "@/components/numberCounter/NumberCounter";
 import Company from "@/components/company/Company";
 import WhyRHV from "@/components/whyRHV/WhyRHV";
+import FiveCard from "@/components/fiveCard/FiveCard";
 
 export default function Home() {
   useEffect(() => {
@@ -28,11 +29,19 @@ export default function Home() {
       <div>
         <WhyRHV />
       </div>
-      <TypewriterEffectSmoothComponent />
+      <div className="pt-20">
+        <h2 className="text-center text-5xl text-white">
+          Client <span className="text-blue-700">Testimonials</span>
+        </h2>
+        <div className="py-20">
+          <FiveCard />
+        </div>
+      </div>
 
       <div>
         <NumberCounter />
       </div>
+      <TypewriterEffectSmoothComponent />
     </>
   );
 }
