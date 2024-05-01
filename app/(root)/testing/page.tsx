@@ -1,9 +1,9 @@
-import FiveCard from "@/components/fiveCard/FiveCard";
+import WorkBanner from "@/components/workBanner/WorkBanner";
 
 const page = () => {
   return (
-    <div className="py-40  bg-white">
-      <FiveCard />
+    <div>
+      <WorkBanner />
     </div>
   );
 };

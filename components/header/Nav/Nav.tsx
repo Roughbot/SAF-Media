@@ -23,6 +23,10 @@ export default function Nav() {
       href: "/whatwedo",
     },
     {
+      title: "Work",
+      href: "/work",
+    },
+    {
       title: "Blogs",
       href: "/blogs",
     },

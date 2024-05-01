@@ -32,9 +32,25 @@ const ServiceBanner = () => {
       </div>
       <div>
         <div className="flex justify-center py-10">
-          <button className="bg-blue-700 text-4xl text-white px-10 py-2 rounded-2xl">
-            <Link href="/whatwedo">View all Services</Link>
-          </button>
+          <Link href="/whatwedo">
+            <span className="text-gray-400 text-2xl hover:text-blue-700 max-w-lg mx-auto mb-2 capitalize flex items-center">
+              what we&#39;re offering{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="text-indigo-600 ml-3 w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                />
+              </svg>
+            </span>
+          </Link>
         </div>
       </div>
     </div>

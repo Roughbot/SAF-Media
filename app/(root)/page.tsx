@@ -31,6 +31,7 @@ export default function Home() {
       <div>
         <ServiceBanner />
       </div>
+
       <div>
         <WorkBanner />
       </div>
