@@ -12,7 +12,7 @@ button.neumorphic {
   place-content: center;
   gap: 1rem;
 
-  --shadow: -0.5rem -0.5rem 1rem hsl(0 0% 100% / 0.75),
+  --shadow: -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75),
     0.5rem 0.5rem 1rem hsl(0 0% 50% / 0.5);
   box-shadow: var(--shadow);
   outline: none;
@@ -20,10 +20,11 @@ button.neumorphic {
 
   &:hover,
   &:focus-visible {
+    // border-color: hsl(219, 93%, 44%);
     color: hsl(219, 93%, 44%);
     scale: 1.1;
     box-shadow: var(--shadow), inset 0.5rem 0.5rem 1rem hsl(0 0% 50% / 0.5),
-      inset -0.5rem -0.5rem 1rem hsl(0 0% 100% / 0.75);
+      inset -0.5rem -0.5rem 1rem hsla(0, 0%, 100%, 0.75);
     color: hsl(219, 93%, 44%);
     > i {
       font-size: 28cqi;
