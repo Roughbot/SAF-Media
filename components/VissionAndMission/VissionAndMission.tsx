@@ -9,7 +9,7 @@ const VissionAndMission = () => {
             Our Vision
           </h2>
           <div className="flex flex-row ">
-            <div className=" flex-3 space-y-3 pt-10 ">
+            <div className=" flex-3 space-y-3 pt-10 text-black ">
               <h3 className="text-4xl font-semibold">
                 Expand your potential so you can achieve greatness
               </h3>
@@ -27,7 +27,7 @@ const VissionAndMission = () => {
             Our Mission
           </h2>
           <div className="flex flex-row ">
-            <div className=" flex-3 space-y-3 pt-10 ">
+            <div className=" flex-3 space-y-3 pt-10 text-black ">
               <h3 className="text-4xl font-semibold">
                 Give power to your brand. Dominate your space.
               </h3>
