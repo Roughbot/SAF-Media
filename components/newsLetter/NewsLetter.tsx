@@ -1,12 +1,24 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { saveNewsletterEmail } from "@/utils/actions/newsLetter.action";
 
 const NewsLetter = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(email);
-    // Add your form submission logic here
+    setLoading(true);
+    saveNewsletterEmail(email)
+      .then(() => {
+        setEmail("");
+        toast.success("Subscribed successfully!");
+        setLoading(false);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
   };
 
   return (
@@ -29,7 +41,7 @@ const NewsLetter = () => {
           type="submit"
           className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
         >
-          Subscribe
+          {loading ? "Subscribing..." : "Subscribe"}
         </button>
       </form>
     </div>
