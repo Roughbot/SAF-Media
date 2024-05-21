@@ -11,6 +11,7 @@ import {
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -41,6 +42,7 @@ const BlogPostForm = ({ existingPost }: any) => {
   const [author, setAuthor] = useState(existingPost ? existingPost.author : "");
 
   const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   useEffect(() => {
     if (existingPost) {
@@ -60,20 +62,22 @@ const BlogPostForm = ({ existingPost }: any) => {
 
     const slug = slugify(title, { lower: true, strict: true });
 
-    // Upload image to S3
+    // Upload image
     setLoading(true);
-    const randomString = crypto.randomBytes(10).toString("hex");
-    const responceURL = await uploadFile(randomString);
-    await fetch(responceURL, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      body: picture,
-    });
+
+    if (!selectedFile) {
+      throw new Error("No image selected");
+    }
+
+    const response = await axios.post("api/upload", selectedFile);
+
+    const URL = response.data.url;
+    console.log(URL);
+    console.log(response);
+
     setLoading(false);
 
-    const pictureURL = responceURL.split("?")[0];
+    const pictureURL = URL;
 
     // Create form data
     const formData = new FormData();
@@ -112,11 +116,6 @@ const BlogPostForm = ({ existingPost }: any) => {
     setPicture("");
     setContent("");
     setAuthor("");
-  };
-
-  // Function to handle Image file change
-  const handleFileChange = (event: any) => {
-    setPicture(event.target.files[0]);
   };
 
   return (
@@ -177,7 +176,13 @@ const BlogPostForm = ({ existingPost }: any) => {
             name="picture"
             className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
             type="file"
-            onChange={handleFileChange}
+            onChange={({ target }) => {
+              if (target.files) {
+                const file = target.files[0];
+                setPicture(URL.createObjectURL(file));
+                setSelectedFile(file);
+              }
+            }}
           />
         </div>
       </div>

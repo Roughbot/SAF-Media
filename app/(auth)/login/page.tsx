@@ -33,8 +33,8 @@ const Login = () => {
       const data = response.data;
       if (data.success) {
         setIsLoading(false);
-        toast.success("Login Successful");
         router.push("/admin");
+        toast.success("Login Successful");
       }
     } catch (error) {
       setIsLoading(false);

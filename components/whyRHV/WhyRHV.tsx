@@ -9,7 +9,7 @@ const WhyRHV = () => {
           Why Choose Right Hand Venture?
         </div>
         <div>
-          <div className="buttons p-10">
+          <div className="buttons p-10 text-black">
             <div className="buttons ">
               <button className="neumorphic">
                 <i className="fa-solid fa-file-signature"></i>

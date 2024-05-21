@@ -71,7 +71,7 @@ const VissionAndMission = () => {
                 Hard work, creativity, knowledge, confidence.
               </h3>
               <p className="text-2xl">
-                That`&#39;`s what we stand for. We believe in hard work,
+                That&#39;s what we stand for. We believe in hard work,
                 creativity, knowledge, and confidence. We believe that these
                 values are the key to success. We are here to help you achieve
                 your goals and dreams.
