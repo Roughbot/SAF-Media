@@ -69,11 +69,18 @@ const BlogPostForm = ({ existingPost }: any) => {
       throw new Error("No image selected");
     }
 
-    const response = await axios.post("api/upload", selectedFile);
+    const imageFormData = new FormData();
+    imageFormData.append("file", selectedFile);
 
-    const URL = response.data.url;
-    console.log(URL);
-    console.log(response);
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      body: imageFormData,
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    const URL = data.filePath;
 
     setLoading(false);
 
