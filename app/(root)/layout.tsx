@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const Layout = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "'//in.fw-cdn.com/31914510/1001156.js'";
+    script.src = "//in.fw-cdn.com/31914510/1001156.js";
     script.async = true;
     script.setAttribute("chat", "true");
     document.body.appendChild(script);
