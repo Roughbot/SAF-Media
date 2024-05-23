@@ -69,18 +69,8 @@ const BlogPostForm = ({ existingPost }: any) => {
       throw new Error("No image selected");
     }
 
-    const imageFormData = new FormData();
-    imageFormData.append("file", selectedFile);
-
-    const response = await fetch("/api/upload", {
-      method: "POST",
-      body: imageFormData,
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-    const URL = data.filePath;
+    const URL =
+      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
 
     setLoading(false);
 
