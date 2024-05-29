@@ -1,8 +1,8 @@
 "use client";
 import Modal from "react-modal";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./workStyles.scss";
-import image from "../../public/assets/services.jpg";
+import sampleImage from "../../public/assets/services.jpg";
 import Image from "next/image";
 
 const workData = [
@@ -59,7 +59,7 @@ const WorkComponent = () => {
               </div>
             </div>
             <figure onClick={openModal}>
-              <Image alt="image1" width={300} height={200} src={image} />
+              <Image alt="image1" width={300} height={200} src={sampleImage} />
             </figure>
             <Modal
               isOpen={modalIsOpen}

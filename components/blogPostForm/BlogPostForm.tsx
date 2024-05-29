@@ -11,7 +11,6 @@ import {
   updateBlogPost,
 } from "@/utils/actions/blogPost.action";
 import toast from "react-hot-toast";
-import axios from "axios";
 
 const QuillNoSSRWrapper = dynamic(
   () => {
@@ -55,6 +54,12 @@ const BlogPostForm = ({ existingPost }: any) => {
     }
   }, [existingPost]);
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
   // Function to handle form submission
 
   const handleSubmit = async (event: any) => {
@@ -69,12 +74,21 @@ const BlogPostForm = ({ existingPost }: any) => {
       throw new Error("No image selected");
     }
 
-    const URL =
-      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg";
+    const imageFormData = new FormData();
+    imageFormData.append("file", selectedFile);
+
+    const response = await fetch("/api/uploads", {
+      method: "POST",
+      body: imageFormData,
+    });
+
+    console.log(response);
+
+    const data = await response.json();
 
     setLoading(false);
 
-    const pictureURL = URL;
+    const pictureURL = data.path;
 
     // Create form data
     const formData = new FormData();
@@ -173,13 +187,7 @@ const BlogPostForm = ({ existingPost }: any) => {
             name="picture"
             className="p-3 rounded-2xl bg-slate-300 !ring-0 !ring-offset-0 shadow-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
             type="file"
-            onChange={({ target }) => {
-              if (target.files) {
-                const file = target.files[0];
-                setPicture(URL.createObjectURL(file));
-                setSelectedFile(file);
-              }
-            }}
+            onChange={handleFileChange}
           />
         </div>
       </div>

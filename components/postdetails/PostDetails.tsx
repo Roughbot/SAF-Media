@@ -35,21 +35,23 @@ const PostDetails = ({ post }: any) => {
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                 />
               </svg>
-              <span className="align-middle">
+              <span className="align-middle text-black">
                 {new Date(post.createdAt).toLocaleDateString()}
               </span>
             </div>
             <div className="flex flex-row space-x-8">
               <h2 className="text-black text-3xl font-bold">{post.author}</h2>
 
-              <p className="flex items-center justify-center">
+              <p className="flex items-center justify-center text-black">
                 {post.views} Views
               </p>
             </div>
           </div>
-          <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+          <h1 className="mb-8 text-3xl font-semibold text-black">
+            {post.title}
+          </h1>
           <div
-            className="first-letter:text-4xl"
+            className="first-letter:text-4xl text-black"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>
         </div>

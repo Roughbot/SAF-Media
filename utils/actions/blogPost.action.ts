@@ -1,11 +1,11 @@
 "use server";
-
+import { encode } from "urlencode";
 import BlogPost from "../database/models/post.model";
 import Comment from "../database/models/comments.model";
 import { connectToDatabase } from "../database/mongoConnection";
 import { handleError } from "../cn";
-import { deleteFile } from "../aws-config";
 import { revalidatePath } from "next/cache";
+import path from "path";
 
 //Create BlogPost
 export async function createBlogPost(formData: FormData) {
@@ -275,9 +275,13 @@ export async function deleteBlogPost(formData: FormData) {
     const slug = formData.get("slug") as string;
     const image = formData.get("image") as string;
 
-    const s3image = image.split("/").pop() || "";
-
-    await deleteFile(s3image);
+    const blogImage = path.basename(image);
+    console.log(encode(blogImage));
+    await fetch(`/api/deleteImage?name=${encode(blogImage)}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
 
     await BlogPost.deleteOne({ slug });
 
