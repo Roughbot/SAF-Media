@@ -30,7 +30,7 @@ const Footer = () => {
             <NewsLetter />
             <div className="flex gap-6 pb-5 items-center justify-around">
               <Link
-                href="https://www.instagram.com/safmediagroup/"
+                href="https://www.instagram.com/righthandventure"
                 target="_blank"
               >
                 <FaInstagram className="text-2xl text-white cursor-pointer hover:text-yellow-600  hover:p-0 hover:rounded-sm" />
@@ -39,7 +39,7 @@ const Footer = () => {
                 <FaTwitter className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
               </Link>
               <Link
-                href="https://www.facebook.com/people/SAF-MEDIA-GROUP/61556903258323/"
+                href="https://www.facebook.com/profile.php?id=61556903258323"
                 target="_blank"
               >
                 <FaFacebook className="text-2xl cursor-pointer text-white hover:text-blue-600  hover:p-0 hover:rounded-sm" />
