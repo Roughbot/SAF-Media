@@ -4,36 +4,12 @@ import React, { useState } from "react";
 import "./workStyles.scss";
 import sampleImage from "../../public/assets/services.jpg";
 import Image from "next/image";
-
-const workData = [
-  {
-    title: "My Title 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. DonecLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec",
-    video: "AwclCGUMrTY",
-  },
-  {
-    title: "My Title 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. DonecLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec",
-    video: "hJDwkDjCld8",
-  },
-  {
-    title: "My Title 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. DonecLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec",
-    video: "DLRUn4DAvdQ",
-  },
-  {
-    title: "My Title 4",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. DonecLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ut dolor non aliquam. Donec",
-    video: "7KG_R-i432I",
-  },
-];
+import workData from "./data";
+import useDeviceDetect from "@/utils/useDeviceDetect";
 
 const WorkComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { isMobile } = useDeviceDetect();
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -43,11 +19,15 @@ const WorkComponent = () => {
     setModalIsOpen(false);
   };
 
+  const redirectToYoutube = (videoId: any) => {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
+  };
+
   return (
     <div>
       {workData.map((data, index) => (
         <section key={index}>
-          <a href="#" className="container">
+          <a className="container">
             <div className="card text-black">
               <div className="content">
                 <h3 className="title">{data.title}</h3>
@@ -58,7 +38,11 @@ const WorkComponent = () => {
                 <span className="text-lg font-bold">^</span>
               </div>
             </div>
-            <figure onClick={openModal}>
+            <figure
+              onClick={() => {
+                isMobile ? redirectToYoutube(data.video) : openModal();
+              }}
+            >
               <Image alt="image1" width={300} height={200} src={sampleImage} />
             </figure>
             <Modal
@@ -95,6 +79,5 @@ const WorkComponent = () => {
     </div>
   );
 };
-
 
 export default WorkComponent;

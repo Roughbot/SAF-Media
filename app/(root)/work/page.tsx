@@ -6,12 +6,12 @@ const page = () => {
   return (
     <div className="bg-black">
       <div>
-        <h2 className="text-5xl md:text-7xl lg:text-8xl text-center font-bold text-blue-700 md:pt-20">
+        <h2 className="text-5xl md:text-7xl lg:text-8xl text-center font-bold text-blue-700 pt-20">
           <span>Our Works</span>
         </h2>
       </div>
-      <div className="flex flex-row py-3">
-        <div className="flex items-center justify-center">
+      <div className="flex flex-col md:flex-row py-3">
+        <div className="flex items-center justify-center ">
           <p className="text-white text-2xl p-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec
             purus ut turpis tincidunt. Nulla facilisi. Donec euismod, nisl et
