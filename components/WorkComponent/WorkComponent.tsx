@@ -9,9 +9,11 @@ import useDeviceDetect from "@/utils/useDeviceDetect";
 
 const WorkComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState("");
   const { isMobile } = useDeviceDetect();
 
-  const openModal = () => {
+  const openModal = (videoId: string) => {
+    setCurrentVideo(videoId);
     setModalIsOpen(true);
   };
 
@@ -40,7 +42,9 @@ const WorkComponent = () => {
             </div>
             <figure
               onClick={() => {
-                isMobile ? redirectToYoutube(data.video) : openModal();
+                isMobile
+                  ? redirectToYoutube(data.video)
+                  : openModal(data.video);
               }}
             >
               <Image alt="image1" width={300} height={200} src={sampleImage} />
@@ -67,7 +71,7 @@ const WorkComponent = () => {
               <iframe
                 width="560"
                 height="315"
-                src={`https://www.youtube.com/embed/${data.video}`}
+                src={`https://www.youtube.com/embed/${currentVideo}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
