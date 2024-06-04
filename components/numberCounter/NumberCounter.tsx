@@ -7,8 +7,8 @@ const NumberCounter = () => {
 
   const data = [
     {
-      number: 200,
-      text: "Satisfied Clients",
+      number: 20,
+      text: "Clients",
       symbol: "+",
     },
     {
@@ -17,12 +17,12 @@ const NumberCounter = () => {
       symbol: "%",
     },
     {
-      number: 40,
+      number: 5,
       text: "Revenue Growth",
       symbol: "M+",
     },
     {
-      number: 156,
+      number: 30,
       text: "Projects Completed",
       symbol: "+",
     },

@@ -7,38 +7,38 @@ import "./styles.scss";
 const testimonials = [
   {
     id: 1,
-    name: "Sara Smith",
-    title: "CEO",
-    org: "Google",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, libero ac semper lacinia, elit mi ultricies nunc, nec interdum ante turpis nec erat. Nullam nec sapien nec nunc luctus dictum. Nunc vel nunc sed purus.",
+    name: "",
+    title: "",
+    org: "Frshmoo",
+    desc: "Working with Right Hand Venture has been a game-changer for Frshmoo. Their expertise in marketing has significantly boosted our brand visibility and increased our sales. We are impressed by their creativity, dedication, and ability to deliver outstanding results.",
   },
   {
     id: 2,
-    name: "John Doe",
-    title: "CTO",
-    org: "Facebook",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, libero ac semper lacinia, elit mi ultricies nunc, nec interdum ante turpis nec erat. Nullam nec sapien nec nunc luctus dictum. Nunc vel nunc sed purus.",
+    name: "",
+    title: "",
+    org: "Angry Label",
+    desc: "Right Hand Venture has been instrumental in elevating Angry Label's market presence. Their innovative strategies and tailored approach have driven remarkable growth in our online engagement and sales. We are thrilled with their results and highly recommend them to any business aiming for success.",
   },
   {
     id: 3,
-    name: "Jane Doe",
-    title: "COO",
-    org: "Amazon",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, libero ac semper lacinia, elit mi ultricies nunc, nec interdum ante turpis nec erat. Nullam nec sapien nec nunc luctus dictum. Nunc vel nunc sed purus.",
+    name: "",
+    title: "",
+    org: "Untrain",
+    desc: "Right Hand Venture has transformed Untrain's business with their exceptional and innovative marketing strategies, significantly increasing our online presence and conversions. Their personalized approach and commitment to understanding our brand have resulted in a bespoke marketing plan perfectly aligned with our goals.",
   },
   {
     id: 4,
-    name: "Tom Smith",
-    title: "CFO",
-    org: "Microsoft",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, libero ac semper lacinia, elit mi ultricies nunc, nec interdum ante turpis nec erat. Nullam nec sapien nec nunc luctus dictum. Nunc vel nunc sed purus.",
+    name: "",
+    title: "",
+    org: "Animatrix",
+    desc: "Right Hand Venture has revolutionized Animatrix’s approach to marketing. Their deep understanding of the streetwear market and innovative strategies have amplified our brand’s reach and engagement. The impressive results speak for themselves, and we couldn't be happier with our partnership",
   },
   {
     id: 5,
-    name: "Alice Doe",
-    title: "CMO",
-    org: "Apple",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor, libero ac semper lacinia, elit mi ultricies nunc, nec interdum ante turpis nec erat. Nullam nec sapien nec nunc luctus dictum. Nunc vel nunc sed purus.",
+    name: "",
+    title: "",
+    org: "Frshmoo",
+    desc: "Working with Right Hand Venture has been a game-changer for Frshmoo. Their expertise in marketing has significantly boosted our brand visibility and increased our sales. We are impressed by their creativity, dedication, and ability to deliver outstanding results.",
   },
 ];
 
@@ -182,11 +182,9 @@ const FiveCard = () => {
             >
               <p className="text-sm md:text-base">{testimonial.desc}</p>
               <div className="icon">
-                <h2>Card {testimonial.name}</h2>
+                <h2>{testimonial.org}</h2>
               </div>
-              <h4>
-                {testimonial.title}, {testimonial.org}
-              </h4>
+              <h4>{testimonial.name}</h4>
             </button>
           ))}
         </div>
