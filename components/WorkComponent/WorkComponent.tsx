@@ -13,6 +13,7 @@ const WorkComponent = () => {
   const [currentVideo, setCurrentVideo] = useState("");
   const [modelDescriptionOpen, setModelDescriptionOpen] = useState(false);
   const { isMobile } = useDeviceDetect();
+  const [caseStudy, setCaseStudy] = useState<any>(null);
 
   useEffect(() => {
     setAppElement(document.getElementById("workComponent") as HTMLElement);
@@ -31,11 +32,14 @@ const WorkComponent = () => {
     window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
   };
 
-  const openDescriptionModel = () => {
+  const openDescriptionModel = (caseStudy: any) => {
+    document.body.style.overflow = "hidden";
+    setCaseStudy(caseStudy);
     setModelDescriptionOpen(true);
   };
 
   const closeDescriptionModel = () => {
+    document.body.style.overflow = "auto";
     setModelDescriptionOpen(false);
   };
   return (
@@ -52,7 +56,7 @@ const WorkComponent = () => {
                   <span
                     className="text-black font-semibold items-center justify-center flex cursor-pointer"
                     onClick={() => {
-                      openDescriptionModel();
+                      openDescriptionModel(data.caseStudy);
                     }}
                   >
                     More{" "}
@@ -71,13 +75,25 @@ const WorkComponent = () => {
                         left: "50%",
                         right: "auto",
                         bottom: "auto",
-                        marginRight: "-50%",
+                        width: "80%",
+
                         transform: "translate(-50%, -50%)",
                         backgroundColor: "White",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
                       },
                     }}
                   >
-                    <span></span>
+                    <div
+                      className={
+                        isMobile
+                          ? "h-[600px] w-[300px] textSize"
+                          : "h-[400px] w-[900px]"
+                      }
+                    >
+                      {caseStudy}
+                    </div>
                   </Modal>
                 </div>
                 <span className="text-lg font-bold">^</span>
