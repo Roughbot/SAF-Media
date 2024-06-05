@@ -1,6 +1,6 @@
 "use client";
 import Modal from "react-modal";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./workStyles.scss";
 import sampleImage from "../../public/assets/services.jpg";
 import Image from "next/image";
@@ -9,9 +9,14 @@ import useDeviceDetect from "@/utils/useDeviceDetect";
 
 const WorkComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [appElement, setAppElement] = useState<HTMLElement | null>(null);
   const [currentVideo, setCurrentVideo] = useState("");
   const [modelDescriptionOpen, setModelDescriptionOpen] = useState(false);
   const { isMobile } = useDeviceDetect();
+
+  useEffect(() => {
+    setAppElement(document.getElementById("workComponent") as HTMLElement);
+  }, []);
 
   const openModal = (videoId: string) => {
     setCurrentVideo(videoId);
@@ -54,9 +59,7 @@ const WorkComponent = () => {
                   </span>
                   <Modal
                     isOpen={modelDescriptionOpen}
-                    appElement={
-                      document.getElementById("workComponent") || undefined
-                    }
+                    appElement={appElement!}
                     onRequestClose={closeDescriptionModel}
                     contentLabel=""
                     style={{
@@ -91,7 +94,7 @@ const WorkComponent = () => {
             </figure>
             <Modal
               isOpen={modalIsOpen}
-              appElement={document.getElementById("workComponent") || undefined}
+              appElement={appElement!}
               onRequestClose={closeModal}
               contentLabel="My dialog"
               style={{
