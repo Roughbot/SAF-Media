@@ -42,7 +42,11 @@ const NumberCounter = () => {
               endTrigger=".grid"
             >
               <div className="text-4xl font-bold text-white">
-                <CountUp end={triggered ? item.number : 0} duration={3} />
+                <CountUp
+                  end={triggered ? item.number : 0}
+                  decimals={1}
+                  duration={3}
+                />
                 {item.symbol}
               </div>
               <div className="text-lg text-gray-400">{item.text}</div>
