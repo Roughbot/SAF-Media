@@ -17,7 +17,7 @@ const NumberCounter = () => {
       symbol: "%",
     },
     {
-      number: 5,
+      number: 0.5,
       text: "Revenue Growth",
       symbol: "M+",
     },

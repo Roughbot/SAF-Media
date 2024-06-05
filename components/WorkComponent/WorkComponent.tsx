@@ -50,7 +50,7 @@ const WorkComponent = () => {
                 <div className="text">
                   <p>{data.description}</p>
                   <span
-                    className="text-black font-semibold items-center justify-center flex pt-4"
+                    className="text-black font-semibold items-center justify-center flex cursor-pointer"
                     onClick={() => {
                       openDescriptionModel();
                     }}
