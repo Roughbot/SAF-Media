@@ -10,6 +10,7 @@ import useDeviceDetect from "@/utils/useDeviceDetect";
 const WorkComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
+  const [modelDescriptionOpen, setModelDescriptionOpen] = useState(false);
   const { isMobile } = useDeviceDetect();
 
   const openModal = (videoId: string) => {
@@ -25,6 +26,13 @@ const WorkComponent = () => {
     window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
   };
 
+  const openDescriptionModel = () => {
+    setModelDescriptionOpen(true);
+  };
+
+  const closeDescriptionModel = () => {
+    setModelDescriptionOpen(false);
+  };
   return (
     <div>
       {workData.map((data, index) => (
@@ -36,6 +44,38 @@ const WorkComponent = () => {
 
                 <div className="text">
                   <p>{data.description}</p>
+                  <span
+                    className="text-black font-semibold items-center justify-center flex pt-4"
+                    onClick={() => {
+                      openDescriptionModel();
+                    }}
+                  >
+                    More{" "}
+                  </span>
+                  <Modal
+                    isOpen={modelDescriptionOpen}
+                    appElement={
+                      document.getElementById("workComponent") || undefined
+                    }
+                    onRequestClose={closeDescriptionModel}
+                    contentLabel=""
+                    style={{
+                      overlay: {
+                        backgroundColor: "rgba(0,0,0,0.5)",
+                      },
+                      content: {
+                        top: "50%",
+                        left: "50%",
+                        right: "auto",
+                        bottom: "auto",
+                        marginRight: "-50%",
+                        transform: "translate(-50%, -50%)",
+                        backgroundColor: "White",
+                      },
+                    }}
+                  >
+                    <span></span>
+                  </Modal>
                 </div>
                 <span className="text-lg font-bold">^</span>
               </div>
@@ -51,6 +91,7 @@ const WorkComponent = () => {
             </figure>
             <Modal
               isOpen={modalIsOpen}
+              appElement={document.getElementById("workComponent") || undefined}
               onRequestClose={closeModal}
               contentLabel="My dialog"
               style={{
