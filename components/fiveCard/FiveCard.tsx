@@ -171,7 +171,7 @@ const FiveCard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="body">
       <div className="cards-wrapper">
         <div className="cards">
           {testimonials.map((testimonial) => (

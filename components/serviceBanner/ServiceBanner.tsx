@@ -26,7 +26,7 @@ const ServiceBanner = () => {
           surprisingly competitive price. With over a decade of digital
           marketing experience, we&#39;re adept at effectively promoting your
           business online. From crafting search engine optimized website to
-          leveraging paid media and organic SEO, local SEO, and docial media
+          leveraging paid media and organic SEO, local SEO, and social media
           marketing tactics, we&#39;ve got you covered.
         </p>
       </div>

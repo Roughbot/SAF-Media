@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
 
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; // This removes the default margin
+  padding: 0; // This removes the default padding
+}
+
 .cards-wrapper {
   width: 100%;
   height: 300px;
