@@ -51,7 +51,7 @@
     "react-scroll-trigger": "^0.6.14",
     "react-vertical-timeline-component": "^3.6.0",
     "recharts": "^2.12.3",
-    "sass": "1.32.13",
+    "sass": "1.79.0",
     "sharp": "^0.33.3",
     "slugify": "^1.6.6",
     "tailwind-merge": "^2.2.1",
